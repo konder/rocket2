@@ -37,8 +37,8 @@ USER root
 ARG HF_ENDPOINT="https://hf-mirror.com"
 
 WORKDIR /app
-RUN mkdir /.cache && mkdir /app/minestudio_temp_dir 
-ENV MINESTUDIO_TEMP_DIR="/app/minestudio_temp_dir"
+RUN mkdir /.cache && mkdir /app/minestudio_dir
+ENV MINESTUDIO_DIR="/app/minestudio_dir"
 RUN python -m minestudio.simulator.entry -y
 
 RUN git clone https://github.com/CraftJarvis/MineStudio.git &&\
@@ -48,7 +48,7 @@ RUN git clone https://github.com/CraftJarvis/MineStudio.git &&\
     bash download_ckpts.sh
 
 RUN python -m pip install gradio==5.9.1 pillow==11.0.0 &&\
-    git clone https://github.com/CraftJarvis/ROCKET-2.git &&\
+    git clone https://github.com/konder/rocket2.git ROCKET-2 &&\
     cd ROCKET-2 &&\
     python model.py
 

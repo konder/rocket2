@@ -182,3 +182,10 @@ minestudio/models/realtime_sam/checkpoints/*.pt
 outputs
 *.mp4
 *.ttf
+
+# 本地预下载的开发依赖 (不提交到 git)
+MineStudio/
+simulator_engine/
+hf_models/
+hf_cache/
+timm_models/

@@ -17,7 +17,29 @@ import numpy as np
 from PIL import Image
 from pathlib import Path
 
-from sam2.build_sam import build_sam2_camera_predictor
+
+def get_device() -> str:
+    """Auto-detect the best available device. 
+    Override via ROCKET_DEVICE env var (e.g. 'cpu', 'cuda', 'mps')."""
+    env_device = os.environ.get("ROCKET_DEVICE")
+    if env_device:
+        return env_device
+    if torch.cuda.is_available():
+        return "cuda"
+    if hasattr(torch.backends, "mps") and torch.backends.mps.is_available():
+        return "mps"
+    return "cpu"
+
+
+DEVICE = get_device()
+
+from sam2_wrapper import build_sam2_predictor
+from weight_utils import ensure_engine, auto_detect_timm_local_weights
+
+# Auto-detect local timm weights and simulator engine at startup
+auto_detect_timm_local_weights()
+ensure_engine()
+
 from minestudio.simulator import MinecraftSim
 from minestudio.simulator.callbacks import (
     load_callbacks_from_config, MaskActionsCallback, PrevActionCallback, InitInventoryCallback, CommandsCallback
@@ -28,7 +50,10 @@ from draw_action import draw_action
 
 
 DEFAULT_IMAGE_URL = "https://pic1.imgdb.cn/item/67d973a688c538a9b5c048fd.png"
-start_image = Image.open(requests.get(DEFAULT_IMAGE_URL, stream=True).raw)
+try:
+    start_image = Image.open(requests.get(DEFAULT_IMAGE_URL, stream=True, timeout=5).raw).convert("RGB")
+except Exception:
+    start_image = Image.new("RGB", (640, 360), (0, 0, 0))
 SCALE = 360 / 640
 PAGE_WIDTH = 800
 PAGE_HEIGHT = int(PAGE_WIDTH * SCALE)
@@ -163,17 +188,17 @@ class CrossViewRocketSession:
         # first realease the old predictor
         if hasattr(self, "predictor"):
             del self.predictor
-        self.predictor = build_sam2_camera_predictor(model_cfg, sam_ckpt)
+        self.predictor = build_sam2_predictor(model_cfg, sam_ckpt, device=DEVICE)
         print(f"Successfully loaded SAM2 from {sam_ckpt}")
         self.able_to_track = False
 
     def load_rocket(self, ckpt_path, cfg_coef=1.0):
         if ckpt_path.startswith("hf:"):
             ckpt_path = ckpt_path.split(":")[-1]
-            agent = CrossViewRocket.from_pretrained(ckpt_path).to("cuda")
+            agent = CrossViewRocket.from_pretrained(ckpt_path).to(DEVICE)
         else:
             assert os.path.exists(ckpt_path), f"Model path {ckpt_path} not found."
-            agent = load_cross_view_rocket(ckpt_path).to("cuda")
+            agent = load_cross_view_rocket(ckpt_path).to(DEVICE)
         agent.eval()
         self.agent = CFGWrapper(agent, k=cfg_coef)
         self.clear_agent_memory()

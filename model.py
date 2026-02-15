@@ -18,6 +18,7 @@ from huggingface_hub import PyTorchModelHubMixin
 from minestudio.models.base_policy import MinePolicy
 from minestudio.utils.vpt_lib.util import FanInInitReLULayer, ResidualRecurrentBlocks
 from minestudio.utils.register import Registers
+from weight_utils import create_timm_model
 
 BINARY_KEYS = [
     "forward", "back", "left", "right", "inventory", "sprint", "sneak", "jump", "attack", "use", 
@@ -56,13 +57,13 @@ class CrossViewRocket(MinePolicy, PyTorchModelHubMixin):
     ):
         super().__init__(hiddim=hiddim, action_space=action_space) 
         # super().__init__(hiddim=hiddim, action_space=action_space, nucleus_prob=0.85)
-        self.view_backbone = timm.create_model(view_backbone, pretrained=True, features_only=True)
+        self.view_backbone = create_timm_model(view_backbone, pretrained=True, features_only=True)
         data_config = timm.data.resolve_model_data_config(self.view_backbone)
         self.transforms = torchvision.transforms.Compose([
             torchvision.transforms.Lambda(lambda x: x / 255.0),
             torchvision.transforms.Normalize(mean=data_config['mean'], std=data_config['std']),
         ])
-        self.mask_backbone = timm.create_model(mask_backbone, pretrained=True, features_only=True, in_chans=1)
+        self.mask_backbone = create_timm_model(mask_backbone, pretrained=True, features_only=True, in_chans=1)
         self.updim_obs = nn.Conv2d(self.view_backbone.feature_info[-1]['num_chs'], hiddim, kernel_size=1, bias=False)
         vision_dim = self.view_backbone.feature_info[-1]['num_chs'] + self.mask_backbone.feature_info[-1]['num_chs']
         self.updim_cross = nn.Conv2d(vision_dim, hiddim, kernel_size=1, bias=False)

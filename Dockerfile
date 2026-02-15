@@ -47,7 +47,7 @@ RUN git clone https://github.com/CraftJarvis/MineStudio.git &&\
     cd checkpoints &&\
     bash download_ckpts.sh
 
-RUN python -m pip install gradio==5.9.1 pillow==11.0.0
+RUN python -m pip install 'gradio>=5.12,<6' pillow==11.0.0
 
 # Copy project source from build context (no git clone needed)
 COPY . /app/ROCKET-2

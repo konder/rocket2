@@ -47,11 +47,13 @@ RUN git clone https://github.com/CraftJarvis/MineStudio.git &&\
     cd checkpoints &&\
     bash download_ckpts.sh
 
-RUN python -m pip install gradio==5.9.1 pillow==11.0.0 &&\
-    git clone https://github.com/konder/rocket2.git ROCKET-2 &&\
-    cd ROCKET-2 &&\
-    python model.py
+RUN python -m pip install gradio==5.9.1 pillow==11.0.0
 
+# Copy project source from build context (no git clone needed)
+COPY . /app/ROCKET-2
 WORKDIR /app/ROCKET-2
+
+# Download ROCKET-2 model weights and timm pretrained weights
+RUN python model.py
 
 CMD ["python", "launch.py", "--env-conf", "./env_conf", "--sam-path", "/app/MineStudio/minestudio/utils/realtime_sam/checkpoints"]

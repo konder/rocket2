@@ -5,3 +5,13 @@ __pycache__
 outputs/
 lightning_logs/
 wandb/
+
+# Dev-only local dependencies (not needed in server build)
+MineStudio/
+simulator_engine/
+hf_models/
+hf_cache/
+timm_models/
+Dockerfile*
+docker-compose.yml
+Makefile

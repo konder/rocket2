@@ -183,9 +183,16 @@ outputs
 *.mp4
 *.ttf
 
+# Benchmark results and videos
+benchmark/results/
+
+# Eval gallery images
+eval_gallery/
+
 # 本地预下载的开发依赖 (不提交到 git)
 MineStudio/
 simulator_engine/
 hf_models/
 hf_cache/
 timm_models/
+Molmo-7B-D-0924/

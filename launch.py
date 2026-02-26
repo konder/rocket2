@@ -33,13 +33,7 @@ def get_device() -> str:
 
 DEVICE = get_device()
 
-from sam2_wrapper import build_sam2_predictor
-from weight_utils import ensure_engine, auto_detect_timm_local_weights
-
-# Auto-detect local timm weights and simulator engine at startup
-auto_detect_timm_local_weights()
-ensure_engine()
-
+from sam2.build_sam import build_sam2_camera_predictor as build_sam2_predictor
 from minestudio.simulator import MinecraftSim
 from minestudio.simulator.callbacks import (
     load_callbacks_from_config, MaskActionsCallback, PrevActionCallback, InitInventoryCallback, CommandsCallback

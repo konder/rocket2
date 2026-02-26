@@ -18,7 +18,7 @@ from huggingface_hub import PyTorchModelHubMixin
 from minestudio.models.base_policy import MinePolicy
 from minestudio.utils.vpt_lib.util import FanInInitReLULayer, ResidualRecurrentBlocks
 from minestudio.utils.register import Registers
-from weight_utils import create_timm_model
+from timm import create_model as create_timm_model
 
 BINARY_KEYS = [
     "forward", "back", "left", "right", "inventory", "sprint", "sneak", "jump", "attack", "use", 

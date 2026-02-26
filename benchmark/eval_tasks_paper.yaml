@@ -1,0 +1,129 @@
+# ROCKET-2 Minecraft Interaction Benchmark
+# These tasks use the project's env_conf/ YAML files for environment setup,
+# matching the evaluation protocol in the ROCKET-2 paper.
+# Each task is tested with 32 episodes by default.
+
+env_conf_dir: ../env_conf
+default_episodes: 32
+default_max_steps: 600
+
+tasks:
+  # --- approach ---
+  - name: navigate_village
+    interaction_type: approach
+    text: "Point to the village building"
+    env_conf: navigate_village.yaml
+    max_steps: 1200
+    success_criteria: null
+
+  - name: navigate_ocean
+    interaction_type: approach
+    text: "Point to the ocean"
+    env_conf: navigate_ocean.yaml
+    max_steps: 1200
+    success_criteria: null
+
+  # --- hunt (kill entity) ---
+  - name: hunt_cowonly
+    interaction_type: hunt
+    text: "Point to the cow"
+    env_conf: hunt_cowonly.yaml
+    max_steps: 600
+    success_criteria: {key: kill_entity, regex: ".*cow.*", num: 1}
+
+  - name: hunt_fence
+    interaction_type: hunt
+    text: "Point to the sheep in the right fence"
+    env_conf: hunt_fence.yaml
+    max_steps: 600
+    success_criteria: {key: kill_entity, regex: ".*sheep.*", num: 1}
+
+  # --- mine (break block) ---
+  - name: mine_coal
+    interaction_type: mine
+    text: "Point to the coal ore"
+    env_conf: mine_coal.yaml
+    max_steps: 600
+    success_criteria: {key: mine_block, regex: ".*coal_ore.*", num: 1}
+
+  - name: mine_emerald
+    interaction_type: mine
+    text: "Point to the emerald ore"
+    env_conf: mine_emerald.yaml
+    max_steps: 600
+    success_criteria: {key: mine_block, regex: ".*emerald_ore.*", num: 1}
+
+  - name: collect_wood
+    interaction_type: mine
+    text: "Point to the tree trunk"
+    env_conf: collect_wood.yaml
+    max_steps: 600
+    success_criteria: {key: mine_block, regex: ".*log.*", num: 1}
+
+  # --- interact / use ---
+  - name: interact_chest
+    interaction_type: use
+    text: "Point to the middle chest"
+    env_conf: interact_chest.yaml
+    max_steps: 600
+    success_criteria: null
+
+  - name: interact_house
+    interaction_type: approach
+    text: "Point to the house"
+    env_conf: interact_house.yaml
+    max_steps: 1200
+    success_criteria: null
+
+  - name: interact_portal
+    interaction_type: use
+    text: "Point to the obsidian portal frame"
+    env_conf: interact_portal.yaml
+    max_steps: 600
+    success_criteria: {key: use_item, regex: ".*flint.*", num: 1}
+
+  # --- place (use item) ---
+  - name: place_door
+    interaction_type: use
+    text: "Point to the diamond block to place the door on"
+    env_conf: place_door.yaml
+    max_steps: 600
+    success_criteria: {key: use_item, regex: ".*door.*", num: 1}
+
+  - name: place_minecart
+    interaction_type: use
+    text: "Point to the rail to place minecart on"
+    env_conf: place_minecart.yaml
+    max_steps: 600
+    success_criteria: {key: use_item, regex: ".*minecart.*", num: 1}
+
+  # --- tool (use item) ---
+  - name: tool_fire
+    interaction_type: use
+    text: "Point to the ground to start fire"
+    env_conf: tool_fire.yaml
+    max_steps: 600
+    success_criteria: {key: use_item, regex: ".*flint.*", num: 1}
+
+  - name: tool_lava
+    interaction_type: use
+    text: "Point to the lava to scoop with bucket"
+    env_conf: tool_lava.yaml
+    max_steps: 600
+    success_criteria: {key: use_item, regex: ".*bucket.*", num: 1}
+
+  # --- craft ---
+  - name: craft
+    interaction_type: craft
+    text: "Point to the crafting table"
+    env_conf: craft.yaml
+    max_steps: 600
+    success_criteria: {key: craft_item, regex: ".*", num: 1}
+
+  # --- build ---
+  - name: build_bridge
+    interaction_type: use
+    text: "Point to the edge of the cliff to build a bridge"
+    env_conf: build_bridge.yaml
+    max_steps: 1200
+    success_criteria: {key: use_item, regex: ".*planks.*", num: 3}

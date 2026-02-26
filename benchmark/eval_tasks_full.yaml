@@ -1,0 +1,487 @@
+# Full MineStudio benchmark: all 76 built-in simple tasks
+# Each task uses MineStudio's task_configs/simple/ YAML for environment setup.
+# interaction_type is inferred from task name prefixes.
+# success_criteria uses info_event from the environment's info dict.
+
+task_group: simple
+default_episodes: 3
+default_max_steps: 600
+
+tasks:
+  # --- build (interaction_type: use) ---
+  - name: build_a_waterfall
+    interaction_type: use
+    text: "Point to the waterfall structure"
+    max_steps: 1200
+    success_criteria: {key: use_item, regex: ".*water.*", num: 1}
+
+  - name: build_dig3fill1
+    interaction_type: use
+    text: "Point to the block to place"
+    max_steps: 600
+    success_criteria: {key: use_item, regex: ".*", num: 1}
+
+  - name: build_gate
+    interaction_type: use
+    text: "Point to the gate"
+    max_steps: 600
+    success_criteria: {key: use_item, regex: ".*gate.*", num: 1}
+
+  - name: build_golems
+    interaction_type: use
+    text: "Point to the pumpkin to place on the golem"
+    max_steps: 1200
+    success_criteria: {key: use_item, regex: ".*pumpkin.*", num: 1}
+
+  - name: build_nether_portal
+    interaction_type: use
+    text: "Point to the obsidian frame"
+    max_steps: 1200
+    success_criteria: {key: use_item, regex: ".*obsidian.*", num: 1}
+
+  - name: build_obsidian
+    interaction_type: use
+    text: "Point to where the obsidian should be placed"
+    max_steps: 1200
+    success_criteria: {key: use_item, regex: ".*", num: 1}
+
+  - name: build_pillar
+    interaction_type: use
+    text: "Point to the top of the pillar"
+    max_steps: 600
+    success_criteria: {key: use_item, regex: ".*", num: 3}
+
+  - name: build_snow_golem
+    interaction_type: use
+    text: "Point to the snow blocks"
+    max_steps: 1200
+    success_criteria: {key: use_item, regex: ".*snow.*", num: 1}
+
+  # --- carve / clean (interaction_type: use) ---
+  - name: carve_pumpkins
+    interaction_type: use
+    text: "Point to the pumpkin to carve"
+    max_steps: 600
+    success_criteria: {key: use_item, regex: ".*shears.*", num: 1}
+
+  - name: clean_up
+    interaction_type: use
+    text: "Point to the items to clean up"
+    max_steps: 600
+    success_criteria: {key: mine_block, regex: ".*", num: 3}
+
+  # --- explore / climb / find / run / travel (interaction_type: approach) ---
+  - name: climb_the_mountain
+    interaction_type: approach
+    text: "Point to the mountain peak"
+    max_steps: 1200
+    success_criteria: null
+
+  - name: explore_boat
+    interaction_type: approach
+    text: "Point to the boat"
+    max_steps: 600
+    success_criteria: null
+
+  - name: explore_chest
+    interaction_type: use
+    text: "Point to the chest"
+    max_steps: 600
+    success_criteria: {key: use_item, regex: ".*", num: 1}
+
+  - name: explore_climb
+    interaction_type: approach
+    text: "Point to the cliff to climb"
+    max_steps: 1200
+    success_criteria: null
+
+  - name: explore_mine
+    interaction_type: mine
+    text: "Point to the ore to mine"
+    max_steps: 600
+    success_criteria: {key: mine_block, regex: ".*", num: 3}
+
+  - name: explore_run
+    interaction_type: approach
+    text: "Point to the direction to run"
+    max_steps: 600
+    success_criteria: null
+
+  - name: explore_the_treasure
+    interaction_type: approach
+    text: "Point to the treasure"
+    max_steps: 1200
+    success_criteria: null
+
+  - name: find_diamond
+    interaction_type: mine
+    text: "Point to the diamond ore"
+    max_steps: 1200
+    success_criteria: {key: mine_block, regex: ".*diamond.*", num: 1}
+
+  - name: find_forest
+    interaction_type: approach
+    text: "Point to the forest"
+    max_steps: 1200
+    success_criteria: null
+
+  - name: find_village
+    interaction_type: approach
+    text: "Point to the village"
+    max_steps: 1200
+    success_criteria: null
+
+  - name: run_and_explore
+    interaction_type: approach
+    text: "Point to the direction to explore"
+    max_steps: 600
+    success_criteria: null
+
+  - name: travel_by_boat
+    interaction_type: approach
+    text: "Point to the boat"
+    max_steps: 600
+    success_criteria: null
+
+  # --- collect (interaction_type: mine) ---
+  - name: collect_dirt
+    interaction_type: mine
+    text: "Point to the dirt block"
+    max_steps: 600
+    success_criteria: {key: mine_block, regex: ".*dirt.*", num: 1}
+
+  - name: collect_grass
+    interaction_type: mine
+    text: "Point to the grass"
+    max_steps: 600
+    success_criteria: {key: mine_block, regex: ".*grass.*", num: 1}
+
+  - name: collect_seagrass
+    interaction_type: mine
+    text: "Point to the seagrass"
+    max_steps: 600
+    success_criteria: {key: mine_block, regex: ".*seagrass.*", num: 1}
+
+  - name: collect_wood
+    interaction_type: mine
+    text: "Point to the tree trunk"
+    max_steps: 600
+    success_criteria: {key: mine_block, regex: ".*log.*", num: 1}
+
+  - name: collect_wool
+    interaction_type: mine
+    text: "Point to the sheep to shear"
+    max_steps: 600
+    success_criteria: {key: mine_block, regex: ".*wool.*", num: 1}
+
+  # --- combat (interaction_type: hunt) ---
+  - name: combat_enderman
+    interaction_type: hunt
+    text: "Point to the enderman"
+    max_steps: 1200
+    success_criteria: {key: kill_entity, regex: ".*enderman.*", num: 1}
+
+  - name: combat_enemies
+    interaction_type: hunt
+    text: "Point to the nearest enemy"
+    max_steps: 1200
+    success_criteria: {key: kill_entity, regex: ".*", num: 1}
+
+  - name: combat_skeletons
+    interaction_type: hunt
+    text: "Point to the skeleton"
+    max_steps: 1200
+    success_criteria: {key: kill_entity, regex: ".*skeleton.*", num: 1}
+
+  - name: combat_spider
+    interaction_type: hunt
+    text: "Point to the spider"
+    max_steps: 1200
+    success_criteria: {key: kill_entity, regex: ".*spider.*", num: 1}
+
+  - name: combat_spiders
+    interaction_type: hunt
+    text: "Point to the spiders"
+    max_steps: 1200
+    success_criteria: {key: kill_entity, regex: ".*spider.*", num: 1}
+
+  - name: combat_zombies
+    interaction_type: hunt
+    text: "Point to the zombie"
+    max_steps: 1200
+    success_criteria: {key: kill_entity, regex: ".*zombie.*", num: 1}
+
+  # --- craft (interaction_type: craft) ---
+  - name: craft_enchantment
+    interaction_type: craft
+    text: "Point to the crafting table"
+    max_steps: 1200
+    success_criteria: {key: craft_item, regex: ".*", num: 1}
+
+  - name: craft_ladder
+    interaction_type: craft
+    text: "Point to the crafting table"
+    max_steps: 600
+    success_criteria: {key: craft_item, regex: ".*ladder.*", num: 1}
+
+  - name: craft_smelting
+    interaction_type: craft
+    text: "Point to the furnace"
+    max_steps: 1200
+    success_criteria: {key: craft_item, regex: ".*", num: 1}
+
+  - name: craft_stonecut
+    interaction_type: craft
+    text: "Point to the stonecutter"
+    max_steps: 600
+    success_criteria: {key: craft_item, regex: ".*", num: 1}
+
+  - name: craft_table
+    interaction_type: craft
+    text: "Point to the crafting table"
+    max_steps: 600
+    success_criteria: {key: craft_item, regex: ".*crafting_table.*", num: 1}
+
+  - name: craft_the_crafting_table
+    interaction_type: craft
+    text: "Point to the wooden planks"
+    max_steps: 600
+    success_criteria: {key: craft_item, regex: ".*crafting_table.*", num: 1}
+
+  - name: craft_to_cake
+    interaction_type: craft
+    text: "Point to the crafting table"
+    max_steps: 1200
+    success_criteria: {key: craft_item, regex: ".*cake.*", num: 1}
+
+  - name: craft_to_clock
+    interaction_type: craft
+    text: "Point to the crafting table"
+    max_steps: 1200
+    success_criteria: {key: craft_item, regex: ".*clock.*", num: 1}
+
+  - name: craft_to_ladder
+    interaction_type: craft
+    text: "Point to the crafting table"
+    max_steps: 600
+    success_criteria: {key: craft_item, regex: ".*ladder.*", num: 1}
+
+  - name: cut_stone
+    interaction_type: craft
+    text: "Point to the stonecutter"
+    max_steps: 600
+    success_criteria: {key: craft_item, regex: ".*", num: 1}
+
+  # --- dig (interaction_type: mine) ---
+  - name: dig_three_down_and_fill_one_up
+    interaction_type: mine
+    text: "Point to the ground to dig"
+    max_steps: 600
+    success_criteria: {key: mine_block, regex: ".*", num: 3}
+
+  # --- drink (interaction_type: use) ---
+  - name: drink_harming_potion
+    interaction_type: use
+    text: "Point to the potion"
+    max_steps: 600
+    success_criteria: {key: use_item, regex: ".*potion.*", num: 1}
+
+  # --- enchant (interaction_type: craft) ---
+  - name: enchant_diamond_sword
+    interaction_type: craft
+    text: "Point to the enchanting table"
+    max_steps: 1200
+    success_criteria: {key: craft_item, regex: ".*", num: 1}
+
+  - name: enchant_sword
+    interaction_type: craft
+    text: "Point to the enchanting table"
+    max_steps: 1200
+    success_criteria: {key: craft_item, regex: ".*", num: 1}
+
+  # --- hunt (interaction_type: hunt) ---
+  - name: hunt_a_sheep
+    interaction_type: hunt
+    text: "Point to the sheep"
+    max_steps: 600
+    success_criteria: {key: kill_entity, regex: ".*sheep.*", num: 1}
+
+  - name: hunt_animals
+    interaction_type: hunt
+    text: "Point to the animal"
+    max_steps: 600
+    success_criteria: {key: kill_entity, regex: ".*", num: 1}
+
+  # --- lead (interaction_type: use) ---
+  - name: lead_animals
+    interaction_type: use
+    text: "Point to the animal to lead"
+    max_steps: 600
+    success_criteria: {key: use_item, regex: ".*lead.*", num: 1}
+
+  # --- make (interaction_type: use) ---
+  - name: make_fire_with_flint_and_steel
+    interaction_type: use
+    text: "Point to the ground to start fire"
+    max_steps: 600
+    success_criteria: {key: use_item, regex: ".*flint.*", num: 1}
+
+  - name: make_obsidian_by_wate
+    interaction_type: use
+    text: "Point to the lava to pour water on"
+    max_steps: 600
+    success_criteria: {key: use_item, regex: ".*bucket.*", num: 1}
+
+  # --- mine (interaction_type: mine) ---
+  - name: mine_diamond_ore
+    interaction_type: mine
+    text: "Point to the diamond ore"
+    max_steps: 1200
+    success_criteria: {key: mine_block, regex: ".*diamond.*", num: 1}
+
+  - name: mine_dirt
+    interaction_type: mine
+    text: "Point to the dirt block"
+    max_steps: 600
+    success_criteria: {key: mine_block, regex: ".*dirt.*", num: 1}
+
+  - name: mine_grass
+    interaction_type: mine
+    text: "Point to the grass block"
+    max_steps: 600
+    success_criteria: {key: mine_block, regex: ".*grass.*", num: 1}
+
+  - name: mine_horizontally
+    interaction_type: mine
+    text: "Point to the stone in the tunnel"
+    max_steps: 600
+    success_criteria: {key: mine_block, regex: ".*stone.*", num: 3}
+
+  - name: mine_iron_ore
+    interaction_type: mine
+    text: "Point to the iron ore"
+    max_steps: 1200
+    success_criteria: {key: mine_block, regex: ".*iron_ore.*", num: 1}
+
+  - name: mine_obsidian
+    interaction_type: mine
+    text: "Point to the obsidian block"
+    max_steps: 1200
+    success_criteria: {key: mine_block, regex: ".*obsidian.*", num: 1}
+
+  # --- plant (interaction_type: use) ---
+  - name: plant_wheats
+    interaction_type: use
+    text: "Point to the farmland to plant wheat"
+    max_steps: 600
+    success_criteria: {key: use_item, regex: ".*seed.*", num: 1}
+
+  # --- prepare (interaction_type: craft) ---
+  - name: prepare_a_birthday_present_for_your_neighbor
+    interaction_type: craft
+    text: "Point to the crafting table"
+    max_steps: 1200
+    success_criteria: {key: craft_item, regex: ".*", num: 1}
+
+  # --- set (interaction_type: use) ---
+  - name: set_fires
+    interaction_type: use
+    text: "Point to the ground to set fire"
+    max_steps: 600
+    success_criteria: {key: use_item, regex: ".*flint.*", num: 1}
+
+  # --- shoot (interaction_type: hunt) ---
+  - name: shoot_phantom
+    interaction_type: hunt
+    text: "Point to the phantom"
+    max_steps: 1200
+    success_criteria: {key: kill_entity, regex: ".*phantom.*", num: 1}
+
+  # --- sleep (interaction_type: use) ---
+  - name: sleep_in_bed
+    interaction_type: use
+    text: "Point to the bed"
+    max_steps: 600
+    success_criteria: {key: use_item, regex: ".*bed.*", num: 1}
+
+  # --- smelt (interaction_type: craft) ---
+  - name: smelt_food
+    interaction_type: craft
+    text: "Point to the furnace"
+    max_steps: 1200
+    success_criteria: {key: craft_item, regex: ".*", num: 1}
+
+  # --- survive (interaction_type varies) ---
+  - name: survive_combat
+    interaction_type: hunt
+    text: "Point to the nearest enemy mob"
+    max_steps: 1200
+    success_criteria: {key: kill_entity, regex: ".*", num: 1}
+
+  - name: survive_hunt
+    interaction_type: hunt
+    text: "Point to the animal to hunt"
+    max_steps: 600
+    success_criteria: {key: kill_entity, regex: ".*", num: 1}
+
+  - name: survive_plant
+    interaction_type: use
+    text: "Point to the farmland"
+    max_steps: 600
+    success_criteria: {key: use_item, regex: ".*seed.*", num: 1}
+
+  - name: survive_sleep
+    interaction_type: use
+    text: "Point to the bed"
+    max_steps: 600
+    success_criteria: {key: use_item, regex: ".*bed.*", num: 1}
+
+  # --- tool (interaction_type: use) ---
+  - name: tool_bow
+    interaction_type: use
+    text: "Point to the target"
+    max_steps: 600
+    success_criteria: {key: use_item, regex: ".*bow.*", num: 1}
+
+  - name: tool_flint
+    interaction_type: use
+    text: "Point to the ground to use flint"
+    max_steps: 600
+    success_criteria: {key: use_item, regex: ".*flint.*", num: 1}
+
+  - name: tool_lead
+    interaction_type: use
+    text: "Point to the animal to lead"
+    max_steps: 600
+    success_criteria: {key: use_item, regex: ".*lead.*", num: 1}
+
+  - name: tool_pumpkin
+    interaction_type: use
+    text: "Point to the pumpkin"
+    max_steps: 600
+    success_criteria: {key: use_item, regex: ".*shears.*", num: 1}
+
+  - name: tool_trident
+    interaction_type: use
+    text: "Point to the target to throw trident at"
+    max_steps: 600
+    success_criteria: {key: use_item, regex: ".*trident.*", num: 1}
+
+  # --- use (interaction_type: use) ---
+  - name: use_bow
+    interaction_type: use
+    text: "Point to the target to shoot"
+    max_steps: 600
+    success_criteria: {key: use_item, regex: ".*bow.*", num: 1}
+
+  - name: use_shield
+    interaction_type: use
+    text: "Point to the shield"
+    max_steps: 600
+    success_criteria: {key: use_item, regex: ".*shield.*", num: 1}
+
+  - name: use_trident
+    interaction_type: use
+    text: "Point to the target"
+    max_steps: 600
+    success_criteria: {key: use_item, regex: ".*trident.*", num: 1}

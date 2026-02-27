@@ -200,15 +200,22 @@ class MolmoGoalGenerator(GoalGeneratorBase):
             )
 
         print(f"[GoalGenerator] WARNING: Could not parse point from: {text}")
-        return (img_w // 2, img_h // 2)
+        return None
 
     def generate(
         self,
         obs_image: np.ndarray,
         text: str,
-    ) -> Tuple[Tuple[int, int], np.ndarray]:
+    ) -> Tuple[Optional[Tuple[int, int]], np.ndarray]:
+        """
+        Returns (point, mask). If Molmo cannot find the target in the image,
+        returns (None, zero_mask) to signal exploration mode.
+        """
         point = self._molmo_predict_point(obs_image, text)
         h, w = obs_image.shape[:2]
+
+        if point is None:
+            return None, np.zeros((h, w), dtype=np.float32)
 
         self.sam_predictor.load_first_frame(obs_image)
         _, _, out_mask_logits = self.sam_predictor.add_new_prompt(

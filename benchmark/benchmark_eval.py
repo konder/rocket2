@@ -170,9 +170,14 @@ def run_single_episode(
     max_steps: int,
     save_video: bool = False,
     video_path: Optional[str] = None,
+    retry_interval: int = 20,
 ) -> Dict[str, Any]:
     """
-    Run a single evaluation episode.
+    Run a single evaluation episode with explore-then-execute strategy.
+
+    If Molmo cannot find the target in the current frame, the agent enters
+    exploration mode (obj_id=-1, mask=0). Every `retry_interval` steps,
+    the goal generator retries on the latest frame until the target is found.
 
     Returns a result dict with success, num_steps, and timing info.
     """
@@ -182,13 +187,21 @@ def run_single_episode(
     first_frame = info["pov"]
 
     text_prompt = task.get("text", "Point to the target object")
-    point, mask = goal_gen.generate(first_frame, text_prompt)
     interaction_type = task.get("interaction_type", "none")
-    agent.set_goal(first_frame, mask, interaction_type)
+
+    point, mask = goal_gen.generate(first_frame, text_prompt)
+    goal_found = point is not None
+
+    if goal_found:
+        agent.set_goal(first_frame, mask, interaction_type)
+        print(f"    Goal found at {point}")
+    else:
+        agent.set_goal(first_frame, mask, "none")
+        print(f"    Target not visible, entering exploration mode")
 
     goal_thumb = None
     if save_video:
-        goal_thumb = _build_goal_thumbnail(first_frame, mask, point)
+        goal_thumb = _build_goal_thumbnail(first_frame, mask, point or (0, 0))
 
     info_history = [info]
     frames = []
@@ -201,12 +214,24 @@ def run_single_episode(
 
     for step in range(max_steps):
         try:
+            # Retry goal detection periodically during exploration
+            if not goal_found and step > 0 and step % retry_interval == 0:
+                current_frame = info["pov"]
+                point, mask = goal_gen.generate(current_frame, text_prompt)
+                if point is not None:
+                    goal_found = True
+                    agent.set_goal(current_frame, mask, interaction_type)
+                    if save_video:
+                        goal_thumb = _build_goal_thumbnail(current_frame, mask, point)
+                    print(f"    Goal found at step {step} at {point}")
+
             action = agent.act(obs)
             obs, reward, terminated, truncated, info = env.step(action)
             info_history.append(info)
             if save_video:
                 frame = _overlay_thumbnail(info["pov"], goal_thumb)
-                step_label = f"Step {step+1}/{max_steps}"
+                mode = "EXPLORE" if not goal_found else ""
+                step_label = f"Step {step+1}/{max_steps} {mode}".strip()
                 cv2.putText(
                     frame, step_label, (10, 25),
                     cv2.FONT_HERSHEY_SIMPLEX, 0.6, (255, 255, 255), 1,
@@ -232,9 +257,10 @@ def run_single_episode(
         "num_steps": actual_steps,
         "max_steps": max_steps,
         "early_done": early_done,
+        "goal_found": goal_found,
         "elapsed_sec": round(elapsed, 2),
         "fps": round(actual_steps / max(elapsed, 0.01), 1),
-        "goal_point": list(point),
+        "goal_point": list(point) if point else None,
         "interaction_type": interaction_type,
     }
     if video_path and save_video:
@@ -272,6 +298,7 @@ def run_task_evaluation(
     num_episodes: int,
     output_dir: str,
     save_video: bool = False,
+    retry_interval: int = 20,
 ) -> Dict[str, Any]:
     """Run all episodes for a single task and aggregate results."""
     task_name = task["name"]
@@ -308,6 +335,7 @@ def run_task_evaluation(
             result = run_single_episode(
                 agent, env, goal_gen, task, max_steps,
                 save_video=save_video, video_path=video_path,
+                retry_interval=retry_interval,
             )
             episode_results.append(result)
             status = "OK" if result["success"] else "FAIL"
@@ -432,6 +460,8 @@ def main():
     )
     goal_group.add_argument("--sam-variant", default="base",
                             choices=["large", "base", "small", "tiny"])
+    goal_group.add_argument("--retry-interval", type=int, default=20,
+                            help="Steps between Molmo retries during exploration (default: 20)")
 
     out_group = parser.add_argument_group("Output")
     out_group.add_argument("--output-dir", default="benchmark/results/",
@@ -491,6 +521,7 @@ def main():
             num_episodes=num_episodes,
             output_dir=args.output_dir,
             save_video=args.save_video,
+            retry_interval=args.retry_interval,
         )
         task_results.append(result)
 

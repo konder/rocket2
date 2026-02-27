@@ -79,7 +79,7 @@ sudo apt-get update && sudo apt-get install -y \
     xvfb \
     libglew-dev libosmesa6-dev libgl1-mesa-glx libglfw3 \
     mesa-utils libegl1-mesa libgl1-mesa-dev libglu1-mesa-dev \
-    libglib2.0-0 libsm6 libxrender1 libxext6 \
+    libglib2.0-0t64 libsm6 libxrender1 libxext6 \
     gcc g++ unzip wget git
 ```
 

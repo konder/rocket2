@@ -262,6 +262,8 @@ class QwenVLDetector:
 
     @staticmethod
     def _load_model(model_id: str, dtype, quant: Optional[str] = None):
+        from transformers import AutoConfig
+
         quant_config = None
         if quant in ("4bit", "4"):
             from transformers import BitsAndBytesConfig
@@ -283,24 +285,28 @@ class QwenVLDetector:
         else:
             extra["torch_dtype"] = dtype
 
-        try:
+        config = AutoConfig.from_pretrained(model_id, trust_remote_code=True)
+        model_type = getattr(config, "model_type", "")
+        print(f"[QwenVL] Detected model_type: {model_type}")
+
+        if "qwen3" in model_type:
+            from transformers import AutoModelForCausalLM
+            print(f"[QwenVL] Loading as AutoModelForCausalLM (Qwen3.5)")
+            return AutoModelForCausalLM.from_pretrained(
+                model_id, device_map="auto", trust_remote_code=True, **extra,
+            ).eval()
+        elif "qwen2_5_vl" in model_type or "qwen2_vl" in model_type:
             from transformers import AutoModelForImageTextToText
+            print(f"[QwenVL] Loading as AutoModelForImageTextToText (Qwen2.5-VL)")
             return AutoModelForImageTextToText.from_pretrained(
                 model_id, device_map="auto", **extra,
             ).eval()
-        except Exception:
-            pass
-        try:
-            from transformers import Qwen2_5_VLForConditionalGeneration
-            return Qwen2_5_VLForConditionalGeneration.from_pretrained(
-                model_id, device_map="auto", **extra,
+        else:
+            from transformers import AutoModelForImageTextToText
+            print(f"[QwenVL] Loading as AutoModelForImageTextToText (generic)")
+            return AutoModelForImageTextToText.from_pretrained(
+                model_id, device_map="auto", trust_remote_code=True, **extra,
             ).eval()
-        except Exception:
-            pass
-        from transformers import AutoModelForCausalLM
-        return AutoModelForCausalLM.from_pretrained(
-            model_id, device_map="auto", trust_remote_code=True, **extra,
-        ).eval()
 
     def detect(self, image: np.ndarray, prompt: str) -> List[Dict]:
         from PIL import Image as PILImage

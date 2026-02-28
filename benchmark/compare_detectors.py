@@ -153,15 +153,43 @@ class MolmoDetector:
 # GroundingDINO backend
 # ---------------------------------------------------------------------------
 class GDinoDetector:
-    def __init__(self, config_path: str, weights_path: str,
+    HF_REPO = "ShilongLiu/GroundingDINO"
+
+    def __init__(self, config_path: Optional[str], weights_path: Optional[str],
                  box_thr: float, text_thr: float, device: str):
         from groundingdino.util.inference import load_model
         self.device = device
         self.box_thr = box_thr
         self.text_thr = text_thr
-        print(f"[GDINO] Loading config={config_path}")
+
+        if not weights_path or not os.path.exists(weights_path):
+            weights_path = self._hf_download([
+                "groundingdino_swint_ogc.pth",
+                "weights/groundingdino_swint_ogc.pth",
+            ])
+        if not config_path or not os.path.exists(config_path):
+            config_path = self._hf_download([
+                "GroundingDINO_SwinT_OGC.py",
+                "groundingdino/config/GroundingDINO_SwinT_OGC.py",
+            ])
+
+        print(f"[GDINO] config  = {config_path}")
+        print(f"[GDINO] weights = {weights_path}")
         self.model = load_model(config_path, weights_path).to(device).eval()
         print(f"[GDINO] Ready on {device}")
+
+    @classmethod
+    def _hf_download(cls, filenames: list) -> str:
+        from huggingface_hub import hf_hub_download
+        for name in filenames:
+            try:
+                return hf_hub_download(repo_id=cls.HF_REPO, filename=name)
+            except Exception:
+                continue
+        raise RuntimeError(
+            f"Could not download {filenames} from {cls.HF_REPO}. "
+            f"Pass --gdino-weights / --gdino-config explicitly."
+        )
 
     def detect(self, image: np.ndarray, prompt: str) -> List[Dict]:
         from PIL import Image as PILImage

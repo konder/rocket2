@@ -102,21 +102,22 @@ class MolmoGoalGenerator(GoalGeneratorBase):
             torch_dtype=dtype,
         ).to(self.device).eval()
 
-        if dtype == torch.float16:
+        if dtype in (torch.float16, torch.bfloat16):
+            target_dtype = dtype
             self.molmo_model.model.vision_backbone.to(torch.float32)
 
             def _downcast_hook(module, input, output):
                 if isinstance(output, torch.Tensor):
-                    return output.to(torch.float16)
+                    return output.to(target_dtype)
                 if isinstance(output, (tuple, list)):
                     return type(output)(
-                        o.to(torch.float16) if isinstance(o, torch.Tensor) else o
+                        o.to(target_dtype) if isinstance(o, torch.Tensor) else o
                         for o in output
                     )
                 return output
 
             self.molmo_model.model.vision_backbone.register_forward_hook(_downcast_hook)
-            print(f"[GoalGenerator] Vision backbone float32 + downcast hook applied")
+            print(f"[GoalGenerator] Vision backbone float32 + downcast hook ({target_dtype}) applied")
 
         self._molmo_dtype = dtype
 

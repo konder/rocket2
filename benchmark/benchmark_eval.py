@@ -45,7 +45,12 @@ from minestudio.simulator.callbacks import (
     PrevActionCallback,
 )
 
-from benchmark.goal_generator import MockGoalGenerator, GoalGeneratorBase
+from benchmark.goal_generator import (
+    MockGoalGenerator,
+    GoalGeneratorBase,
+    MolmoGoalGenerator,
+    GroundingDinoGoalGenerator,
+)
 from benchmark.rocket2_agent import Rocket2Agent
 
 
@@ -475,10 +480,32 @@ def main():
                         help="Run only specific tasks by name (default: all)")
 
     goal_group = parser.add_argument_group("Goal generation")
+    goal_group.add_argument(
+        "--goal-backend",
+        default="molmo",
+        choices=["molmo", "groundingdino"],
+        help="Goal point backend: molmo or groundingdino (default: molmo)",
+    )
     goal_group.add_argument("--molmo-mock", action="store_true",
                             help="Use mock goal generator (center point, no Molmo)")
     goal_group.add_argument("--molmo-model", default="allenai/Molmo-7B-D-0924",
                             help="Molmo model ID for goal generation")
+    goal_group.add_argument(
+        "--gdino-config", default=None,
+        help="GroundingDINO config .py path (optional if HF auto-download works)",
+    )
+    goal_group.add_argument(
+        "--gdino-weights", default=None,
+        help="GroundingDINO weights .pth path (optional if HF auto-download works)",
+    )
+    goal_group.add_argument(
+        "--gdino-hf-repo", default="ShilongLiu/GroundingDINO",
+        help="HF repo ID to auto-download GroundingDINO assets",
+    )
+    goal_group.add_argument("--gdino-box-threshold", type=float, default=0.35,
+                            help="GroundingDINO box threshold (default: 0.35)")
+    goal_group.add_argument("--gdino-text-threshold", type=float, default=0.25,
+                            help="GroundingDINO text threshold (default: 0.25)")
     goal_group.add_argument(
         "--sam-path",
         default="./MineStudio/minestudio/utils/realtime_sam/checkpoints",
@@ -523,13 +550,24 @@ def main():
         print("Using MockGoalGenerator (no Molmo)")
         goal_gen = MockGoalGenerator()
     else:
-        print(f"Using MolmoGoalGenerator ({args.molmo_model})")
-        from benchmark.goal_generator import MolmoGoalGenerator
-        goal_gen = MolmoGoalGenerator(
-            molmo_model_id=args.molmo_model,
-            sam_path=args.sam_path,
-            sam_variant=args.sam_variant,
-        )
+        if args.goal_backend == "groundingdino":
+            print("Using GroundingDinoGoalGenerator")
+            goal_gen = GroundingDinoGoalGenerator(
+                sam_path=args.sam_path,
+                sam_variant=args.sam_variant,
+                gdino_config=args.gdino_config,
+                gdino_weights=args.gdino_weights,
+                gdino_hf_repo=args.gdino_hf_repo,
+                box_threshold=args.gdino_box_threshold,
+                text_threshold=args.gdino_text_threshold,
+            )
+        else:
+            print(f"Using MolmoGoalGenerator ({args.molmo_model})")
+            goal_gen = MolmoGoalGenerator(
+                molmo_model_id=args.molmo_model,
+                sam_path=args.sam_path,
+                sam_variant=args.sam_variant,
+            )
 
     default_episodes = task_config.get("default_episodes", 3)
     task_results = []
@@ -561,7 +599,11 @@ def main():
             "ckpt": args.ckpt,
             "cfg_coef": args.cfg_coef,
             "molmo_mock": args.molmo_mock,
+            "goal_backend": args.goal_backend,
             "molmo_model": args.molmo_model if not args.molmo_mock else None,
+            "gdino_config": args.gdino_config,
+            "gdino_weights": args.gdino_weights,
+            "gdino_hf_repo": args.gdino_hf_repo,
         },
         "summary": summary,
         "task_results": task_results,

@@ -262,7 +262,13 @@ class QwenVLDetector:
 
     @staticmethod
     def _load_model(model_id: str, dtype, quant: Optional[str] = None):
-        from transformers import AutoConfig
+        from transformers import AutoConfig, AutoModelForCausalLM
+
+        config = AutoConfig.from_pretrained(model_id, trust_remote_code=True)
+        model_type = getattr(config, "model_type", "")
+        print(f"[QwenVL] Detected model_type: {model_type}")
+
+        is_qwen3 = "qwen3" in model_type
 
         extra = {"torch_dtype": dtype}
 
@@ -273,44 +279,62 @@ class QwenVLDetector:
                     "int4_weight_only", group_size=128
                 )
                 print(f"[QwenVL] Using torchao int4_weight_only quantization")
-            except ImportError:
-                from transformers import BitsAndBytesConfig
-                extra["quantization_config"] = BitsAndBytesConfig(
-                    load_in_4bit=True,
-                    bnb_4bit_compute_dtype=dtype,
-                    bnb_4bit_quant_type="nf4",
-                    bnb_4bit_use_double_quant=True,
-                )
-                print(f"[QwenVL] Using bitsandbytes 4-bit NF4 quantization")
+            except Exception as e:
+                print(f"[QwenVL] TorchAoConfig unavailable: {e}")
+                if not is_qwen3:
+                    from transformers import BitsAndBytesConfig
+                    extra["quantization_config"] = BitsAndBytesConfig(
+                        load_in_4bit=True, bnb_4bit_compute_dtype=dtype,
+                        bnb_4bit_quant_type="nf4", bnb_4bit_use_double_quant=True,
+                    )
+                    print(f"[QwenVL] Fallback: bitsandbytes 4-bit NF4")
+                else:
+                    print(f"[QwenVL] Skipping bnb for Qwen3.5 (incompatible), will use CPU offload")
         elif quant in ("8bit", "8"):
             try:
                 from transformers import TorchAoConfig
                 extra["quantization_config"] = TorchAoConfig("int8_weight_only")
                 print(f"[QwenVL] Using torchao int8_weight_only quantization")
-            except ImportError:
-                from transformers import BitsAndBytesConfig
-                extra["quantization_config"] = BitsAndBytesConfig(load_in_8bit=True)
-                print(f"[QwenVL] Using bitsandbytes 8-bit quantization")
+            except Exception as e:
+                print(f"[QwenVL] TorchAoConfig unavailable: {e}")
+                if not is_qwen3:
+                    from transformers import BitsAndBytesConfig
+                    extra["quantization_config"] = BitsAndBytesConfig(load_in_8bit=True)
+                    print(f"[QwenVL] Fallback: bitsandbytes 8-bit")
+                else:
+                    print(f"[QwenVL] Skipping bnb for Qwen3.5, will use CPU offload")
+
+        if is_qwen3:
+            print(f"[QwenVL] Loading Qwen3.5 on CPU first, then dispatching to GPU...")
+            model = AutoModelForCausalLM.from_pretrained(
+                model_id, device_map="cpu", trust_remote_code=True,
+                torch_dtype=dtype,
+            ).eval()
+
+            if "quantization_config" in extra:
+                print(f"[QwenVL] Applying post-load quantization...")
+                try:
+                    from torchao.quantization import quantize_, int4_weight_only, int8_weight_only
+                    q_fn = int4_weight_only(group_size=128) if "4" in (quant or "") else int8_weight_only()
+                    quantize_(model, q_fn)
+                    print(f"[QwenVL] torchao quantization applied successfully")
+                except Exception as e:
+                    print(f"[QwenVL] Post-load quantization failed: {e}, using bf16")
+
+            from accelerate import dispatch_model, infer_auto_device_map
+            gpu_mem = torch.cuda.get_device_properties(0).total_memory / (1024**3)
+            max_mem = {0: f"{int(gpu_mem * 0.85)}GiB", "cpu": "48GiB"}
+            print(f"[QwenVL] Dispatching with max_memory: {max_mem}")
+            device_map = infer_auto_device_map(model, max_memory=max_mem)
+            model = dispatch_model(model, device_map=device_map)
+            print(f"[QwenVL] Qwen3.5 ready")
+            return model
 
         if torch.cuda.is_available():
             gpu_mem = torch.cuda.get_device_properties(0).total_memory / (1024**3)
-            extra["max_memory"] = {
-                0: f"{int(gpu_mem * 0.85)}GiB",
-                "cpu": "48GiB",
-            }
-            print(f"[QwenVL] max_memory: GPU={int(gpu_mem * 0.85)}GiB, CPU=48GiB")
+            extra["max_memory"] = {0: f"{int(gpu_mem * 0.85)}GiB", "cpu": "48GiB"}
 
-        config = AutoConfig.from_pretrained(model_id, trust_remote_code=True)
-        model_type = getattr(config, "model_type", "")
-        print(f"[QwenVL] Detected model_type: {model_type}")
-
-        if "qwen3" in model_type:
-            from transformers import AutoModelForCausalLM
-            print(f"[QwenVL] Loading as AutoModelForCausalLM (Qwen3.5)")
-            return AutoModelForCausalLM.from_pretrained(
-                model_id, device_map="auto", trust_remote_code=True, **extra,
-            ).eval()
-        elif "qwen2_5_vl" in model_type or "qwen2_vl" in model_type:
+        if "qwen2_5_vl" in model_type or "qwen2_vl" in model_type:
             from transformers import AutoModelForImageTextToText
             print(f"[QwenVL] Loading as AutoModelForImageTextToText (Qwen2.5-VL)")
             return AutoModelForImageTextToText.from_pretrained(

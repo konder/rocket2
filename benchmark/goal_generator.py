@@ -263,8 +263,8 @@ class GroundingDinoGoalGenerator(GoalGeneratorBase):
         gdino_config: Optional[str] = None,
         gdino_weights: Optional[str] = None,
         gdino_hf_repo: str = "ShilongLiu/GroundingDINO",
-        box_threshold: float = 0.35,
-        text_threshold: float = 0.25,
+        box_threshold: float = 0.25,
+        text_threshold: float = 0.20,
         device: Optional[str] = None,
     ):
         self.device = device or get_device()
@@ -349,12 +349,7 @@ class GroundingDinoGoalGenerator(GoalGeneratorBase):
 
     @staticmethod
     def _normalize_caption(text: str) -> str:
-        caption = text.strip().lower()
-        for prefix in ["point to", "pinpoint", "find", "locate"]:
-            if caption.startswith(prefix):
-                caption = caption[len(prefix):].strip()
-        if caption.startswith("the "):
-            caption = caption[4:]
+        caption = text.strip()
         if not caption.endswith("."):
             caption += "."
         return caption

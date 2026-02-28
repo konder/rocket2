@@ -502,10 +502,10 @@ def main():
         "--gdino-hf-repo", default="ShilongLiu/GroundingDINO",
         help="HF repo ID to auto-download GroundingDINO assets",
     )
-    goal_group.add_argument("--gdino-box-threshold", type=float, default=0.35,
-                            help="GroundingDINO box threshold (default: 0.35)")
-    goal_group.add_argument("--gdino-text-threshold", type=float, default=0.25,
-                            help="GroundingDINO text threshold (default: 0.25)")
+    goal_group.add_argument("--gdino-box-threshold", type=float, default=0.25,
+                            help="GroundingDINO box threshold (default: 0.25)")
+    goal_group.add_argument("--gdino-text-threshold", type=float, default=0.20,
+                            help="GroundingDINO text threshold (default: 0.20)")
     goal_group.add_argument(
         "--sam-path",
         default="./MineStudio/minestudio/utils/realtime_sam/checkpoints",

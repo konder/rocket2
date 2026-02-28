@@ -43,7 +43,7 @@ lmdb>=1.4.0
 hydra-core>=1.3.2
 hydra-colorlog>=1.2.0
 Pyro4>=4.82
-x-transformers>=1.30.0
+x-transformers==0.27.1
 
 # --- Training (optional) ---
 lightning>=2.2.0

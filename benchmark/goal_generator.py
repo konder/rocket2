@@ -98,11 +98,7 @@ class MolmoGoalGenerator(GoalGeneratorBase):
             torch_dtype=dtype,
         ).to(self.device).eval()
 
-        if self.device == "mps" and dtype == torch.float16:
-            # MPS float16 causes type mismatch in vision backbone layer norms
-            # (float32 intermediates vs float16 weights). Fix: compute vision
-            # backbone in float32, then downcast output to float16 via hook
-            # to avoid both the type mismatch and MPS's 4GB single-tensor limit.
+        if dtype == torch.float16:
             self.molmo_model.model.vision_backbone.to(torch.float32)
 
             def _downcast_hook(module, input, output):
@@ -116,7 +112,7 @@ class MolmoGoalGenerator(GoalGeneratorBase):
                 return output
 
             self.molmo_model.model.vision_backbone.register_forward_hook(_downcast_hook)
-            print(f"[GoalGenerator] MPS: vision backbone float32 + downcast hook")
+            print(f"[GoalGenerator] Vision backbone float32 + downcast hook applied")
 
         print(f"[GoalGenerator] Molmo loaded on {self.device} (dtype={dtype})")
 

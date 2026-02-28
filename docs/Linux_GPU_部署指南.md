@@ -83,6 +83,17 @@ sudo apt-get update && sudo apt-get install -y \
     gcc g++ unzip wget git
 ```
 
+设置 Java 8 为默认版本（MineRL 要求 Java 8，不兼容 Java 11+）：
+
+```bash
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+export PATH=$JAVA_HOME/bin:$PATH
+
+# 写入 bashrc 使其永久生效
+echo 'export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64' >> ~/.bashrc
+echo 'export PATH=$JAVA_HOME/bin:$PATH' >> ~/.bashrc
+```
+
 验证 Java：
 
 ```bash
@@ -97,7 +108,7 @@ java -version
 ### 3.1 克隆项目
 
 ```bash
-git clone <your-rocket2-repo-url> rocket2
+git clone https://github.com/konder/rocket2 rocket2
 cd rocket2
 ```
 
@@ -110,6 +121,7 @@ pip install minestudio==1.1.2
 ### 3.3 安装项目依赖
 
 ```bash
+pip install "cuda-python<12"
 pip install -r requirements.txt
 ```
 
@@ -157,26 +169,35 @@ env.close()
 
 ## 5. SAM-2 安装与权重下载
 
-### 5.1 安装 SAM-2（从 MineStudio 源码）
+### 5.1 克隆 MineStudio 源码
+
+SAM-2 使用的是 MineStudio 仓库中的定制版本，需要从源码安装：
 
 ```bash
-cd MineStudio/minestudio/utils/realtime_sam
-pip install --no-build-isolation -e .
-cd ../../../../
+cd ~
+git clone https://github.com/CraftJarvis/MineStudio.git
 ```
 
-### 5.2 下载 SAM-2 权重
+### 5.2 安装 SAM-2
 
 ```bash
-cd MineStudio/minestudio/utils/realtime_sam/checkpoints
+cd ~/MineStudio/minestudio/utils/realtime_sam
+pip install --no-build-isolation -e .
+cd -
+```
+
+### 5.3 下载 SAM-2 权重
+
+```bash
+cd ~/MineStudio/minestudio/utils/realtime_sam/checkpoints
 bash download_ckpts.sh
-cd ../../../../../
+cd -
 ```
 
 验证：
 
 ```bash
-ls MineStudio/minestudio/utils/realtime_sam/checkpoints/
+ls ~/MineStudio/minestudio/utils/realtime_sam/checkpoints/
 # 应包含：sam2_hiera_base_plus.pt, sam2_hiera_large.pt 等
 ```
 
@@ -189,14 +210,14 @@ ls MineStudio/minestudio/utils/realtime_sam/checkpoints/
 ROCKET-2 模型首次运行时会从 HuggingFace 自动下载：
 
 ```bash
-# 默认模型: phython96/ROCKET-2-1.5x-17w
-# 或手动下载:
 python -c "
-from minestudio.models import load_rocket_policy
-model = load_rocket_policy('hf:phython96/ROCKET-2-1.5x-17w')
+from model import CrossViewRocket
+agent = CrossViewRocket.from_pretrained('phython96/ROCKET-2-1.5x-17w')
 print('ROCKET-2 loaded')
 "
 ```
+
+> 如需使用 HF 镜像加速下载：`export HF_ENDPOINT=https://hf-mirror.com`
 
 ### 6.2 Molmo-7B-D 模型（~14GB）
 
@@ -237,8 +258,7 @@ python benchmark/benchmark_eval.py \
 ```bash
 python benchmark/benchmark_eval.py \
     --task-file benchmark/eval_tasks_paper.yaml \
-    --molmo-model ./Molmo-7B-D-0924 \
-    --sam-path ./MineStudio/minestudio/utils/realtime_sam/checkpoints \
+    --sam-path ~/MineStudio/minestudio/utils/realtime_sam/checkpoints \
     --episodes 1 \
     --tasks mine_coal \
     --output-dir benchmark/results/ \

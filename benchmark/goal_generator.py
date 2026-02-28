@@ -104,8 +104,8 @@ class MolmoGoalGenerator(GoalGeneratorBase):
 
         tokenizer_vocab = len(self.molmo_processor.tokenizer)
         if self.molmo_model.config.vocab_size < tokenizer_vocab:
-            print(f"[GoalGenerator] Resizing embeddings: {self.molmo_model.config.vocab_size} -> {tokenizer_vocab}")
-            self.molmo_model.resize_token_embeddings(tokenizer_vocab)
+            print(f"[GoalGenerator] WARNING: tokenizer ({tokenizer_vocab}) > model vocab ({self.molmo_model.config.vocab_size}). "
+                  f"Clear HF cache and re-download with transformers=={self.molmo_model.config.transformers_version}")
 
         if dtype in (torch.float16, torch.bfloat16):
             target_dtype = dtype

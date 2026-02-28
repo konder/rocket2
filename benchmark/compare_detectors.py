@@ -1,5 +1,5 @@
 """
-Compare goal detection across Molmo, GroundingDINO, and Qwen2.5-VL.
+Compare goal detection across Molmo, GroundingDINO, and Qwen3.5-27B.
 
 For each task's first-frame screenshot, run all selected backends and
 draw bounding boxes / points on the image with scores.
@@ -10,7 +10,6 @@ Usage:
         --image-dir benchmark/first_frames/ \
         --output-dir benchmark/detection_compare/ \
         --backends molmo groundingdino qwen \
-        --sam-path ~/MineStudio/minestudio/utils/realtime_sam/checkpoints \
         --device cuda
 
     # Single task, single backend:
@@ -19,9 +18,10 @@ Usage:
         --image-dir benchmark/first_frames/ \
         --output-dir benchmark/detection_compare/ \
         --tasks mine_coal \
-        --backends groundingdino \
-        --gdino-config /path/to/GroundingDINO_SwinT_OGC.py \
-        --gdino-weights /path/to/groundingdino_swint_ogc.pth
+        --backends groundingdino
+
+Qwen3.5-27B requires latest transformers:
+    pip install "transformers @ git+https://github.com/huggingface/transformers.git@main"
 """
 
 import os
@@ -46,7 +46,7 @@ COLORS = {
 DISPLAY_NAMES = {
     "molmo": "Molmo-7B",
     "groundingdino": "GroundingDINO",
-    "qwen": "Qwen2.5-VL",
+    "qwen": "Qwen3.5-27B",
 }
 
 
@@ -214,24 +214,45 @@ class GDinoDetector:
 
 
 # ---------------------------------------------------------------------------
-# Qwen2.5-VL backend
+# Qwen3.5 / Qwen2.5-VL backend
 # ---------------------------------------------------------------------------
 class QwenVLDetector:
     def __init__(self, model_id: str, device: str):
-        from transformers import Qwen2_5_VLForConditionalGeneration, AutoProcessor
+        from transformers import AutoProcessor
 
         self.device = device
         dtype = torch.bfloat16 if device == "cuda" and torch.cuda.is_bf16_supported() else torch.float16
         if device == "cpu":
             dtype = torch.float32
         self.dtype = dtype
+        self.model_id = model_id
 
         print(f"[QwenVL] Loading {model_id} ...")
-        self.model = Qwen2_5_VLForConditionalGeneration.from_pretrained(
-            model_id, torch_dtype=dtype, device_map="auto",
-        ).eval()
+        self.model = self._load_model(model_id, dtype)
         self.processor = AutoProcessor.from_pretrained(model_id)
         print(f"[QwenVL] Ready (dtype={dtype})")
+
+    @staticmethod
+    def _load_model(model_id: str, dtype):
+        try:
+            from transformers import AutoModelForImageTextToText
+            return AutoModelForImageTextToText.from_pretrained(
+                model_id, torch_dtype=dtype, device_map="auto",
+            ).eval()
+        except Exception:
+            pass
+        try:
+            from transformers import Qwen2_5_VLForConditionalGeneration
+            return Qwen2_5_VLForConditionalGeneration.from_pretrained(
+                model_id, torch_dtype=dtype, device_map="auto",
+            ).eval()
+        except Exception:
+            pass
+        from transformers import AutoModelForCausalLM
+        return AutoModelForCausalLM.from_pretrained(
+            model_id, torch_dtype=dtype, device_map="auto",
+            trust_remote_code=True,
+        ).eval()
 
     def detect(self, image: np.ndarray, prompt: str) -> List[Dict]:
         from PIL import Image as PILImage
@@ -246,7 +267,7 @@ class QwenVLDetector:
                 break
 
         text_prompt = (
-            f'Detect "{obj_name}" in this image. '
+            f'Detect all "{obj_name}" in this Minecraft game screenshot. '
             f'Return JSON array: [{{"bbox_2d": [x1,y1,x2,y2], "label": "name", "score": 0.9}}]. '
             f"Coordinates are absolute pixel values for a {w}x{h} image."
         )
@@ -261,27 +282,49 @@ class QwenVLDetector:
             }
         ]
 
-        inputs = self.processor.apply_chat_template(
-            messages, add_generation_prompt=True,
-            tokenize=True, return_dict=True, return_tensors="pt",
-            images=[pil],
-        ).to(self.model.device)
+        try:
+            inputs = self.processor.apply_chat_template(
+                messages, add_generation_prompt=True,
+                tokenize=True, return_dict=True, return_tensors="pt",
+                images=[pil],
+                enable_thinking=False,
+            ).to(self.model.device)
+        except TypeError:
+            inputs = self.processor.apply_chat_template(
+                messages, add_generation_prompt=True,
+                tokenize=True, return_dict=True, return_tensors="pt",
+                images=[pil],
+            ).to(self.model.device)
 
         with torch.inference_mode():
-            out_ids = self.model.generate(**inputs, max_new_tokens=512)
+            out_ids = self.model.generate(**inputs, max_new_tokens=1024)
 
         trimmed = [o[len(i):] for i, o in zip(inputs.input_ids, out_ids)]
         raw_text = self.processor.batch_decode(
             trimmed, skip_special_tokens=True, clean_up_tokenization_spaces=False
         )[0]
-        print(f"  [QwenVL] raw: {raw_text[:400]}")
+
+        raw_text = self._strip_thinking(raw_text)
+        print(f"  [QwenVL] raw: {raw_text[:500]}")
 
         return self._parse_detections(raw_text, w, h)
 
     @staticmethod
+    def _strip_thinking(text: str) -> str:
+        """Remove <think>...</think> block from Qwen3.5 output."""
+        m = re.search(r'</think>\s*', text)
+        if m:
+            return text[m.end():]
+        return text
+
+    @staticmethod
     def _parse_detections(text: str, w: int, h: int) -> List[Dict]:
         results = []
-        json_match = re.search(r'\[.*\]', text, re.DOTALL)
+
+        code_match = re.search(r'```(?:json)?\s*(.*?)```', text, re.DOTALL)
+        parse_text = code_match.group(1).strip() if code_match else text
+
+        json_match = re.search(r'\[.*\]', parse_text, re.DOTALL)
         if json_match:
             try:
                 items = json.loads(json_match.group())
@@ -308,7 +351,7 @@ class QwenVLDetector:
 
         for m in re.finditer(
             r'"?bbox_2d"?\s*:\s*\[\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)\s*\]',
-            text
+            parse_text
         ):
             x1, y1, x2, y2 = int(m.group(1)), int(m.group(2)), int(m.group(3)), int(m.group(4))
             results.append({
@@ -375,12 +418,13 @@ def main():
     # Molmo
     parser.add_argument("--molmo-model", default="allenai/Molmo-7B-D-0924")
     # GroundingDINO
-    parser.add_argument("--gdino-config", default=None)
+    parser.add_argument("--gdino-config",
+                        default="/opt/conda/envs/rocket2/lib/python3.10/site-packages/groundingdino/config/GroundingDINO_SwinT_OGC.py")
     parser.add_argument("--gdino-weights", default=None)
     parser.add_argument("--gdino-box-threshold", type=float, default=0.25)
     parser.add_argument("--gdino-text-threshold", type=float, default=0.20)
     # Qwen
-    parser.add_argument("--qwen-model", default="Qwen/Qwen2.5-VL-7B-Instruct")
+    parser.add_argument("--qwen-model", default="Qwen/Qwen3.5-27B")
     # Display
     parser.add_argument("--show-all", action="store_true",
                         help="Draw all detections (not just top-1)")

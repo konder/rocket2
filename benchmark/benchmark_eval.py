@@ -137,14 +137,36 @@ def _build_goal_thumbnail(
     goal_image: np.ndarray,
     mask: np.ndarray,
     point: tuple,
+    interaction_type: str = "none",
     scale: float = 0.3,
 ) -> np.ndarray:
-    """Build a small thumbnail of the goal image with mask overlay and point marker."""
+    """Build a thumbnail using launch.py-like mask visualization style."""
+    colors = [
+        (255, 0, 0), (0, 255, 0), (0, 0, 255),
+        (255, 255, 0), (255, 0, 255), (0, 255, 255),
+        (255, 255, 255), (0, 0, 0), (128, 128, 128),
+        (128, 0, 0), (128, 128, 0), (0, 128, 0),
+        (128, 0, 128), (0, 128, 128), (0, 0, 128),
+    ]
+    segment_mapping = {
+        "hunt": 0, "use": 3, "mine": 2, "interact": 3,
+        "craft": 4, "switch": 5, "approach": 6, "none": -1
+    }
+
     vis = goal_image.copy()
-    color = np.array([0, 255, 0], dtype=np.uint8).reshape(1, 1, 3)
-    mask_overlay = (mask[..., None] * color).astype(np.uint8)
-    vis = cv2.addWeighted(vis, 1.0, mask_overlay, 0.4, 0.0)
-    cv2.circle(vis, point, 5, (255, 0, 0), -1)
+    key = interaction_type.lower()
+    color_idx = segment_mapping.get(key, -1)
+    rgb_color = colors[color_idx] if color_idx >= 0 else (0, 255, 0)
+    bgr_color = np.array(rgb_color, dtype=np.uint8).reshape(1, 1, 3)[:, :, ::-1]
+
+    mask_overlay = (mask[..., None] * bgr_color).astype(np.uint8)
+    vis = cv2.addWeighted(vis, 1.0, mask_overlay, 0.5, 0.0)
+
+    binary_mask = (mask * 255).astype(np.uint8)
+    contours, _ = cv2.findContours(binary_mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+    cv2.drawContours(vis, contours, -1, (255, 0, 0), 2)
+
+    cv2.circle(vis, point, 5, (255, 255, 255), -1)
     vis = cv2.copyMakeBorder(vis, 3, 3, 3, 3, cv2.BORDER_CONSTANT, value=(255, 255, 255))
     h, w = vis.shape[:2]
     vis = cv2.resize(vis, (int(w * scale), int(h * scale)), interpolation=cv2.INTER_LINEAR)
@@ -201,7 +223,9 @@ def run_single_episode(
 
     goal_thumb = None
     if save_video:
-        goal_thumb = _build_goal_thumbnail(first_frame, mask, point or (0, 0))
+        goal_thumb = _build_goal_thumbnail(
+            first_frame, mask, point or (0, 0), interaction_type=interaction_type
+        )
 
     info_history = [info]
     frames = []
@@ -222,7 +246,9 @@ def run_single_episode(
                     goal_found = True
                     agent.set_goal(current_frame, mask, interaction_type)
                     if save_video:
-                        goal_thumb = _build_goal_thumbnail(current_frame, mask, point)
+                        goal_thumb = _build_goal_thumbnail(
+                            current_frame, mask, point, interaction_type=interaction_type
+                        )
                     print(f"    Goal found at step {step} at {point}")
 
             action = agent.act(obs)

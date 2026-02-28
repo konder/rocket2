@@ -102,6 +102,11 @@ class MolmoGoalGenerator(GoalGeneratorBase):
             torch_dtype=dtype,
         ).to(self.device).eval()
 
+        tokenizer_vocab = len(self.molmo_processor.tokenizer)
+        if self.molmo_model.config.vocab_size < tokenizer_vocab:
+            print(f"[GoalGenerator] Resizing embeddings: {self.molmo_model.config.vocab_size} -> {tokenizer_vocab}")
+            self.molmo_model.resize_token_embeddings(tokenizer_vocab)
+
         if dtype in (torch.float16, torch.bfloat16):
             target_dtype = dtype
             self.molmo_model.model.vision_backbone.to(torch.float32)

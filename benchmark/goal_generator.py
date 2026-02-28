@@ -420,8 +420,21 @@ class GroundingDinoGoalGenerator(GoalGeneratorBase):
                 f"center={center}, dist_to_center={dist_to_center:.1f}"
             )
 
-        scored_indices.sort(key=lambda x: (-x[1], x[2]))
-        best_entry = scored_indices[0]
+        # Filter out detections in the top 20% of the image (sky/distant terrain)
+        # and bottom 15% (HUD area). These are rarely actionable targets.
+        filtered = [
+            e for e in scored_indices
+            if 0.20 * h <= e[4][1] <= 0.85 * h
+        ]
+        if filtered:
+            candidates = filtered
+            print(f"[GoalGenerator] After position filter: {len(candidates)}/{len(scored_indices)} candidates")
+        else:
+            candidates = scored_indices
+            print(f"[GoalGenerator] Position filter removed all, using unfiltered")
+
+        candidates.sort(key=lambda x: (-x[1], x[2]))
+        best_entry = candidates[0]
         best_idx = best_entry[0]
         best_xyxy = best_entry[3]
         x1, y1, x2, y2 = best_xyxy

@@ -349,7 +349,13 @@ class GroundingDinoGoalGenerator(GoalGeneratorBase):
 
     @staticmethod
     def _normalize_caption(text: str) -> str:
-        caption = text.strip()
+        """Prepare caption for GroundingDINO, stripping prompt prefixes
+        that cause spurious 'point'/'find' label detections."""
+        caption = text.strip().lower()
+        for prefix in ["point to", "pinpoint", "find", "locate"]:
+            if caption.startswith(prefix):
+                caption = caption[len(prefix):].strip()
+                break
         if not caption.endswith("."):
             caption += "."
         return caption
@@ -399,19 +405,25 @@ class GroundingDinoGoalGenerator(GoalGeneratorBase):
                 ]
             return [float(np.clip(v, 0, max(w, h) - 1)) for v in box.tolist()]
 
+        img_cx, img_cy = w / 2.0, h / 2.0
+
+        scored_indices = []
         print(f"[GoalGenerator] GroundingDINO detections ({len(logits_np)} total):")
         for i in range(len(logits_np)):
             xyxy = _to_xyxy(boxes_np[i])
             center = (int(round((xyxy[0] + xyxy[2]) / 2)), int(round((xyxy[1] + xyxy[3]) / 2)))
-            marker = " <<< BEST" if i == int(np.argmax(logits_np)) else ""
+            dist_to_center = np.sqrt((center[0] - img_cx)**2 + (center[1] - img_cy)**2)
+            scored_indices.append((i, float(logits_np[i]), dist_to_center, xyxy, center))
             print(
                 f"  [{i}] phrase='{phrases_list[i]}', score={logits_np[i]:.3f}, "
                 f"bbox=({xyxy[0]:.1f},{xyxy[1]:.1f},{xyxy[2]:.1f},{xyxy[3]:.1f}), "
-                f"center={center}{marker}"
+                f"center={center}, dist_to_center={dist_to_center:.1f}"
             )
 
-        best_idx = int(np.argmax(logits_np))
-        best_xyxy = _to_xyxy(boxes_np[best_idx])
+        scored_indices.sort(key=lambda x: (-x[1], x[2]))
+        best_entry = scored_indices[0]
+        best_idx = best_entry[0]
+        best_xyxy = best_entry[3]
         x1, y1, x2, y2 = best_xyxy
         best_score = float(logits_np[best_idx])
         best_phrase = str(phrases_list[best_idx])

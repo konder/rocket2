@@ -242,93 +242,46 @@ class GDinoDetector:
 
 
 # ---------------------------------------------------------------------------
-# Qwen3.5 / Qwen2.5-VL backend
+# Qwen VL backend — API mode (SGLang / vLLM) or local transformers
 # ---------------------------------------------------------------------------
 class QwenVLDetector:
-    def __init__(self, model_id: str, device: str, quant: Optional[str] = None):
-        from transformers import AutoProcessor
-
-        self.device = device
-        dtype = torch.bfloat16 if device == "cuda" and torch.cuda.is_bf16_supported() else torch.float16
-        if device == "cpu":
-            dtype = torch.float32
-        self.dtype = dtype
+    def __init__(self, model_id: str, device: str,
+                 quant: Optional[str] = None, api_base: Optional[str] = None):
         self.model_id = model_id
+        self.api_base = api_base
 
-        print(f"[QwenVL] Loading {model_id} (quant={quant or 'none'}) ...")
-        self.model = self._load_model(model_id, dtype, quant)
-        self.processor = AutoProcessor.from_pretrained(model_id)
-        print(f"[QwenVL] Ready (dtype={dtype}, quant={quant or 'none'})")
+        if api_base:
+            print(f"[QwenVL] API mode → {api_base}  model={model_id}")
+            self.model = None
+            self.processor = None
+        else:
+            from transformers import AutoProcessor
+            self.device = device
+            dtype = torch.bfloat16 if device == "cuda" and torch.cuda.is_bf16_supported() else torch.float16
+            if device == "cpu":
+                dtype = torch.float32
+            print(f"[QwenVL] Loading {model_id} locally (quant={quant or 'none'}) ...")
+            self.model = self._load_model_local(model_id, dtype, quant)
+            self.processor = AutoProcessor.from_pretrained(model_id)
+            print(f"[QwenVL] Ready locally (dtype={dtype})")
 
     @staticmethod
-    def _load_model(model_id: str, dtype, quant: Optional[str] = None):
-        from transformers import AutoConfig, AutoModelForCausalLM
-
+    def _load_model_local(model_id: str, dtype, quant: Optional[str] = None):
+        from transformers import AutoConfig
         config = AutoConfig.from_pretrained(model_id, trust_remote_code=True)
         model_type = getattr(config, "model_type", "")
-        print(f"[QwenVL] Detected model_type: {model_type}")
-
-        is_qwen3 = "qwen3" in model_type
+        print(f"[QwenVL] model_type: {model_type}")
 
         extra = {"torch_dtype": dtype}
-
         if quant in ("4bit", "4"):
-            try:
-                from transformers import TorchAoConfig
-                extra["quantization_config"] = TorchAoConfig(
-                    "int4_weight_only", group_size=128
-                )
-                print(f"[QwenVL] Using torchao int4_weight_only quantization")
-            except Exception as e:
-                print(f"[QwenVL] TorchAoConfig unavailable: {e}")
-                if not is_qwen3:
-                    from transformers import BitsAndBytesConfig
-                    extra["quantization_config"] = BitsAndBytesConfig(
-                        load_in_4bit=True, bnb_4bit_compute_dtype=dtype,
-                        bnb_4bit_quant_type="nf4", bnb_4bit_use_double_quant=True,
-                    )
-                    print(f"[QwenVL] Fallback: bitsandbytes 4-bit NF4")
-                else:
-                    print(f"[QwenVL] Skipping bnb for Qwen3.5 (incompatible), will use CPU offload")
+            from transformers import BitsAndBytesConfig
+            extra["quantization_config"] = BitsAndBytesConfig(
+                load_in_4bit=True, bnb_4bit_compute_dtype=dtype,
+                bnb_4bit_quant_type="nf4", bnb_4bit_use_double_quant=True,
+            )
         elif quant in ("8bit", "8"):
-            try:
-                from transformers import TorchAoConfig
-                extra["quantization_config"] = TorchAoConfig("int8_weight_only")
-                print(f"[QwenVL] Using torchao int8_weight_only quantization")
-            except Exception as e:
-                print(f"[QwenVL] TorchAoConfig unavailable: {e}")
-                if not is_qwen3:
-                    from transformers import BitsAndBytesConfig
-                    extra["quantization_config"] = BitsAndBytesConfig(load_in_8bit=True)
-                    print(f"[QwenVL] Fallback: bitsandbytes 8-bit")
-                else:
-                    print(f"[QwenVL] Skipping bnb for Qwen3.5, will use CPU offload")
-
-        if is_qwen3:
-            print(f"[QwenVL] Loading Qwen3.5 on CPU first, then dispatching to GPU...")
-            model = AutoModelForCausalLM.from_pretrained(
-                model_id, device_map="cpu", trust_remote_code=True,
-                torch_dtype=dtype,
-            ).eval()
-
-            if "quantization_config" in extra:
-                print(f"[QwenVL] Applying post-load quantization...")
-                try:
-                    from torchao.quantization import quantize_, int4_weight_only, int8_weight_only
-                    q_fn = int4_weight_only(group_size=128) if "4" in (quant or "") else int8_weight_only()
-                    quantize_(model, q_fn)
-                    print(f"[QwenVL] torchao quantization applied successfully")
-                except Exception as e:
-                    print(f"[QwenVL] Post-load quantization failed: {e}, using bf16")
-
-            from accelerate import dispatch_model, infer_auto_device_map
-            gpu_mem = torch.cuda.get_device_properties(0).total_memory / (1024**3)
-            max_mem = {0: f"{int(gpu_mem * 0.85)}GiB", "cpu": "48GiB"}
-            print(f"[QwenVL] Dispatching with max_memory: {max_mem}")
-            device_map = infer_auto_device_map(model, max_memory=max_mem)
-            model = dispatch_model(model, device_map=device_map)
-            print(f"[QwenVL] Qwen3.5 ready")
-            return model
+            from transformers import BitsAndBytesConfig
+            extra["quantization_config"] = BitsAndBytesConfig(load_in_8bit=True)
 
         if torch.cuda.is_available():
             gpu_mem = torch.cuda.get_device_properties(0).total_memory / (1024**3)
@@ -336,51 +289,76 @@ class QwenVLDetector:
 
         if "qwen2_5_vl" in model_type or "qwen2_vl" in model_type:
             from transformers import AutoModelForImageTextToText
-            print(f"[QwenVL] Loading as AutoModelForImageTextToText (Qwen2.5-VL)")
             return AutoModelForImageTextToText.from_pretrained(
                 model_id, device_map="auto", **extra,
             ).eval()
         else:
-            from transformers import AutoModelForImageTextToText
-            print(f"[QwenVL] Loading as AutoModelForImageTextToText (generic)")
-            return AutoModelForImageTextToText.from_pretrained(
+            from transformers import AutoModelForCausalLM
+            return AutoModelForCausalLM.from_pretrained(
                 model_id, device_map="auto", trust_remote_code=True, **extra,
             ).eval()
 
-    def detect(self, image: np.ndarray, prompt: str) -> List[Dict]:
-        from PIL import Image as PILImage
-
-        pil = PILImage.fromarray(image)
-        h, w = image.shape[:2]
-
+    def _build_prompt(self, prompt: str, w: int, h: int) -> str:
         obj_name = prompt.strip()
         for prefix in ["Point to the", "Point to"]:
             if obj_name.lower().startswith(prefix.lower()):
                 obj_name = obj_name[len(prefix):].strip()
                 break
-
-        text_prompt = (
+        return (
             f'Detect all "{obj_name}" in this Minecraft game screenshot. '
             f'Return JSON array: [{{"bbox_2d": [x1,y1,x2,y2], "label": "name", "score": 0.9}}]. '
             f"Coordinates are absolute pixel values for a {w}x{h} image."
         )
 
-        messages = [
-            {
+    def detect(self, image: np.ndarray, prompt: str) -> List[Dict]:
+        h, w = image.shape[:2]
+        if self.api_base:
+            return self._detect_api(image, prompt, w, h)
+        return self._detect_local(image, prompt, w, h)
+
+    def _detect_api(self, image: np.ndarray, prompt: str, w: int, h: int) -> List[Dict]:
+        import base64
+        from openai import OpenAI
+
+        _, buf = cv2.imencode(".png", cv2.cvtColor(image, cv2.COLOR_RGB2BGR))
+        b64 = base64.b64encode(buf).decode("utf-8")
+
+        client = OpenAI(base_url=self.api_base, api_key="EMPTY")
+        text_prompt = self._build_prompt(prompt, w, h)
+
+        resp = client.chat.completions.create(
+            model=self.model_id,
+            messages=[{
                 "role": "user",
                 "content": [
-                    {"type": "image"},
+                    {"type": "image_url", "image_url": {"url": f"data:image/png;base64,{b64}"}},
                     {"type": "text", "text": text_prompt},
                 ],
-            }
-        ]
+            }],
+            max_tokens=1024,
+            temperature=0.7,
+            top_p=0.8,
+            extra_body={"chat_template_kwargs": {"enable_thinking": False}},
+        )
+        raw_text = resp.choices[0].message.content or ""
+        raw_text = self._strip_thinking(raw_text)
+        print(f"  [QwenVL-API] raw: {raw_text[:500]}")
+        return self._parse_detections(raw_text, w, h)
+
+    def _detect_local(self, image: np.ndarray, prompt: str, w: int, h: int) -> List[Dict]:
+        from PIL import Image as PILImage
+
+        pil = PILImage.fromarray(image)
+        text_prompt = self._build_prompt(prompt, w, h)
+        messages = [{"role": "user", "content": [
+            {"type": "image"}, {"type": "text", "text": text_prompt},
+        ]}]
 
         try:
             inputs = self.processor.apply_chat_template(
                 messages, add_generation_prompt=True,
                 tokenize=True, return_dict=True, return_tensors="pt",
-                images=[pil],
-                enable_thinking=False,
+                images=[pil], enable_thinking=False,
             ).to(self.model.device)
         except TypeError:
             inputs = self.processor.apply_chat_template(
@@ -396,10 +374,8 @@ class QwenVLDetector:
         raw_text = self.processor.batch_decode(
             trimmed, skip_special_tokens=True, clean_up_tokenization_spaces=False
         )[0]
-
         raw_text = self._strip_thinking(raw_text)
         print(f"  [QwenVL] raw: {raw_text[:500]}")
-
         return self._parse_detections(raw_text, w, h)
 
     @staticmethod
@@ -518,8 +494,11 @@ def main():
     parser.add_argument("--gdino-text-threshold", type=float, default=0.20)
     # Qwen
     parser.add_argument("--qwen-model", default="Qwen/Qwen3.5-27B")
-    parser.add_argument("--qwen-quant", default="4bit", choices=["4bit", "8bit", "none"],
-                        help="Quantization for Qwen model (default: 4bit for 27B)")
+    parser.add_argument("--qwen-quant", default="none", choices=["4bit", "8bit", "none"],
+                        help="Quantization (only for local loading, not API mode)")
+    parser.add_argument("--qwen-api", default=None,
+                        help="OpenAI-compatible API base URL (e.g. http://localhost:8000/v1). "
+                             "Use with SGLang/vLLM. Skips local model loading.")
     # Display
     parser.add_argument("--show-all", action="store_true",
                         help="Draw all detections (not just top-1)")
@@ -545,7 +524,9 @@ def main():
         )
     if "qwen" in args.backends:
         q = args.qwen_quant if args.qwen_quant != "none" else None
-        detectors["qwen"] = QwenVLDetector(args.qwen_model, device, quant=q)
+        detectors["qwen"] = QwenVLDetector(
+            args.qwen_model, device, quant=q, api_base=args.qwen_api,
+        )
 
     summary = []
 

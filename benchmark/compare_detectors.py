@@ -293,7 +293,7 @@ class QwenVLDetector:
                 print(f"[QwenVL] Using bitsandbytes 8-bit quantization")
 
         if torch.cuda.is_available():
-            gpu_mem = torch.cuda.get_device_properties(0).total_mem / (1024**3)
+            gpu_mem = torch.cuda.get_device_properties(0).total_memory / (1024**3)
             extra["max_memory"] = {
                 0: f"{int(gpu_mem * 0.85)}GiB",
                 "cpu": "48GiB",

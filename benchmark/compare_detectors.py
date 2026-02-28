@@ -217,7 +217,7 @@ class GDinoDetector:
 # Qwen3.5 / Qwen2.5-VL backend
 # ---------------------------------------------------------------------------
 class QwenVLDetector:
-    def __init__(self, model_id: str, device: str):
+    def __init__(self, model_id: str, device: str, quant: Optional[str] = None):
         from transformers import AutoProcessor
 
         self.device = device
@@ -227,31 +227,51 @@ class QwenVLDetector:
         self.dtype = dtype
         self.model_id = model_id
 
-        print(f"[QwenVL] Loading {model_id} ...")
-        self.model = self._load_model(model_id, dtype)
+        print(f"[QwenVL] Loading {model_id} (quant={quant or 'none'}) ...")
+        self.model = self._load_model(model_id, dtype, quant)
         self.processor = AutoProcessor.from_pretrained(model_id)
-        print(f"[QwenVL] Ready (dtype={dtype})")
+        print(f"[QwenVL] Ready (dtype={dtype}, quant={quant or 'none'})")
 
     @staticmethod
-    def _load_model(model_id: str, dtype):
+    def _load_model(model_id: str, dtype, quant: Optional[str] = None):
+        quant_config = None
+        if quant in ("4bit", "4"):
+            from transformers import BitsAndBytesConfig
+            quant_config = BitsAndBytesConfig(
+                load_in_4bit=True,
+                bnb_4bit_compute_dtype=dtype,
+                bnb_4bit_quant_type="nf4",
+                bnb_4bit_use_double_quant=True,
+            )
+            print(f"[QwenVL] Using 4-bit NF4 quantization (~14GB VRAM for 27B)")
+        elif quant in ("8bit", "8"):
+            from transformers import BitsAndBytesConfig
+            quant_config = BitsAndBytesConfig(load_in_8bit=True)
+            print(f"[QwenVL] Using 8-bit quantization (~27GB VRAM for 27B)")
+
+        extra = {}
+        if quant_config:
+            extra["quantization_config"] = quant_config
+        else:
+            extra["torch_dtype"] = dtype
+
         try:
             from transformers import AutoModelForImageTextToText
             return AutoModelForImageTextToText.from_pretrained(
-                model_id, torch_dtype=dtype, device_map="auto",
+                model_id, device_map="auto", **extra,
             ).eval()
         except Exception:
             pass
         try:
             from transformers import Qwen2_5_VLForConditionalGeneration
             return Qwen2_5_VLForConditionalGeneration.from_pretrained(
-                model_id, torch_dtype=dtype, device_map="auto",
+                model_id, device_map="auto", **extra,
             ).eval()
         except Exception:
             pass
         from transformers import AutoModelForCausalLM
         return AutoModelForCausalLM.from_pretrained(
-            model_id, torch_dtype=dtype, device_map="auto",
-            trust_remote_code=True,
+            model_id, device_map="auto", trust_remote_code=True, **extra,
         ).eval()
 
     def detect(self, image: np.ndarray, prompt: str) -> List[Dict]:
@@ -425,6 +445,8 @@ def main():
     parser.add_argument("--gdino-text-threshold", type=float, default=0.20)
     # Qwen
     parser.add_argument("--qwen-model", default="Qwen/Qwen3.5-27B")
+    parser.add_argument("--qwen-quant", default="4bit", choices=["4bit", "8bit", "none"],
+                        help="Quantization for Qwen model (default: 4bit for 27B)")
     # Display
     parser.add_argument("--show-all", action="store_true",
                         help="Draw all detections (not just top-1)")
@@ -449,7 +471,8 @@ def main():
             args.gdino_box_threshold, args.gdino_text_threshold, device,
         )
     if "qwen" in args.backends:
-        detectors["qwen"] = QwenVLDetector(args.qwen_model, device)
+        q = args.qwen_quant if args.qwen_quant != "none" else None
+        detectors["qwen"] = QwenVLDetector(args.qwen_model, device, quant=q)
 
     summary = []
 

@@ -158,6 +158,10 @@ class MolmoGoalGenerator(GoalGeneratorBase):
             for k, v in inputs.items()
         }
 
+        max_token_id = self.molmo_model.config.vocab_size - 1
+        if inputs["input_ids"].max() > max_token_id:
+            inputs["input_ids"] = inputs["input_ids"].clamp(max=max_token_id)
+
         gen_config = GenerationConfig(
             max_new_tokens=64,
             use_cache=True,

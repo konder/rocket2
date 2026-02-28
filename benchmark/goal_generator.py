@@ -85,8 +85,12 @@ class MolmoGoalGenerator(GoalGeneratorBase):
     def _load_molmo(self, model_id: str):
         from transformers import AutoModelForCausalLM, AutoProcessor
 
-        # CPU needs float32; MPS and CUDA can use float16 (saves ~50% memory)
-        dtype = torch.float32 if self.device == "cpu" else torch.float16
+        if self.device == "cpu":
+            dtype = torch.float32
+        elif self.device == "cuda" and torch.cuda.is_bf16_supported():
+            dtype = torch.bfloat16
+        else:
+            dtype = torch.float16
 
         print(f"[GoalGenerator] Loading Molmo from {model_id} ...")
         self.molmo_processor = AutoProcessor.from_pretrained(
@@ -113,6 +117,8 @@ class MolmoGoalGenerator(GoalGeneratorBase):
 
             self.molmo_model.model.vision_backbone.register_forward_hook(_downcast_hook)
             print(f"[GoalGenerator] Vision backbone float32 + downcast hook applied")
+
+        self._molmo_dtype = dtype
 
         print(f"[GoalGenerator] Molmo loaded on {self.device} (dtype={dtype})")
 

@@ -264,26 +264,41 @@ class QwenVLDetector:
     def _load_model(model_id: str, dtype, quant: Optional[str] = None):
         from transformers import AutoConfig
 
-        quant_config = None
-        if quant in ("4bit", "4"):
-            from transformers import BitsAndBytesConfig
-            quant_config = BitsAndBytesConfig(
-                load_in_4bit=True,
-                bnb_4bit_compute_dtype=dtype,
-                bnb_4bit_quant_type="nf4",
-                bnb_4bit_use_double_quant=True,
-            )
-            print(f"[QwenVL] Using 4-bit NF4 quantization (~14GB VRAM for 27B)")
-        elif quant in ("8bit", "8"):
-            from transformers import BitsAndBytesConfig
-            quant_config = BitsAndBytesConfig(load_in_8bit=True)
-            print(f"[QwenVL] Using 8-bit quantization (~27GB VRAM for 27B)")
+        extra = {"torch_dtype": dtype}
 
-        extra = {}
-        if quant_config:
-            extra["quantization_config"] = quant_config
-        else:
-            extra["torch_dtype"] = dtype
+        if quant in ("4bit", "4"):
+            try:
+                from transformers import TorchAoConfig
+                extra["quantization_config"] = TorchAoConfig(
+                    "int4_weight_only", group_size=128
+                )
+                print(f"[QwenVL] Using torchao int4_weight_only quantization")
+            except ImportError:
+                from transformers import BitsAndBytesConfig
+                extra["quantization_config"] = BitsAndBytesConfig(
+                    load_in_4bit=True,
+                    bnb_4bit_compute_dtype=dtype,
+                    bnb_4bit_quant_type="nf4",
+                    bnb_4bit_use_double_quant=True,
+                )
+                print(f"[QwenVL] Using bitsandbytes 4-bit NF4 quantization")
+        elif quant in ("8bit", "8"):
+            try:
+                from transformers import TorchAoConfig
+                extra["quantization_config"] = TorchAoConfig("int8_weight_only")
+                print(f"[QwenVL] Using torchao int8_weight_only quantization")
+            except ImportError:
+                from transformers import BitsAndBytesConfig
+                extra["quantization_config"] = BitsAndBytesConfig(load_in_8bit=True)
+                print(f"[QwenVL] Using bitsandbytes 8-bit quantization")
+
+        if torch.cuda.is_available():
+            gpu_mem = torch.cuda.get_device_properties(0).total_mem / (1024**3)
+            extra["max_memory"] = {
+                0: f"{int(gpu_mem * 0.85)}GiB",
+                "cpu": "48GiB",
+            }
+            print(f"[QwenVL] max_memory: GPU={int(gpu_mem * 0.85)}GiB, CPU=48GiB")
 
         config = AutoConfig.from_pretrained(model_id, trust_remote_code=True)
         model_type = getattr(config, "model_type", "")

@@ -385,31 +385,42 @@ class GroundingDinoGoalGenerator(GoalGeneratorBase):
 
         boxes_np = np.asarray(boxes)
         logits_np = np.asarray(logits).reshape(-1)
-        best_idx = int(np.argmax(logits_np))
-        best_box = boxes_np[best_idx]
-        best_score = float(logits_np[best_idx])
-        best_phrase = str(list(phrases)[best_idx]) if phrases is not None else "unknown"
-
+        phrases_list = list(phrases) if phrases is not None else ["?"] * len(logits_np)
         h, w = image.shape[:2]
-        if np.max(best_box) <= 1.5:
-            cx, cy, bw, bh = [float(x) for x in best_box.tolist()]
-            x1 = (cx - bw / 2.0) * w
-            y1 = (cy - bh / 2.0) * h
-            x2 = (cx + bw / 2.0) * w
-            y2 = (cy + bh / 2.0) * h
-        else:
-            x1, y1, x2, y2 = [float(x) for x in best_box.tolist()]
 
-        x1 = float(np.clip(x1, 0, w - 1))
-        y1 = float(np.clip(y1, 0, h - 1))
-        x2 = float(np.clip(x2, 0, w - 1))
-        y2 = float(np.clip(y2, 0, h - 1))
+        def _to_xyxy(box):
+            if np.max(box) <= 1.5:
+                bcx, bcy, bw, bh = [float(v) for v in box.tolist()]
+                return [
+                    float(np.clip((bcx - bw / 2.0) * w, 0, w - 1)),
+                    float(np.clip((bcy - bh / 2.0) * h, 0, h - 1)),
+                    float(np.clip((bcx + bw / 2.0) * w, 0, w - 1)),
+                    float(np.clip((bcy + bh / 2.0) * h, 0, h - 1)),
+                ]
+            return [float(np.clip(v, 0, max(w, h) - 1)) for v in box.tolist()]
+
+        print(f"[GoalGenerator] GroundingDINO detections ({len(logits_np)} total):")
+        for i in range(len(logits_np)):
+            xyxy = _to_xyxy(boxes_np[i])
+            center = (int(round((xyxy[0] + xyxy[2]) / 2)), int(round((xyxy[1] + xyxy[3]) / 2)))
+            marker = " <<< BEST" if i == int(np.argmax(logits_np)) else ""
+            print(
+                f"  [{i}] phrase='{phrases_list[i]}', score={logits_np[i]:.3f}, "
+                f"bbox=({xyxy[0]:.1f},{xyxy[1]:.1f},{xyxy[2]:.1f},{xyxy[3]:.1f}), "
+                f"center={center}{marker}"
+            )
+
+        best_idx = int(np.argmax(logits_np))
+        best_xyxy = _to_xyxy(boxes_np[best_idx])
+        x1, y1, x2, y2 = best_xyxy
+        best_score = float(logits_np[best_idx])
+        best_phrase = str(phrases_list[best_idx])
         cx = int(round((x1 + x2) / 2.0))
         cy = int(round((y1 + y2) / 2.0))
         bbox = np.array([x1, y1, x2, y2], dtype=np.float32)
 
         print(
-            f"[GoalGenerator] GroundingDINO best: phrase='{best_phrase}', score={best_score:.3f}, "
+            f"[GoalGenerator] Selected: phrase='{best_phrase}', score={best_score:.3f}, "
             f"bbox=({x1:.1f},{y1:.1f},{x2:.1f},{y2:.1f}), point=({cx},{cy})"
         )
         return (cx, cy), bbox, best_score

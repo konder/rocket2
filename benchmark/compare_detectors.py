@@ -483,8 +483,6 @@ class QwenVLDetector:
             r = _extract_item({"bbox_2d": [m.group(1), m.group(2), m.group(3), m.group(4)]})
             if r:
                 results.append(r)
-                "point": ((x1 + x2) // 2, (y1 + y2) // 2),
-            })
         return results
 
 

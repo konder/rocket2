@@ -383,9 +383,9 @@ class Sa2VADetector:
 
         print(f"[Sa2VA] Loading {model_id} ...")
         self.model = AutoModelForCausalLM.from_pretrained(
-            model_id, torch_dtype=torch.float32,
+            model_id, torch_dtype="auto",
             trust_remote_code=True,
-        ).to(device).eval()
+        ).cuda().eval()
 
         self.tokenizer = AutoTokenizer.from_pretrained(
             model_id, trust_remote_code=True,

@@ -22,8 +22,8 @@ Usage (DINO vs DINO+SAM2 only):
         --backends groundingdino gdino_sam2 \
         --sam-path ./MineStudio/minestudio/utils/realtime_sam/checkpoints
 
-Sa2VA requires:
-    pip install "transformers @ git+https://github.com/huggingface/transformers.git@main"
+Sa2VA (ByteDance/Sa2VA-4B) uses InternVL2.5 + legacy transformers,
+so it can run in the same environment as Molmo/GroundingDINO.
 """
 
 import os
@@ -368,63 +368,30 @@ class GDinoSAM2Detector:
 
 
 # ---------------------------------------------------------------------------
-# R-Sa2VA: SAM2 + VLM unified model — text prompt → segmentation mask → bbox
+# Sa2VA: SAM2 + VLM unified model — text prompt → segmentation mask → bbox
 # https://github.com/bytedance/Sa2VA
+# Uses InternVL-based models (ByteDance/Sa2VA-4B etc.) which work with
+# legacy transformers — can run in the same env as Molmo/GroundingDINO.
 # ---------------------------------------------------------------------------
 class Sa2VADetector:
-    """R-Sa2VA uses a unified SAM2+VLM architecture to segment objects from text."""
+    """Sa2VA uses a unified SAM2+VLM architecture to segment objects from text."""
 
     def __init__(self, model_id: str, device: str):
-        from transformers import AutoModelForCausalLM, AutoProcessor
+        from transformers import AutoModelForCausalLM, AutoTokenizer
         self.device = device
         self.model_id = model_id
 
         print(f"[Sa2VA] Loading {model_id} ...")
-        self._apply_compat_patches()
-
         self.model = AutoModelForCausalLM.from_pretrained(
             model_id, torch_dtype=torch.bfloat16,
             trust_remote_code=True,
         ).to(device).eval()
 
-        self._remove_compat_patches()
-
-        self.processor = AutoProcessor.from_pretrained(
+        self.tokenizer = AutoTokenizer.from_pretrained(
             model_id, trust_remote_code=True,
         )
-        self.tokenizer = None
+        self.processor = None
         print(f"[Sa2VA] Ready on {device}")
-
-    @staticmethod
-    def _apply_compat_patches():
-        """Temporary patches for Sa2VA + latest transformers compatibility."""
-        import transformers
-
-        # Patch 1: torch.linspace creates meta tensors inside
-        # init_empty_weights(), but SAM2 calls .item() on them.
-        Sa2VADetector._orig_linspace = torch.linspace
-        def _cpu_linspace(*args, **kwargs):
-            if "device" not in kwargs or str(kwargs.get("device")) == "meta":
-                kwargs["device"] = "cpu"
-            return Sa2VADetector._orig_linspace(*args, **kwargs)
-        torch.linspace = _cpu_linspace
-
-        # Patch 2: latest transformers expects all_tied_weights_keys on model,
-        # but Sa2VA's custom model class doesn't define it.
-        _orig_finalize = transformers.modeling_utils.PreTrainedModel._finalize_model_loading
-        @classmethod
-        def _patched_finalize(cls, model, *args, **kwargs):
-            if not hasattr(model, "all_tied_weights_keys"):
-                model.all_tied_weights_keys = {}
-            return _orig_finalize.__func__(cls, model, *args, **kwargs)
-        Sa2VADetector._orig_finalize = _orig_finalize
-        transformers.modeling_utils.PreTrainedModel._finalize_model_loading = _patched_finalize
-
-    @staticmethod
-    def _remove_compat_patches():
-        import transformers
-        torch.linspace = Sa2VADetector._orig_linspace
-        transformers.modeling_utils.PreTrainedModel._finalize_model_loading = Sa2VADetector._orig_finalize
 
     @staticmethod
     def _build_prompt(prompt: str) -> str:
@@ -556,7 +523,7 @@ def main():
     parser.add_argument("--gdino-box-threshold", type=float, default=0.25)
     parser.add_argument("--gdino-text-threshold", type=float, default=0.20)
     # Sa2VA
-    parser.add_argument("--sa2va-model", default="HarborYuan/R-Sa2VA-Qwen3VL-4B-RL")
+    parser.add_argument("--sa2va-model", default="ByteDance/Sa2VA-4B")
     # Display
     parser.add_argument("--top-k", type=int, default=1,
                         help="Draw top-K detections per model (0=all, default=1)")

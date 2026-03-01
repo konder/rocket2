@@ -385,6 +385,7 @@ class Sa2VADetector:
         self.model = AutoModelForCausalLM.from_pretrained(
             model_id, torch_dtype=torch.bfloat16,
             trust_remote_code=True,
+            attn_implementation="eager",
         ).cuda().eval()
 
         self.tokenizer = AutoTokenizer.from_pretrained(

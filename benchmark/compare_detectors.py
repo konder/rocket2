@@ -383,6 +383,7 @@ class Sa2VADetector:
         self.model = AutoModelForCausalLM.from_pretrained(
             model_id, torch_dtype=torch.bfloat16,
             trust_remote_code=True,
+            low_cpu_mem_usage=False,
         ).to(device).eval()
 
         self.processor = AutoProcessor.from_pretrained(

@@ -410,12 +410,10 @@ class Sa2VADetector:
         text = self._build_prompt(prompt)
 
         print(f"  [Sa2VA] prompt: {text}")
-        result = self.model.predict_forward(
-            image=pil,
-            text=text,
-            tokenizer=self.tokenizer,
-            processor=self.processor,
-        )
+        kwargs = {"image": pil, "text": text, "tokenizer": self.tokenizer}
+        if self.processor is not None:
+            kwargs["processor"] = self.processor
+        result = self.model.predict_forward(**kwargs)
 
         prediction = result.get("prediction", "")
         print(f"  [Sa2VA] prediction: {prediction[:200]}")

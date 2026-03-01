@@ -381,9 +381,9 @@ class Sa2VADetector:
 
         print(f"[Sa2VA] Loading {model_id} ...")
         self.model = AutoModelForCausalLM.from_pretrained(
-            model_id, torch_dtype="auto", device_map="auto",
+            model_id, torch_dtype=torch.bfloat16,
             trust_remote_code=True,
-        ).eval()
+        ).to(device).eval()
 
         self.processor = AutoProcessor.from_pretrained(
             model_id, trust_remote_code=True,

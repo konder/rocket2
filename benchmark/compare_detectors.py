@@ -490,12 +490,12 @@ class QwenVLDetector:
 # Visualization
 # ---------------------------------------------------------------------------
 def draw_detections(image: np.ndarray, backend: str, detections: List[Dict],
-                    show_all: bool = True) -> np.ndarray:
+                    top_k: int = 1) -> np.ndarray:
     color = COLORS.get(backend, (128, 128, 128))
     name = DISPLAY_NAMES.get(backend, backend)
     vis = image.copy()
 
-    items = detections if show_all else detections[:1]
+    items = detections[:top_k] if top_k > 0 else detections
     for i, det in enumerate(items):
         x1, y1, x2, y2 = [int(v) for v in det["bbox"]]
         score = det["score"]
@@ -554,8 +554,8 @@ def main():
                         help="OpenAI-compatible API base URL (e.g. http://localhost:8000/v1). "
                              "Use with SGLang/vLLM. Skips local model loading.")
     # Display
-    parser.add_argument("--show-all", action="store_true",
-                        help="Draw all detections (not just top-1)")
+    parser.add_argument("--top-k", type=int, default=1,
+                        help="Draw top-K detections per model (0=all, default=1)")
     args = parser.parse_args()
 
     device = get_device(args.device)
@@ -618,7 +618,7 @@ def main():
                  "bbox": d["bbox"], "point": d["point"]}
                 for d in dets
             ]
-            canvas = draw_detections(canvas, backend, dets, show_all=args.show_all)
+            canvas = draw_detections(canvas, backend, dets, top_k=args.top_k)
 
         h, w = canvas.shape[:2]
         legend_y = h - 10

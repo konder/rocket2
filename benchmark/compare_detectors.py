@@ -385,7 +385,6 @@ class Sa2VADetector:
         self.model = AutoModelForCausalLM.from_pretrained(
             model_id, torch_dtype=torch.bfloat16,
             trust_remote_code=True,
-            attn_implementation="eager",
         ).cuda().eval()
 
         self.tokenizer = AutoTokenizer.from_pretrained(
@@ -425,7 +424,8 @@ class Sa2VADetector:
         kwargs = {"image": pil, "text": text, "tokenizer": self.tokenizer}
         if self.processor is not None:
             kwargs["processor"] = self.processor
-        result = self.model.predict_forward(**kwargs)
+        with torch.cuda.amp.autocast(dtype=torch.bfloat16):
+            result = self.model.predict_forward(**kwargs)
 
         prediction = result.get("prediction", "")
         print(f"  [Sa2VA] prediction: {prediction[:200]}")

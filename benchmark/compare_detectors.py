@@ -364,27 +364,36 @@ class QwenVLDetector:
         ]}]
 
         try:
+            dev = self.model.device
+        except Exception:
+            dev = "cuda" if torch.cuda.is_available() else "cpu"
+
+        try:
             inputs = self.processor.apply_chat_template(
                 messages, add_generation_prompt=True,
                 tokenize=True, return_dict=True, return_tensors="pt",
                 images=[pil], enable_thinking=False,
-            ).to(self.model.device)
+            )
         except TypeError:
             inputs = self.processor.apply_chat_template(
                 messages, add_generation_prompt=True,
                 tokenize=True, return_dict=True, return_tensors="pt",
                 images=[pil],
-            ).to(self.model.device)
+            )
+
+        inputs = {k: v.to(dev) if isinstance(v, torch.Tensor) else v
+                  for k, v in inputs.items()}
 
         with torch.inference_mode():
-            out_ids = self.model.generate(**inputs, max_new_tokens=1024)
+            out_ids = self.model.generate(**inputs, max_new_tokens=2048)
 
-        trimmed = [o[len(i):] for i, o in zip(inputs.input_ids, out_ids)]
+        trimmed = [o[len(i):] for i, o in zip(inputs["input_ids"], out_ids)]
         raw_text = self.processor.batch_decode(
             trimmed, skip_special_tokens=True, clean_up_tokenization_spaces=False
         )[0]
+        print(f"  [QwenVL] raw (before strip): {raw_text[:300]}")
         raw_text = self._strip_thinking(raw_text)
-        print(f"  [QwenVL] raw: {raw_text[:500]}")
+        print(f"  [QwenVL] raw (after strip):  {raw_text[:500]}")
         return self._parse_detections(raw_text, w, h)
 
     @staticmethod
@@ -563,7 +572,9 @@ def main():
             try:
                 dets = detector.detect(rgb, prompt)
             except Exception as e:
+                import traceback
                 print(f"  ERROR: {e}")
+                traceback.print_exc()
                 dets = []
 
             task_results[backend] = [

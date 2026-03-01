@@ -413,7 +413,8 @@ class Sa2VADetector:
         kwargs = {"image": pil, "text": text, "tokenizer": self.tokenizer}
         if self.processor is not None:
             kwargs["processor"] = self.processor
-        result = self.model.predict_forward(**kwargs)
+        with torch.autocast(device, dtype=torch.bfloat16):
+            result = self.model.predict_forward(**kwargs)
 
         prediction = result.get("prediction", "")
         print(f"  [Sa2VA] prediction: {prediction[:200]}")

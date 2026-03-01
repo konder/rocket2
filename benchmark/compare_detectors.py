@@ -392,15 +392,12 @@ class Sa2VADetector:
         )
         self.processor = None
 
-        # vision_model outputs float32 but mlp1 weights are bfloat16.
-        # Add a pre-hook to cast input dtype automatically.
-        def _cast_to_param_dtype(module, args):
-            target = next(module.parameters()).dtype
-            return tuple(
-                a.to(target) if isinstance(a, torch.Tensor) and a.dtype != target else a
-                for a in args
-            )
-        self.model.mlp1.register_forward_pre_hook(_cast_to_param_dtype)
+        # Ensure pixel_values enter vision_model in bfloat16 so the
+        # entire pipeline (vision → mlp1 → LLM / FlashAttention) stays bf16.
+        _orig_extract = self.model.extract_feature
+        def _bf16_extract(pixel_values, *args, **kwargs):
+            return _orig_extract(pixel_values.to(torch.bfloat16), *args, **kwargs)
+        self.model.extract_feature = _bf16_extract
 
         print(f"[Sa2VA] Ready on {device}")
 
@@ -424,8 +421,7 @@ class Sa2VADetector:
         kwargs = {"image": pil, "text": text, "tokenizer": self.tokenizer}
         if self.processor is not None:
             kwargs["processor"] = self.processor
-        with torch.cuda.amp.autocast(dtype=torch.bfloat16):
-            result = self.model.predict_forward(**kwargs)
+        result = self.model.predict_forward(**kwargs)
 
         prediction = result.get("prediction", "")
         print(f"  [Sa2VA] prediction: {prediction[:200]}")

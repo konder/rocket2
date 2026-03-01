@@ -391,6 +391,14 @@ class Sa2VADetector:
             model_id, trust_remote_code=True,
         )
         self.processor = None
+
+        # Sa2VA's extract_feature does pixel_values.to(device) but doesn't
+        # cast dtype, causing mismatch with bfloat16 weights.
+        _orig_extract = self.model.extract_feature
+        def _extract_bf16(pixel_values):
+            return _orig_extract(pixel_values.to(dtype=torch.bfloat16))
+        self.model.extract_feature = _extract_bf16
+
         print(f"[Sa2VA] Ready on {device}")
 
     @staticmethod
@@ -413,8 +421,7 @@ class Sa2VADetector:
         kwargs = {"image": pil, "text": text, "tokenizer": self.tokenizer}
         if self.processor is not None:
             kwargs["processor"] = self.processor
-        with torch.autocast(device, dtype=torch.bfloat16):
-            result = self.model.predict_forward(**kwargs)
+        result = self.model.predict_forward(**kwargs)
 
         prediction = result.get("prediction", "")
         print(f"  [Sa2VA] prediction: {prediction[:200]}")

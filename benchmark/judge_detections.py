@@ -48,9 +48,10 @@ BOX_COLORS = [
 ]
 
 SOURCE_NAMES = {
-    "molmo": "Molmo",
     "groundingdino": "DINO",
-    "qwen": "Qwen",
+    "molmo": "Molmo+SAM2",
+    "gdino_sam2": "DINO+SAM2",
+    "sa2va": "R-Sa2VA",
 }
 
 
@@ -69,8 +70,9 @@ def draw_candidates(image_bgr: np.ndarray, candidates: List[Dict]) -> np.ndarray
             cv2.circle(vis, (px, py), 9, (255, 255, 255), 2)
 
         tag = f"#{idx + 1} {c['source']}"
-        if c.get("score", 1.0) < 1.0:
-            tag += f" {c['score']:.2f}"
+        s = c.get("score", -1.0)
+        if 0 <= s < 1.0:
+            tag += f" {s:.2f}"
 
         (tw, th), _ = cv2.getTextSize(tag, cv2.FONT_HERSHEY_SIMPLEX, 0.6, 2)
         ty = max(y1 - 8, th + 6)
@@ -89,11 +91,16 @@ def build_judge_prompt(task_prompt: str, candidates: List[Dict]) -> str:
         "",
     ]
     for c in candidates:
+        score_str = f", confidence={c['score']:.2f}" if 0 <= c["score"] < 1.0 else ""
+        note = " (no confidence score)" if c["score"] < 0 else ""
         lines.append(
             f"  Box #{c['idx'] + 1} ({c['source']}): "
             f"bbox=({c['bbox'][0]:.0f},{c['bbox'][1]:.0f},{c['bbox'][2]:.0f},{c['bbox'][3]:.0f})"
+            f"{score_str}{note}"
         )
     lines += [
+        "",
+        "Note: Molmo+SAM2 and DINO+SAM2 use SAM2 to produce precise bounding boxes from segmentation masks. R-Sa2VA uses an end-to-end VLM+SAM2 architecture for text-prompted segmentation. GroundingDINO outputs bounding boxes directly.",
         "",
         "Which box best matches the task target? If none is correct, reply 0.",
         "Reply with ONLY the box number (e.g. 1, 2, or 0).",
@@ -264,7 +271,7 @@ def main():
         print(f"{'='*60}")
 
         candidates = []
-        for backend in ["molmo", "groundingdino", "qwen"]:
+        for backend in ["groundingdino", "molmo", "gdino_sam2", "sa2va"]:
             dets = task_entry.get(backend, [])
             source = SOURCE_NAMES.get(backend, backend)
             for det in dets[:args.top_k]:

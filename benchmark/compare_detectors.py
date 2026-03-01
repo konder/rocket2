@@ -1,26 +1,28 @@
 """
-Compare goal detection across Molmo, GroundingDINO, and Qwen3.5-27B.
+Compare goal detection across multiple backends:
+  - groundingdino : GroundingDINO direct bbox
+  - molmo         : Molmo pointing + SAM2 segmentation → bbox
+  - gdino_sam2    : GroundingDINO bbox → SAM2 box-prompt refine → bbox
+  - sa2va         : R-Sa2VA (SAM2 + VLM) text-prompted segmentation → bbox
 
-For each task's first-frame screenshot, run all selected backends and
-draw bounding boxes / points on the image with scores.
-
-Usage:
+Usage (all four):
     python benchmark/compare_detectors.py \
         --task-file benchmark/eval_tasks_paper.yaml \
         --image-dir benchmark/first_frames/ \
         --output-dir benchmark/detection_compare/ \
-        --backends molmo groundingdino qwen \
+        --backends groundingdino molmo gdino_sam2 sa2va \
+        --sam-path ./MineStudio/minestudio/utils/realtime_sam/checkpoints \
         --device cuda
 
-    # Single task, single backend:
+Usage (DINO vs DINO+SAM2 only):
     python benchmark/compare_detectors.py \
         --task-file benchmark/eval_tasks_paper.yaml \
         --image-dir benchmark/first_frames/ \
         --output-dir benchmark/detection_compare/ \
-        --tasks mine_coal \
-        --backends groundingdino
+        --backends groundingdino gdino_sam2 \
+        --sam-path ./MineStudio/minestudio/utils/realtime_sam/checkpoints
 
-Qwen3.5-27B requires latest transformers:
+Sa2VA requires:
     pip install "transformers @ git+https://github.com/huggingface/transformers.git@main"
 """
 
@@ -38,15 +40,17 @@ from typing import List, Dict, Optional, Tuple
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 
 COLORS = {
-    "molmo": (0, 0, 255),       # red (BGR)
-    "groundingdino": (0, 200, 0),  # green
-    "qwen": (255, 100, 0),      # blue
+    "groundingdino": (0, 200, 0),  # green (BGR)
+    "molmo": (0, 0, 255),          # red
+    "gdino_sam2": (0, 255, 255),   # yellow
+    "sa2va": (255, 100, 0),        # blue
 }
 
 DISPLAY_NAMES = {
-    "molmo": "Molmo-7B",
     "groundingdino": "GroundingDINO",
-    "qwen": "Qwen3.5-27B",
+    "molmo": "Molmo+SAM2",
+    "gdino_sam2": "DINO+SAM2",
+    "sa2va": "R-Sa2VA",
 }
 
 
@@ -62,7 +66,8 @@ def get_device(requested: Optional[str] = None) -> str:
 # Molmo backend
 # ---------------------------------------------------------------------------
 class MolmoDetector:
-    def __init__(self, model_id: str, device: str):
+    def __init__(self, model_id: str, device: str,
+                 sam_path: Optional[str] = None, sam_variant: str = "base"):
         from transformers import AutoModelForCausalLM, AutoProcessor
 
         self.device = device
@@ -93,7 +98,46 @@ class MolmoDetector:
 
             self.model.model.vision_backbone.register_forward_hook(_hook)
 
-        print(f"[Molmo] Ready on {device} (dtype={dtype})")
+        self.sam_predictor = None
+        if sam_path:
+            self._load_sam(sam_path, sam_variant)
+
+        print(f"[Molmo] Ready on {device} (dtype={dtype}, SAM2={'yes' if self.sam_predictor else 'no'})")
+
+    def _load_sam(self, sam_path: str, variant: str):
+        from sam2.build_sam import build_sam2_camera_predictor
+
+        ckpt_mapping = {
+            "large": ("sam2_hiera_large.pt", "sam2_hiera_l.yaml"),
+            "base": ("sam2_hiera_base_plus.pt", "sam2_hiera_b+.yaml"),
+            "small": ("sam2_hiera_small.pt", "sam2_hiera_s.yaml"),
+            "tiny": ("sam2_hiera_tiny.pt", "sam2_hiera_t.yaml"),
+        }
+        ckpt_file, cfg_file = ckpt_mapping.get(variant, ckpt_mapping["base"])
+        ckpt_full = os.path.join(sam_path, ckpt_file)
+        self.sam_predictor = build_sam2_camera_predictor(
+            cfg_file, ckpt_full, device=self.device,
+        )
+        print(f"[Molmo] SAM-2 ({variant}) loaded from {ckpt_full}")
+
+    def _sam_point_to_bbox(self, image_rgb: np.ndarray,
+                           point: Tuple[int, int]) -> Optional[List[float]]:
+        """Use SAM2 to segment around the point and derive a tight bbox."""
+        if self.sam_predictor is None:
+            return None
+
+        self.sam_predictor.load_first_frame(image_rgb)
+        _, _, out_mask_logits = self.sam_predictor.add_new_prompt(
+            frame_idx=0, obj_id=0,
+            points=[list(point)], labels=[1],
+        )
+        mask = (out_mask_logits[0, 0] > 0.0).cpu().numpy().astype(np.uint8)
+
+        if mask.sum() < 10:
+            return None
+
+        ys, xs = np.where(mask > 0)
+        return [float(xs.min()), float(ys.min()), float(xs.max()), float(ys.max())]
 
     def detect(self, image: np.ndarray, prompt: str) -> List[Dict]:
         from PIL import Image as PILImage
@@ -127,11 +171,23 @@ class MolmoDetector:
         if point is None:
             return []
         x, y = point
-        r = 30
+
+        sam_bbox = self._sam_point_to_bbox(image, point)
+        if sam_bbox is not None:
+            bbox = sam_bbox
+            label = "molmo+sam2"
+            print(f"  [Molmo] SAM2 bbox: ({bbox[0]:.0f},{bbox[1]:.0f},{bbox[2]:.0f},{bbox[3]:.0f})")
+        else:
+            r = 30
+            bbox = [max(0, x - r), max(0, y - r), min(w - 1, x + r), min(h - 1, y + r)]
+            label = "molmo_point"
+            if self.sam_predictor is not None:
+                print(f"  [Molmo] SAM2 mask too small, using point fallback")
+
         return [{
-            "label": "molmo_point",
-            "score": 1.0,
-            "bbox": [max(0, x - r), max(0, y - r), min(w - 1, x + r), min(h - 1, y + r)],
+            "label": label,
+            "score": -1.0,
+            "bbox": bbox,
             "point": (x, y),
             "raw_text": text.strip(),
         }]
@@ -242,247 +298,160 @@ class GDinoDetector:
 
 
 # ---------------------------------------------------------------------------
-# Qwen VL backend — API mode (SGLang / vLLM) or local transformers
+# GroundingDINO + SAM2:  DINO bbox → SAM2 box prompt → mask → refined bbox
 # ---------------------------------------------------------------------------
-class QwenVLDetector:
-    def __init__(self, model_id: str, device: str,
-                 quant: Optional[str] = None, api_base: Optional[str] = None):
-        self.model_id = model_id
-        self.api_base = api_base
+class GDinoSAM2Detector:
+    """DINO finds bbox, SAM2 refines it via box prompt segmentation."""
 
-        if api_base:
-            print(f"[QwenVL] API mode → {api_base}  model={model_id}")
-            self.model = None
-            self.processor = None
-        else:
-            from transformers import AutoProcessor
-            self.device = device
-            dtype = torch.bfloat16 if device == "cuda" and torch.cuda.is_bf16_supported() else torch.float16
-            if device == "cpu":
-                dtype = torch.float32
-            print(f"[QwenVL] Loading {model_id} locally (quant={quant or 'none'}) ...")
-            self.model = self._load_model_local(model_id, dtype, quant)
-            self.processor = AutoProcessor.from_pretrained(model_id)
-            print(f"[QwenVL] Ready locally (dtype={dtype})")
+    def __init__(self, gdino: GDinoDetector,
+                 sam_path: str, sam_variant: str, device: str):
+        from sam2.build_sam import build_sam2_camera_predictor
+
+        self.gdino = gdino
+        self.device = device
+
+        ckpt_mapping = {
+            "large": ("sam2_hiera_large.pt", "sam2_hiera_l.yaml"),
+            "base": ("sam2_hiera_base_plus.pt", "sam2_hiera_b+.yaml"),
+            "small": ("sam2_hiera_small.pt", "sam2_hiera_s.yaml"),
+            "tiny": ("sam2_hiera_tiny.pt", "sam2_hiera_t.yaml"),
+        }
+        ckpt_file, cfg_file = ckpt_mapping.get(sam_variant, ckpt_mapping["base"])
+        ckpt_full = os.path.join(sam_path, ckpt_file)
+        self.sam_predictor = build_sam2_camera_predictor(
+            cfg_file, ckpt_full, device=device,
+        )
+        print(f"[DINO+SAM2] SAM-2 ({sam_variant}) loaded from {ckpt_full}")
+
+    def detect(self, image: np.ndarray, prompt: str) -> List[Dict]:
+        dino_dets = self.gdino.detect(image, prompt)
+        if not dino_dets:
+            return []
+
+        h, w = image.shape[:2]
+        results = []
+
+        for i, det in enumerate(dino_dets):
+            x1, y1, x2, y2 = det["bbox"]
+            score = det["score"]
+            label = det["label"]
+
+            self.sam_predictor.load_first_frame(image)
+            # Box prompt: two corner points (top-left, bottom-right) with
+            # labels [2, 3] — SAM2's internal representation of a box prompt.
+            _, _, out_mask_logits = self.sam_predictor.add_new_prompt(
+                frame_idx=0, obj_id=0,
+                points=[[int(x1), int(y1)], [int(x2), int(y2)]],
+                labels=[2, 3],
+            )
+            mask = (out_mask_logits[0, 0] > 0.0).cpu().numpy().astype(np.uint8)
+
+            if mask.sum() >= 10:
+                ys, xs = np.where(mask > 0)
+                rx1, ry1 = float(xs.min()), float(ys.min())
+                rx2, ry2 = float(xs.max()), float(ys.max())
+                print(f"  [DINO+SAM2] [{i}] SAM2 refined: "
+                      f"({x1:.0f},{y1:.0f},{x2:.0f},{y2:.0f}) → "
+                      f"({rx1:.0f},{ry1:.0f},{rx2:.0f},{ry2:.0f})")
+            else:
+                rx1, ry1, rx2, ry2 = x1, y1, x2, y2
+                print(f"  [DINO+SAM2] [{i}] SAM2 mask too small, keeping DINO bbox")
+
+            results.append({
+                "label": label,
+                "score": score,
+                "bbox": [rx1, ry1, rx2, ry2],
+                "point": (int((rx1 + rx2) / 2), int((ry1 + ry2) / 2)),
+            })
+
+        return results
+
+
+# ---------------------------------------------------------------------------
+# R-Sa2VA: SAM2 + VLM unified model — text prompt → segmentation mask → bbox
+# https://github.com/bytedance/Sa2VA
+# ---------------------------------------------------------------------------
+class Sa2VADetector:
+    """R-Sa2VA uses a unified SAM2+VLM architecture to segment objects from text."""
+
+    def __init__(self, model_id: str, device: str):
+        from transformers import AutoModelForCausalLM, AutoProcessor
+        self.device = device
+        self.model_id = model_id
+
+        print(f"[Sa2VA] Loading {model_id} ...")
+        self.model = AutoModelForCausalLM.from_pretrained(
+            model_id, torch_dtype="auto", device_map="auto",
+            trust_remote_code=True,
+        ).eval()
+
+        self.processor = AutoProcessor.from_pretrained(
+            model_id, trust_remote_code=True,
+        )
+        self.tokenizer = None
+        print(f"[Sa2VA] Ready on {device}")
 
     @staticmethod
-    def _load_model_local(model_id: str, dtype, quant: Optional[str] = None):
-        from transformers import AutoConfig
-        config = AutoConfig.from_pretrained(model_id, trust_remote_code=True)
-        model_type = getattr(config, "model_type", "")
-        print(f"[QwenVL] model_type: {model_type}")
-
-        extra = {"torch_dtype": dtype}
-        if quant in ("4bit", "4"):
-            from transformers import BitsAndBytesConfig
-            extra["quantization_config"] = BitsAndBytesConfig(
-                load_in_4bit=True, bnb_4bit_compute_dtype=dtype,
-                bnb_4bit_quant_type="nf4", bnb_4bit_use_double_quant=True,
-            )
-        elif quant in ("8bit", "8"):
-            from transformers import BitsAndBytesConfig
-            extra["quantization_config"] = BitsAndBytesConfig(load_in_8bit=True)
-
-        if torch.cuda.is_available():
-            gpu_mem = torch.cuda.get_device_properties(0).total_memory / (1024**3)
-            extra["max_memory"] = {0: f"{int(gpu_mem * 0.85)}GiB", "cpu": "48GiB"}
-
-        is_vl = any(t in model_type for t in ["qwen2_5_vl", "qwen2_vl", "qwen3_vl"])
-        if is_vl:
-            from transformers import AutoModelForImageTextToText
-            print(f"[QwenVL] Loading as AutoModelForImageTextToText ({model_type})")
-            return AutoModelForImageTextToText.from_pretrained(
-                model_id, device_map="auto", **extra,
-            ).eval()
-        elif "qwen3" in model_type:
-            from transformers import AutoModelForCausalLM
-            print(f"[QwenVL] Loading as AutoModelForCausalLM ({model_type})")
-            return AutoModelForCausalLM.from_pretrained(
-                model_id, device_map="auto", trust_remote_code=True, **extra,
-            ).eval()
-        else:
-            from transformers import AutoModelForImageTextToText
-            print(f"[QwenVL] Loading as AutoModelForImageTextToText (generic)")
-            return AutoModelForImageTextToText.from_pretrained(
-                model_id, device_map="auto", trust_remote_code=True, **extra,
-            ).eval()
-
-    def _build_prompt(self, prompt: str, w: int, h: int) -> str:
+    def _build_prompt(prompt: str) -> str:
         obj_name = prompt.strip()
         for prefix in ["Point to the", "Point to"]:
             if obj_name.lower().startswith(prefix.lower()):
                 obj_name = obj_name[len(prefix):].strip()
                 break
-        return (
-            f'Detect {obj_name} in this image and return the bounding box coordinates. '
-            f'Output format: {{"bbox_2d": [x1, y1, x2, y2], "label": "{obj_name}"}}'
-        )
+        return f"<image>Please segment the {obj_name}."
 
     def detect(self, image: np.ndarray, prompt: str) -> List[Dict]:
-        h, w = image.shape[:2]
-        if self.api_base:
-            return self._detect_api(image, prompt, w, h)
-        return self._detect_local(image, prompt, w, h)
-
-    def _detect_api(self, image: np.ndarray, prompt: str, w: int, h: int) -> List[Dict]:
-        import base64
-        from openai import OpenAI
-
-        _, buf = cv2.imencode(".png", cv2.cvtColor(image, cv2.COLOR_RGB2BGR))
-        b64 = base64.b64encode(buf).decode("utf-8")
-
-        client = OpenAI(base_url=self.api_base, api_key="EMPTY")
-        text_prompt = self._build_prompt(prompt, w, h)
-
-        resp = client.chat.completions.create(
-            model=self.model_id,
-            messages=[{
-                "role": "user",
-                "content": [
-                    {"type": "image_url", "image_url": {"url": f"data:image/png;base64,{b64}"}},
-                    {"type": "text", "text": text_prompt},
-                ],
-            }],
-            max_tokens=1024,
-            temperature=0.7,
-            top_p=0.8,
-            extra_body={"chat_template_kwargs": {"enable_thinking": False}},
-        )
-        raw_text = resp.choices[0].message.content or ""
-        raw_text = self._strip_thinking(raw_text)
-        print(f"  [QwenVL-API] raw: {raw_text[:500]}")
-        return self._parse_detections(raw_text, w, h)
-
-    def _detect_local(self, image: np.ndarray, prompt: str, w: int, h: int) -> List[Dict]:
         from PIL import Image as PILImage
 
         pil = PILImage.fromarray(image)
-        text_prompt = self._build_prompt(prompt, w, h)
-        messages = [{"role": "user", "content": [
-            {"type": "image"},
-            {"type": "text", "text": text_prompt},
-        ]}]
+        h, w = image.shape[:2]
+        text = self._build_prompt(prompt)
 
-        try:
-            dev = self.model.device
-        except Exception:
-            dev = "cuda" if torch.cuda.is_available() else "cpu"
+        print(f"  [Sa2VA] prompt: {text}")
+        result = self.model.predict_forward(
+            image=pil,
+            text=text,
+            tokenizer=self.tokenizer,
+            processor=self.processor,
+        )
 
-        # Method 1: apply_chat_template with images= kwarg (Qwen2.5-VL style)
-        inputs = None
-        for kwargs in [
-            {"images": [pil], "enable_thinking": False},
-            {"images": [pil]},
-            {},
-        ]:
-            try:
-                inputs = self.processor.apply_chat_template(
-                    messages, add_generation_prompt=True,
-                    tokenize=True, return_dict=True, return_tensors="pt",
-                    **kwargs,
-                )
-                break
-            except (TypeError, KeyError):
-                continue
+        prediction = result.get("prediction", "")
+        print(f"  [Sa2VA] prediction: {prediction[:200]}")
 
-        # Method 2: two-step — text template then processor call
-        if inputs is None:
-            print(f"  [QwenVL] Falling back to two-step processing")
-            text = self.processor.apply_chat_template(
-                messages, tokenize=False, add_generation_prompt=True,
-            )
-            inputs = self.processor(
-                text=[text], images=[pil], return_tensors="pt",
-            )
-
-        inputs = {k: v.to(dev) if isinstance(v, torch.Tensor) else v
-                  for k, v in inputs.items()}
-
-        with torch.inference_mode():
-            out_ids = self.model.generate(**inputs, max_new_tokens=2048)
-
-        trimmed = [o[len(i):] for i, o in zip(inputs["input_ids"], out_ids)]
-        raw_text = self.processor.batch_decode(
-            trimmed, skip_special_tokens=True, clean_up_tokenization_spaces=False
-        )[0]
-        print(f"  [QwenVL] raw (before strip): {raw_text[:300]}")
-        raw_text = self._strip_thinking(raw_text)
-        print(f"  [QwenVL] raw (after strip):  {raw_text[:500]}")
-        return self._parse_detections(raw_text, w, h)
-
-    @staticmethod
-    def _strip_thinking(text: str) -> str:
-        """Remove <think>...</think> block from Qwen3.5 output."""
-        m = re.search(r'</think>\s*', text)
-        if m:
-            return text[m.end():]
-        return text
-
-    @staticmethod
-    def _parse_detections(text: str, w: int, h: int) -> List[Dict]:
         results = []
-
-        code_match = re.search(r'```(?:json)?\s*(.*?)```', text, re.DOTALL)
-        parse_text = code_match.group(1).strip() if code_match else text
-
-        def _extract_item(item: dict) -> Optional[Dict]:
-            bbox = item.get("bbox_2d", item.get("bbox", None))
-            if not bbox or len(bbox) != 4:
-                return None
-            x1, y1, x2, y2 = [float(v) for v in bbox]
-            # Qwen VL may output coords in 0-1000 normalized range
-            if all(0 <= v <= 1000 for v in [x1, y1, x2, y2]) and max(x1, y1, x2, y2) > 1.5:
-                if x2 <= 1.0 and y2 <= 1.0:
-                    pass  # already in pixel range [0,1]
+        if "[SEG]" in prediction and "prediction_masks" in result:
+            masks = result["prediction_masks"]
+            for seg_idx, mask_set in enumerate(masks):
+                if isinstance(mask_set, list):
+                    mask = mask_set[0]
                 else:
-                    x1, y1, x2, y2 = x1 / 1000 * w, y1 / 1000 * h, x2 / 1000 * w, y2 / 1000 * h
-            x1 = np.clip(x1, 0, w - 1)
-            y1 = np.clip(y1, 0, h - 1)
-            x2 = np.clip(x2, 0, w - 1)
-            y2 = np.clip(y2, 0, h - 1)
-            score = float(item.get("score", item.get("confidence", 1.0)))
-            label = item.get("label", "?")
-            return {
-                "label": label, "score": score,
-                "bbox": [x1, y1, x2, y2],
-                "point": (int((x1 + x2) / 2), int((y1 + y2) / 2)),
-            }
+                    mask = mask_set
 
-        # Try JSON array
-        json_match = re.search(r'\[.*\]', parse_text, re.DOTALL)
-        if json_match:
-            try:
-                items = json.loads(json_match.group())
-                if isinstance(items, list):
-                    for item in items:
-                        r = _extract_item(item)
-                        if r:
-                            results.append(r)
-                    if results:
-                        return results
-            except json.JSONDecodeError:
-                pass
+                if isinstance(mask, torch.Tensor):
+                    mask = mask.cpu().numpy()
+                mask = mask.astype(np.uint8)
 
-        # Try single JSON object { "bbox_2d": ... }
-        json_obj_match = re.search(r'\{[^{}]*"bbox_2d"[^{}]*\}', parse_text)
-        if json_obj_match:
-            try:
-                item = json.loads(json_obj_match.group())
-                r = _extract_item(item)
-                if r:
-                    results.append(r)
-                    return results
-            except json.JSONDecodeError:
-                pass
+                if mask.shape[:2] != (h, w):
+                    mask = cv2.resize(mask, (w, h), interpolation=cv2.INTER_NEAREST)
 
-        # Fallback: regex for bbox_2d values
-        for m in re.finditer(
-            r'"?bbox_2d"?\s*:\s*\[\s*([\d.]+)\s*,\s*([\d.]+)\s*,\s*([\d.]+)\s*,\s*([\d.]+)\s*\]',
-            parse_text
-        ):
-            r = _extract_item({"bbox_2d": [m.group(1), m.group(2), m.group(3), m.group(4)]})
-            if r:
-                results.append(r)
+                if mask.sum() < 10:
+                    print(f"  [Sa2VA] seg[{seg_idx}] mask too small, skipping")
+                    continue
+
+                ys, xs = np.where(mask > 0)
+                x1, y1 = float(xs.min()), float(ys.min())
+                x2, y2 = float(xs.max()), float(ys.max())
+
+                results.append({
+                    "label": "sa2va_seg",
+                    "score": -1.0,
+                    "bbox": [x1, y1, x2, y2],
+                    "point": (int((x1 + x2) / 2), int((y1 + y2) / 2)),
+                })
+                print(f"  [Sa2VA] seg[{seg_idx}] bbox=({x1:.0f},{y1:.0f},{x2:.0f},{y2:.0f})")
+        else:
+            print(f"  [Sa2VA] no [SEG] token in output")
+
         return results
 
 
@@ -509,9 +478,9 @@ def draw_detections(image: np.ndarray, backend: str, detections: List[Dict],
             cv2.circle(vis, (px, py), 8, (255, 255, 255), 1)
 
         tag = f"{name}"
-        if score < 1.0:
+        if 0 <= score < 1.0:
             tag += f" {score:.2f}"
-        if label and label != "molmo_point":
+        if label and label not in ("molmo_point", "molmo+sam2", "sa2va_seg"):
             tag += f" [{label}]"
         rank = f"#{i}" if len(items) > 1 else ""
         text = f"{tag}{rank}"
@@ -535,24 +504,24 @@ def main():
     parser.add_argument("--output-dir", default="benchmark/detection_compare/")
     parser.add_argument("--tasks", nargs="*", default=None)
     parser.add_argument("--backends", nargs="+",
-                        choices=["molmo", "groundingdino", "qwen"],
-                        default=["molmo", "groundingdino", "qwen"])
+                        choices=["groundingdino", "molmo", "gdino_sam2", "sa2va"],
+                        default=["groundingdino", "molmo", "gdino_sam2", "sa2va"])
     parser.add_argument("--device", default=None)
-    # Molmo
+    # Molmo + SAM2
     parser.add_argument("--molmo-model", default="allenai/Molmo-7B-D-0924")
+    parser.add_argument("--sam-path", default=None,
+                        help="SAM2 checkpoints directory (required for molmo and gdino_sam2). "
+                             "e.g. ./MineStudio/minestudio/utils/realtime_sam/checkpoints")
+    parser.add_argument("--sam-variant", default="base",
+                        choices=["large", "base", "small", "tiny"])
     # GroundingDINO
     parser.add_argument("--gdino-config",
                         default="/opt/conda/envs/rocket2/lib/python3.10/site-packages/groundingdino/config/GroundingDINO_SwinT_OGC.py")
     parser.add_argument("--gdino-weights", default=None)
     parser.add_argument("--gdino-box-threshold", type=float, default=0.25)
     parser.add_argument("--gdino-text-threshold", type=float, default=0.20)
-    # Qwen
-    parser.add_argument("--qwen-model", default="Qwen/Qwen3.5-27B")
-    parser.add_argument("--qwen-quant", default="none", choices=["4bit", "8bit", "none"],
-                        help="Quantization (only for local loading, not API mode)")
-    parser.add_argument("--qwen-api", default=None,
-                        help="OpenAI-compatible API base URL (e.g. http://localhost:8000/v1). "
-                             "Use with SGLang/vLLM. Skips local model loading.")
+    # Sa2VA
+    parser.add_argument("--sa2va-model", default="HarborYuan/R-Sa2VA-Qwen3VL-4B-RL")
     # Display
     parser.add_argument("--top-k", type=int, default=1,
                         help="Draw top-K detections per model (0=all, default=1)")
@@ -569,18 +538,31 @@ def main():
     os.makedirs(args.output_dir, exist_ok=True)
 
     detectors = {}
-    if "molmo" in args.backends:
-        detectors["molmo"] = MolmoDetector(args.molmo_model, device)
-    if "groundingdino" in args.backends:
-        detectors["groundingdino"] = GDinoDetector(
+    gdino = None
+
+    if "groundingdino" in args.backends or "gdino_sam2" in args.backends:
+        gdino = GDinoDetector(
             args.gdino_config, args.gdino_weights,
             args.gdino_box_threshold, args.gdino_text_threshold, device,
         )
-    if "qwen" in args.backends:
-        q = args.qwen_quant if args.qwen_quant != "none" else None
-        detectors["qwen"] = QwenVLDetector(
-            args.qwen_model, device, quant=q, api_base=args.qwen_api,
+        if "groundingdino" in args.backends:
+            detectors["groundingdino"] = gdino
+
+    if "molmo" in args.backends:
+        detectors["molmo"] = MolmoDetector(
+            args.molmo_model, device,
+            sam_path=args.sam_path, sam_variant=args.sam_variant,
         )
+
+    if "gdino_sam2" in args.backends:
+        if not args.sam_path:
+            parser.error("--sam-path is required for gdino_sam2 backend")
+        detectors["gdino_sam2"] = GDinoSAM2Detector(
+            gdino, args.sam_path, args.sam_variant, device,
+        )
+
+    if "sa2va" in args.backends:
+        detectors["sa2va"] = Sa2VADetector(args.sa2va_model, device)
 
     summary = []
 

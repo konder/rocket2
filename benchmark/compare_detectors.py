@@ -360,7 +360,8 @@ class QwenVLDetector:
         pil = PILImage.fromarray(image)
         text_prompt = self._build_prompt(prompt, w, h)
         messages = [{"role": "user", "content": [
-            {"type": "image"}, {"type": "text", "text": text_prompt},
+            {"type": "image"},
+            {"type": "text", "text": text_prompt},
         ]}]
 
         try:
@@ -368,17 +369,31 @@ class QwenVLDetector:
         except Exception:
             dev = "cuda" if torch.cuda.is_available() else "cpu"
 
-        try:
-            inputs = self.processor.apply_chat_template(
-                messages, add_generation_prompt=True,
-                tokenize=True, return_dict=True, return_tensors="pt",
-                images=[pil], enable_thinking=False,
+        # Method 1: apply_chat_template with images= kwarg (Qwen2.5-VL style)
+        inputs = None
+        for kwargs in [
+            {"images": [pil], "enable_thinking": False},
+            {"images": [pil]},
+            {},
+        ]:
+            try:
+                inputs = self.processor.apply_chat_template(
+                    messages, add_generation_prompt=True,
+                    tokenize=True, return_dict=True, return_tensors="pt",
+                    **kwargs,
+                )
+                break
+            except (TypeError, KeyError):
+                continue
+
+        # Method 2: two-step — text template then processor call
+        if inputs is None:
+            print(f"  [QwenVL] Falling back to two-step processing")
+            text = self.processor.apply_chat_template(
+                messages, tokenize=False, add_generation_prompt=True,
             )
-        except TypeError:
-            inputs = self.processor.apply_chat_template(
-                messages, add_generation_prompt=True,
-                tokenize=True, return_dict=True, return_tensors="pt",
-                images=[pil],
+            inputs = self.processor(
+                text=[text], images=[pil], return_tensors="pt",
             )
 
         inputs = {k: v.to(dev) if isinstance(v, torch.Tensor) else v

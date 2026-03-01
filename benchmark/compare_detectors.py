@@ -287,14 +287,23 @@ class QwenVLDetector:
             gpu_mem = torch.cuda.get_device_properties(0).total_memory / (1024**3)
             extra["max_memory"] = {0: f"{int(gpu_mem * 0.85)}GiB", "cpu": "48GiB"}
 
-        if "qwen2_5_vl" in model_type or "qwen2_vl" in model_type:
+        is_vl = any(t in model_type for t in ["qwen2_5_vl", "qwen2_vl", "qwen3_vl"])
+        if is_vl:
             from transformers import AutoModelForImageTextToText
+            print(f"[QwenVL] Loading as AutoModelForImageTextToText ({model_type})")
             return AutoModelForImageTextToText.from_pretrained(
                 model_id, device_map="auto", **extra,
             ).eval()
-        else:
+        elif "qwen3" in model_type:
             from transformers import AutoModelForCausalLM
+            print(f"[QwenVL] Loading as AutoModelForCausalLM ({model_type})")
             return AutoModelForCausalLM.from_pretrained(
+                model_id, device_map="auto", trust_remote_code=True, **extra,
+            ).eval()
+        else:
+            from transformers import AutoModelForImageTextToText
+            print(f"[QwenVL] Loading as AutoModelForImageTextToText (generic)")
+            return AutoModelForImageTextToText.from_pretrained(
                 model_id, device_map="auto", trust_remote_code=True, **extra,
             ).eval()
 

@@ -383,7 +383,7 @@ class Sa2VADetector:
 
         print(f"[Sa2VA] Loading {model_id} ...")
         self.model = AutoModelForCausalLM.from_pretrained(
-            model_id, torch_dtype=torch.bfloat16,
+            model_id, torch_dtype=torch.float32,
             trust_remote_code=True,
         ).to(device).eval()
 
@@ -391,14 +391,6 @@ class Sa2VADetector:
             model_id, trust_remote_code=True,
         )
         self.processor = None
-
-        # Sa2VA's extract_feature does pixel_values.to(device) but doesn't
-        # cast dtype, causing mismatch with bfloat16 weights.
-        _orig_extract = self.model.extract_feature
-        def _extract_bf16(pixel_values):
-            return _orig_extract(pixel_values.to(dtype=torch.bfloat16))
-        self.model.extract_feature = _extract_bf16
-
         print(f"[Sa2VA] Ready on {device}")
 
     @staticmethod

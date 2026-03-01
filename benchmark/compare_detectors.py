@@ -380,30 +380,51 @@ class Sa2VADetector:
         self.model_id = model_id
 
         print(f"[Sa2VA] Loading {model_id} ...")
+        self._apply_compat_patches()
 
-        # Sa2VA's SAM2 init calls torch.linspace().item() which fails on
-        # meta tensors created by transformers' init_empty_weights() context.
-        # Patch torch.linspace to always produce CPU tensors during loading.
-        _orig_linspace = torch.linspace
-        def _cpu_linspace(*args, **kwargs):
-            if "device" not in kwargs or str(kwargs.get("device")) == "meta":
-                kwargs["device"] = "cpu"
-            return _orig_linspace(*args, **kwargs)
-        torch.linspace = _cpu_linspace
+        self.model = AutoModelForCausalLM.from_pretrained(
+            model_id, torch_dtype=torch.bfloat16,
+            trust_remote_code=True,
+        ).to(device).eval()
 
-        try:
-            self.model = AutoModelForCausalLM.from_pretrained(
-                model_id, torch_dtype=torch.bfloat16,
-                trust_remote_code=True,
-            ).to(device).eval()
-        finally:
-            torch.linspace = _orig_linspace
+        self._remove_compat_patches()
 
         self.processor = AutoProcessor.from_pretrained(
             model_id, trust_remote_code=True,
         )
         self.tokenizer = None
         print(f"[Sa2VA] Ready on {device}")
+
+    @staticmethod
+    def _apply_compat_patches():
+        """Temporary patches for Sa2VA + latest transformers compatibility."""
+        import transformers
+
+        # Patch 1: torch.linspace creates meta tensors inside
+        # init_empty_weights(), but SAM2 calls .item() on them.
+        Sa2VADetector._orig_linspace = torch.linspace
+        def _cpu_linspace(*args, **kwargs):
+            if "device" not in kwargs or str(kwargs.get("device")) == "meta":
+                kwargs["device"] = "cpu"
+            return Sa2VADetector._orig_linspace(*args, **kwargs)
+        torch.linspace = _cpu_linspace
+
+        # Patch 2: latest transformers expects all_tied_weights_keys on model,
+        # but Sa2VA's custom model class doesn't define it.
+        _orig_finalize = transformers.modeling_utils.PreTrainedModel._finalize_model_loading
+        @classmethod
+        def _patched_finalize(cls, model, *args, **kwargs):
+            if not hasattr(model, "all_tied_weights_keys"):
+                model.all_tied_weights_keys = {}
+            return _orig_finalize.__func__(cls, model, *args, **kwargs)
+        Sa2VADetector._orig_finalize = _orig_finalize
+        transformers.modeling_utils.PreTrainedModel._finalize_model_loading = _patched_finalize
+
+    @staticmethod
+    def _remove_compat_patches():
+        import transformers
+        torch.linspace = Sa2VADetector._orig_linspace
+        transformers.modeling_utils.PreTrainedModel._finalize_model_loading = Sa2VADetector._orig_finalize
 
     @staticmethod
     def _build_prompt(prompt: str) -> str:

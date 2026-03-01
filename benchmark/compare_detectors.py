@@ -380,11 +380,24 @@ class Sa2VADetector:
         self.model_id = model_id
 
         print(f"[Sa2VA] Loading {model_id} ...")
-        self.model = AutoModelForCausalLM.from_pretrained(
-            model_id, torch_dtype=torch.bfloat16,
-            trust_remote_code=True,
-            low_cpu_mem_usage=False,
-        ).to(device).eval()
+
+        # Sa2VA's SAM2 init calls torch.linspace().item() which fails on
+        # meta tensors created by transformers' init_empty_weights() context.
+        # Patch torch.linspace to always produce CPU tensors during loading.
+        _orig_linspace = torch.linspace
+        def _cpu_linspace(*args, **kwargs):
+            if "device" not in kwargs or str(kwargs.get("device")) == "meta":
+                kwargs["device"] = "cpu"
+            return _orig_linspace(*args, **kwargs)
+        torch.linspace = _cpu_linspace
+
+        try:
+            self.model = AutoModelForCausalLM.from_pretrained(
+                model_id, torch_dtype=torch.bfloat16,
+                trust_remote_code=True,
+            ).to(device).eval()
+        finally:
+            torch.linspace = _orig_linspace
 
         self.processor = AutoProcessor.from_pretrained(
             model_id, trust_remote_code=True,

@@ -391,6 +391,17 @@ class Sa2VADetector:
             model_id, trust_remote_code=True,
         )
         self.processor = None
+
+        # vision_model outputs float32 but mlp1 weights are bfloat16.
+        # Add a pre-hook to cast input dtype automatically.
+        def _cast_to_param_dtype(module, args):
+            target = next(module.parameters()).dtype
+            return tuple(
+                a.to(target) if isinstance(a, torch.Tensor) and a.dtype != target else a
+                for a in args
+            )
+        self.model.mlp1.register_forward_pre_hook(_cast_to_param_dtype)
+
         print(f"[Sa2VA] Ready on {device}")
 
     @staticmethod

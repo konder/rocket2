@@ -314,9 +314,8 @@ class QwenVLDetector:
                 obj_name = obj_name[len(prefix):].strip()
                 break
         return (
-            f'Detect all "{obj_name}" in this Minecraft game screenshot. '
-            f'Return JSON array: [{{"bbox_2d": [x1,y1,x2,y2], "label": "name", "score": 0.9}}]. '
-            f"Coordinates are absolute pixel values for a {w}x{h} image."
+            f'Detect {obj_name} in this image and return the bounding box coordinates. '
+            f'Output format: {{"bbox_2d": [x1, y1, x2, y2], "label": "{obj_name}"}}'
         )
 
     def detect(self, image: np.ndarray, prompt: str) -> List[Dict]:
@@ -426,40 +425,64 @@ class QwenVLDetector:
         code_match = re.search(r'```(?:json)?\s*(.*?)```', text, re.DOTALL)
         parse_text = code_match.group(1).strip() if code_match else text
 
+        def _extract_item(item: dict) -> Optional[Dict]:
+            bbox = item.get("bbox_2d", item.get("bbox", None))
+            if not bbox or len(bbox) != 4:
+                return None
+            x1, y1, x2, y2 = [float(v) for v in bbox]
+            # Qwen VL may output coords in 0-1000 normalized range
+            if all(0 <= v <= 1000 for v in [x1, y1, x2, y2]) and max(x1, y1, x2, y2) > 1.5:
+                if x2 <= 1.0 and y2 <= 1.0:
+                    pass  # already in pixel range [0,1]
+                else:
+                    x1, y1, x2, y2 = x1 / 1000 * w, y1 / 1000 * h, x2 / 1000 * w, y2 / 1000 * h
+            x1 = np.clip(x1, 0, w - 1)
+            y1 = np.clip(y1, 0, h - 1)
+            x2 = np.clip(x2, 0, w - 1)
+            y2 = np.clip(y2, 0, h - 1)
+            score = float(item.get("score", item.get("confidence", 1.0)))
+            label = item.get("label", "?")
+            return {
+                "label": label, "score": score,
+                "bbox": [x1, y1, x2, y2],
+                "point": (int((x1 + x2) / 2), int((y1 + y2) / 2)),
+            }
+
+        # Try JSON array
         json_match = re.search(r'\[.*\]', parse_text, re.DOTALL)
         if json_match:
             try:
                 items = json.loads(json_match.group())
                 if isinstance(items, list):
                     for item in items:
-                        bbox = item.get("bbox_2d", item.get("bbox", None))
-                        if bbox and len(bbox) == 4:
-                            x1, y1, x2, y2 = [float(v) for v in bbox]
-                            x1 = np.clip(x1, 0, w - 1)
-                            y1 = np.clip(y1, 0, h - 1)
-                            x2 = np.clip(x2, 0, w - 1)
-                            y2 = np.clip(y2, 0, h - 1)
-                            score = float(item.get("score", item.get("confidence", 0.5)))
-                            label = item.get("label", "?")
-                            results.append({
-                                "label": label,
-                                "score": score,
-                                "bbox": [x1, y1, x2, y2],
-                                "point": (int((x1 + x2) / 2), int((y1 + y2) / 2)),
-                            })
-                return results
+                        r = _extract_item(item)
+                        if r:
+                            results.append(r)
+                    if results:
+                        return results
             except json.JSONDecodeError:
                 pass
 
+        # Try single JSON object { "bbox_2d": ... }
+        json_obj_match = re.search(r'\{[^{}]*"bbox_2d"[^{}]*\}', parse_text)
+        if json_obj_match:
+            try:
+                item = json.loads(json_obj_match.group())
+                r = _extract_item(item)
+                if r:
+                    results.append(r)
+                    return results
+            except json.JSONDecodeError:
+                pass
+
+        # Fallback: regex for bbox_2d values
         for m in re.finditer(
-            r'"?bbox_2d"?\s*:\s*\[\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)\s*\]',
+            r'"?bbox_2d"?\s*:\s*\[\s*([\d.]+)\s*,\s*([\d.]+)\s*,\s*([\d.]+)\s*,\s*([\d.]+)\s*\]',
             parse_text
         ):
-            x1, y1, x2, y2 = int(m.group(1)), int(m.group(2)), int(m.group(3)), int(m.group(4))
-            results.append({
-                "label": "detected",
-                "score": 0.5,
-                "bbox": [float(x1), float(y1), float(x2), float(y2)],
+            r = _extract_item({"bbox_2d": [m.group(1), m.group(2), m.group(3), m.group(4)]})
+            if r:
+                results.append(r)
                 "point": ((x1 + x2) // 2, (y1 + y2) // 2),
             })
         return results

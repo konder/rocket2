@@ -1,22 +1,13 @@
 """
-Compare goal detection across multiple backends:
+Compare goal detection across multiple backends (tool; benchmark_eval uses GroundingDino):
   - groundingdino : GroundingDINO direct bbox
   - molmo         : Molmo pointing + SAM2 segmentation → bbox
   - gdino_sam2    : GroundingDINO bbox → SAM2 box-prompt refine → bbox
   - sa2va         : R-Sa2VA (SAM2 + VLM) text-prompted segmentation → bbox
   - qwen_api      : Qwen VL via vLLM/sglang OpenAI-compatible API → bbox
 
-Usage (Qwen VL API only — requires a running vLLM server):
-    python benchmark/compare_detectors.py \
-        --task-file benchmark/eval_tasks_paper.yaml \
-        --image-dir benchmark/first_frames/ \
-        --output-dir benchmark/detection_compare/ \
-        --backends qwen_api \
-        --qwen-api-base http://localhost:8000 \
-        --device cuda
-
-Usage (DINO vs Qwen VL API):
-    python benchmark/compare_detectors.py \
+Usage (from repo root):
+    python benchmark/tools/compare_detectors.py \
         --task-file benchmark/eval_tasks_paper.yaml \
         --image-dir benchmark/first_frames/ \
         --output-dir benchmark/detection_compare/ \
@@ -36,7 +27,7 @@ import numpy as np
 import torch
 from typing import List, Dict, Optional, Tuple
 
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), "../.."))
 
 COLORS = {
     "groundingdino": (0, 200, 0),  # green (BGR)

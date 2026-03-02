@@ -1,14 +1,17 @@
 """
 Capture the first frame of each task in eval_tasks_paper.yaml.
 
+Used as input for compare_detectors and judge_detections (benchmark/tools/).
+Benchmark evaluation itself uses GroundingDino in benchmark_eval.py.
+
 Usage:
-    python benchmark/capture_first_frames.py \
+    python benchmark/tools/capture_first_frames.py \
         --task-file benchmark/eval_tasks_paper.yaml \
         --output-dir benchmark/first_frames/ \
         --tasks mine_coal collect_wood hunt_cowonly
-    
+
     # Capture all tasks:
-    python benchmark/capture_first_frames.py \
+    python benchmark/tools/capture_first_frames.py \
         --task-file benchmark/eval_tasks_paper.yaml \
         --output-dir benchmark/first_frames/
 """
@@ -21,7 +24,7 @@ import argparse
 import cv2
 import numpy as np
 
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), "../.."))
 
 from minestudio.simulator import MinecraftSim
 from minestudio.simulator.callbacks import load_callbacks_from_config, PrevActionCallback

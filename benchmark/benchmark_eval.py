@@ -2,21 +2,32 @@
 ROCKET-2 Benchmark Evaluation Script
 
 Runs automated evaluation of ROCKET-2 across multiple Minecraft tasks.
+Goal detection uses GroundingDino by default (--goal-backend groundingdino).
 Supports two task sources:
   - Paper benchmark: env_conf/ YAML files (16 tasks from ROCKET-2 paper)
   - Full benchmark: MineStudio built-in simple tasks (76 tasks)
 
+Helper tools (detector comparison / VLM judge) live in benchmark/tools/:
+  - capture_first_frames.py, compare_detectors.py, judge_detections.py
+
 Usage:
-    # macOS local debug (mock Molmo, 1 episode per task)
+    # Default: GroundingDino goal backend
+    python benchmark/benchmark_eval.py \\
+        --task-file benchmark/eval_tasks_paper.yaml \\
+        --episodes 3 \\
+        --output-dir benchmark/results/
+
+    # macOS local debug (mock goal, no detector)
     python benchmark/benchmark_eval.py \\
         --task-file benchmark/eval_tasks_paper.yaml \\
         --molmo-mock \\
         --episodes 1 \\
         --output-dir benchmark/results/
 
-    # Linux server (real Molmo, 32 episodes, parallel)
+    # Optional: Molmo+SAM2 goal backend
     python benchmark/benchmark_eval.py \\
         --task-file benchmark/eval_tasks_paper.yaml \\
+        --goal-backend molmo \\
         --molmo-model allenai/Molmo-7B-D-0924 \\
         --sam-path ./MineStudio/minestudio/utils/realtime_sam/checkpoints \\
         --episodes 32 \\
@@ -482,9 +493,9 @@ def main():
     goal_group = parser.add_argument_group("Goal generation")
     goal_group.add_argument(
         "--goal-backend",
-        default="molmo",
+        default="groundingdino",
         choices=["molmo", "groundingdino"],
-        help="Goal point backend: molmo or groundingdino (default: molmo)",
+        help="Goal point backend: groundingdino (default) or molmo",
     )
     goal_group.add_argument("--molmo-mock", action="store_true",
                             help="Use mock goal generator (center point, no Molmo)")

@@ -1,26 +1,19 @@
 """
-Use a VLM to judge which detection candidate is best.
+Use a VLM to judge which detection candidate is best (tool; input from compare_detectors.py).
 
-Reads detection_results.json from compare_detectors.py, draws all
-candidates as numbered boxes on the original image, and asks the
-VLM to pick the best one for each task.
+Reads detection_results.json from benchmark/tools/compare_detectors.py, draws all
+candidates as numbered boxes on the original image, and asks the VLM to pick the best.
 
-Usage (vLLM API — recommended, e.g. Qwen3.5-VL-27B):
-    python benchmark/judge_detections.py \
+Usage (from repo root):
+    python benchmark/tools/judge_detections.py \
         --task-file benchmark/eval_tasks_paper.yaml \
         --image-dir benchmark/first_frames/ \
         --results-json benchmark/detection_compare/detection_results.json \
         --output-dir benchmark/judge_results/ \
         --api-base http://localhost:8000
 
-Usage (local model):
-    python benchmark/judge_detections.py \
-        --task-file benchmark/eval_tasks_paper.yaml \
-        --image-dir benchmark/first_frames/ \
-        --results-json benchmark/detection_compare/detection_results.json \
-        --output-dir benchmark/judge_results/ \
-        --model Qwen/Qwen3-VL-8B-Instruct-FP8 \
-        --device cuda
+    # Local model:
+    python benchmark/tools/judge_detections.py ... --model Qwen/Qwen3-VL-8B-Instruct-FP8 --device cuda
 """
 
 import os
@@ -33,7 +26,7 @@ import numpy as np
 import torch
 from typing import List, Dict, Optional, Tuple
 
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), "../.."))
 
 BOX_COLORS = [
     (0, 0, 255),    # #1 red

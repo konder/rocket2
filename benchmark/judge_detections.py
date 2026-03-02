@@ -1,27 +1,26 @@
 """
-Use a VLM (Qwen3-VL) to judge which detection candidate is best.
+Use a VLM to judge which detection candidate is best.
 
 Reads detection_results.json from compare_detectors.py, draws all
 candidates as numbered boxes on the original image, and asks the
 VLM to pick the best one for each task.
 
+Usage (vLLM API — recommended, e.g. Qwen3.5-VL-27B):
+    python benchmark/judge_detections.py \
+        --task-file benchmark/eval_tasks_paper.yaml \
+        --image-dir benchmark/first_frames/ \
+        --results-json benchmark/detection_compare/detection_results.json \
+        --output-dir benchmark/judge_results/ \
+        --api-base http://localhost:8000
+
 Usage (local model):
     python benchmark/judge_detections.py \
         --task-file benchmark/eval_tasks_paper.yaml \
         --image-dir benchmark/first_frames/ \
-        --results-json benchmark/detection_compare/molmo_dino/detection_results.json \
+        --results-json benchmark/detection_compare/detection_results.json \
         --output-dir benchmark/judge_results/ \
         --model Qwen/Qwen3-VL-8B-Instruct-FP8 \
         --device cuda
-
-Usage (API mode via SGLang/vLLM):
-    python benchmark/judge_detections.py \
-        --task-file benchmark/eval_tasks_paper.yaml \
-        --image-dir benchmark/first_frames/ \
-        --results-json benchmark/detection_compare/molmo_dino/detection_results.json \
-        --output-dir benchmark/judge_results/ \
-        --model Qwen/Qwen3-VL-8B-Instruct-FP8 \
-        --api-base http://localhost:8000/v1
 """
 
 import os
@@ -52,6 +51,7 @@ SOURCE_NAMES = {
     "molmo": "Molmo+SAM2",
     "gdino_sam2": "DINO+SAM2",
     "sa2va": "R-Sa2VA",
+    "qwen_api": "Qwen-VL",
 }
 
 
@@ -100,7 +100,7 @@ def build_judge_prompt(task_prompt: str, candidates: List[Dict]) -> str:
         )
     lines += [
         "",
-        "Note: Molmo+SAM2 and DINO+SAM2 use SAM2 to produce precise bounding boxes from segmentation masks. R-Sa2VA uses an end-to-end VLM+SAM2 architecture for text-prompted segmentation. GroundingDINO outputs bounding boxes directly.",
+        "Note: Molmo+SAM2 and DINO+SAM2 use SAM2 to produce precise bounding boxes from segmentation masks. R-Sa2VA uses an end-to-end VLM+SAM2 architecture for text-prompted segmentation. GroundingDINO outputs bounding boxes directly. Qwen-VL is a vision-language model that detects objects via text prompt.",
         "",
         "Which box best matches the task target? If none is correct, reply 0.",
         "Reply with ONLY the box number (e.g. 1, 2, or 0).",
@@ -127,10 +127,22 @@ class JudgeVLM:
         self.api_base = api_base
 
         if api_base:
-            print(f"[Judge] API mode → {api_base}")
+            from openai import OpenAI
+            base = api_base.rstrip("/")
+            if not base.endswith("/v1"):
+                base += "/v1"
+            self.client = OpenAI(base_url=base, api_key="EMPTY")
+
+            if not model_id:
+                models = self.client.models.list()
+                self.model_id = models.data[0].id if models.data else "default"
+                print(f"[Judge] Auto-detected model: {self.model_id}")
+
+            print(f"[Judge] API mode → {api_base}  model={self.model_id}")
             self.model = None
             self.processor = None
         else:
+            self.client = None
             from transformers import AutoModelForImageTextToText, AutoProcessor, AutoConfig
             config = AutoConfig.from_pretrained(model_id, trust_remote_code=True)
             model_type = getattr(config, "model_type", "")
@@ -148,30 +160,28 @@ class JudgeVLM:
             print(f"[Judge] Ready on {device}")
 
     def judge(self, image_rgb: np.ndarray, prompt: str) -> str:
-        if self.api_base:
+        if self.client is not None:
             return self._judge_api(image_rgb, prompt)
         return self._judge_local(image_rgb, prompt)
 
     def _judge_api(self, image_rgb: np.ndarray, prompt: str) -> str:
         import base64
-        from openai import OpenAI
 
         _, buf = cv2.imencode(".png", cv2.cvtColor(image_rgb, cv2.COLOR_RGB2BGR))
         b64 = base64.b64encode(buf).decode("utf-8")
 
-        client = OpenAI(base_url=self.api_base, api_key="EMPTY")
-        resp = client.chat.completions.create(
+        resp = self.client.chat.completions.create(
             model=self.model_id,
             messages=[{
                 "role": "user",
                 "content": [
-                    {"type": "image_url", "image_url": {"url": f"data:image/png;base64,{b64}"}},
+                    {"type": "image_url",
+                     "image_url": {"url": f"data:image/png;base64,{b64}"}},
                     {"type": "text", "text": prompt},
                 ],
             }],
-            max_tokens=256,
+            max_tokens=512,
             temperature=0.1,
-            extra_body={"chat_template_kwargs": {"enable_thinking": False}},
         )
         return resp.choices[0].message.content or ""
 
@@ -232,8 +242,10 @@ def main():
                         help="detection_results.json from compare_detectors.py")
     parser.add_argument("--output-dir", default="benchmark/judge_results/")
     parser.add_argument("--tasks", nargs="*", default=None)
-    parser.add_argument("--model", default="Qwen/Qwen3-VL-8B-Instruct-FP8")
-    parser.add_argument("--api-base", default=None)
+    parser.add_argument("--model", default=None,
+                        help="Model name (auto-detected from vLLM server if omitted)")
+    parser.add_argument("--api-base", default="http://localhost:8000",
+                        help="vLLM/sglang API base URL (set to empty string for local mode)")
     parser.add_argument("--device", default="cuda")
     parser.add_argument("--top-k", type=int, default=2,
                         help="Use top-K detections from each backend as candidates")
@@ -250,7 +262,14 @@ def main():
         task_names = set(args.tasks)
 
     os.makedirs(args.output_dir, exist_ok=True)
-    judge = JudgeVLM(args.model, args.device, api_base=args.api_base)
+
+    api_base = args.api_base if args.api_base else None
+    model_id = args.model or ""
+    if api_base and not model_id:
+        model_id = ""
+    elif not api_base and not model_id:
+        model_id = "Qwen/Qwen3-VL-8B-Instruct-FP8"
+    judge = JudgeVLM(model_id, args.device, api_base=api_base)
 
     final_results = []
 
@@ -271,7 +290,7 @@ def main():
         print(f"{'='*60}")
 
         candidates = []
-        for backend in ["groundingdino", "molmo", "gdino_sam2", "sa2va"]:
+        for backend in ["groundingdino", "molmo", "gdino_sam2", "sa2va", "qwen_api"]:
             dets = task_entry.get(backend, [])
             source = SOURCE_NAMES.get(backend, backend)
             for det in dets[:args.top_k]:

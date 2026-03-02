@@ -519,10 +519,14 @@ class QwenVLAPIDetector:
                         {"type": "text", "text": text},
                     ],
                 }],
-                max_tokens=1024,
+                max_tokens=4096,
                 temperature=0.0,
             )
-            content = resp.choices[0].message.content or ""
+            msg = resp.choices[0].message
+            content = msg.content or ""
+            reasoning = getattr(msg, "reasoning_content", None) or ""
+            if reasoning:
+                content = f"<think>{reasoning}</think>\n{content}"
         except Exception as e:
             print(f"  [QwenVL-API] API error: {e}")
             return []

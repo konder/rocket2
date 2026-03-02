@@ -180,10 +180,15 @@ class JudgeVLM:
                     {"type": "text", "text": prompt},
                 ],
             }],
-            max_tokens=512,
+            max_tokens=4096,
             temperature=0.1,
         )
-        return resp.choices[0].message.content or ""
+        msg = resp.choices[0].message
+        content = msg.content or ""
+        reasoning = getattr(msg, "reasoning_content", None) or ""
+        if reasoning:
+            content = f"<think>{reasoning}</think>\n{content}"
+        return content
 
     def _judge_local(self, image_rgb: np.ndarray, prompt: str) -> str:
         from PIL import Image as PILImage

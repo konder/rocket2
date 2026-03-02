@@ -4,26 +4,25 @@ Compare goal detection across multiple backends:
   - molmo         : Molmo pointing + SAM2 segmentation → bbox
   - gdino_sam2    : GroundingDINO bbox → SAM2 box-prompt refine → bbox
   - sa2va         : R-Sa2VA (SAM2 + VLM) text-prompted segmentation → bbox
+  - qwen_api      : Qwen VL via vLLM/sglang OpenAI-compatible API → bbox
 
-Usage (all four):
+Usage (Qwen VL API only — requires a running vLLM server):
     python benchmark/compare_detectors.py \
         --task-file benchmark/eval_tasks_paper.yaml \
         --image-dir benchmark/first_frames/ \
         --output-dir benchmark/detection_compare/ \
-        --backends groundingdino molmo gdino_sam2 sa2va \
-        --sam-path ./MineStudio/minestudio/utils/realtime_sam/checkpoints \
+        --backends qwen_api \
+        --qwen-api-base http://localhost:8000 \
         --device cuda
 
-Usage (DINO vs DINO+SAM2 only):
+Usage (DINO vs Qwen VL API):
     python benchmark/compare_detectors.py \
         --task-file benchmark/eval_tasks_paper.yaml \
         --image-dir benchmark/first_frames/ \
         --output-dir benchmark/detection_compare/ \
-        --backends groundingdino gdino_sam2 \
-        --sam-path ./MineStudio/minestudio/utils/realtime_sam/checkpoints
-
-Sa2VA (ByteDance/Sa2VA-4B) uses InternVL2.5 + legacy transformers,
-so it can run in the same environment as Molmo/GroundingDINO.
+        --backends groundingdino qwen_api \
+        --qwen-api-base http://localhost:8000 \
+        --device cuda
 """
 
 import os
@@ -44,6 +43,7 @@ COLORS = {
     "molmo": (0, 0, 255),          # red
     "gdino_sam2": (0, 255, 255),   # yellow
     "sa2va": (255, 100, 0),        # blue
+    "qwen_api": (255, 0, 255),     # magenta
 }
 
 DISPLAY_NAMES = {
@@ -51,6 +51,7 @@ DISPLAY_NAMES = {
     "molmo": "Molmo+SAM2",
     "gdino_sam2": "DINO+SAM2",
     "sa2va": "R-Sa2VA",
+    "qwen_api": "Qwen-VL",
 }
 
 
@@ -464,6 +465,144 @@ class Sa2VADetector:
 
 
 # ---------------------------------------------------------------------------
+# Qwen VL via OpenAI-compatible API (vLLM / sglang)
+# ---------------------------------------------------------------------------
+class QwenVLAPIDetector:
+    """Call a Qwen VL model served by vLLM/sglang to detect objects and return bboxes."""
+
+    def __init__(self, api_base: str, model_name: str):
+        from openai import OpenAI
+        self.client = OpenAI(
+            base_url=api_base.rstrip("/") + "/v1",
+            api_key="EMPTY",
+        )
+        self.model_name = model_name
+        print(f"[QwenVL-API] model={model_name}  api={api_base}")
+
+    @staticmethod
+    def _extract_object(prompt: str) -> str:
+        obj = prompt.strip()
+        for prefix in ["Point to the", "Point to"]:
+            if obj.lower().startswith(prefix.lower()):
+                obj = obj[len(prefix):].strip()
+                break
+        return obj
+
+    def detect(self, image: np.ndarray, prompt: str) -> List[Dict]:
+        import base64
+        import io
+        from PIL import Image as PILImage
+
+        h, w = image.shape[:2]
+        obj = self._extract_object(prompt)
+
+        pil = PILImage.fromarray(image)
+        buf = io.BytesIO()
+        pil.save(buf, format="PNG")
+        b64 = base64.b64encode(buf.getvalue()).decode()
+
+        text = (
+            f'Detect "{obj}" in this Minecraft screenshot ({w}x{h} pixels).\n'
+            f'Output as JSON: [{{"label":"name","bbox":[x1,y1,x2,y2]}}]\n'
+            f'Coordinates are absolute pixels. If not found, output [].'
+        )
+        print(f"  [QwenVL-API] prompt: {text}")
+
+        try:
+            resp = self.client.chat.completions.create(
+                model=self.model_name,
+                messages=[{
+                    "role": "user",
+                    "content": [
+                        {"type": "image_url",
+                         "image_url": {"url": f"data:image/png;base64,{b64}"}},
+                        {"type": "text", "text": text},
+                    ],
+                }],
+                max_tokens=1024,
+                temperature=0.0,
+            )
+            content = resp.choices[0].message.content or ""
+        except Exception as e:
+            print(f"  [QwenVL-API] API error: {e}")
+            return []
+
+        print(f"  [QwenVL-API] response: {content[:500]}")
+
+        results = self._parse_response(content, w, h)
+        for i, r in enumerate(results):
+            bbox = r["bbox"]
+            print(f"  [QwenVL-API] [{i}] label='{r['label']}' "
+                  f"bbox=({bbox[0]:.0f},{bbox[1]:.0f},{bbox[2]:.0f},{bbox[3]:.0f})")
+        if not results:
+            print(f"  [QwenVL-API] no detection parsed")
+        return results
+
+    @staticmethod
+    def _parse_response(content: str, w: int, h: int) -> List[Dict]:
+        results: List[Dict] = []
+
+        # Strategy 1: JSON array  [{"label":...,"bbox":[x1,y1,x2,y2]}, ...]
+        json_match = re.search(r'\[.*\]', content, re.DOTALL)
+        if json_match:
+            try:
+                arr = json.loads(json_match.group())
+                if isinstance(arr, list):
+                    for item in arr:
+                        if not isinstance(item, dict):
+                            continue
+                        bbox = item.get("bbox", item.get("bbox_2d", []))
+                        if len(bbox) == 4:
+                            bbox = [float(v) for v in bbox]
+                            results.append({
+                                "label": str(item.get("label", "qwen_det")),
+                                "score": float(item.get("score",
+                                               item.get("confidence", -1.0))),
+                                "bbox": bbox,
+                                "point": (int((bbox[0]+bbox[2])/2),
+                                          int((bbox[1]+bbox[3])/2)),
+                            })
+            except (json.JSONDecodeError, ValueError):
+                pass
+        if results:
+            return results
+
+        # Strategy 2: Qwen VL grounding — <box>(x1, y1),(x2, y2)</box>
+        # Coordinates normalised to [0, 1000].
+        for m in re.finditer(
+                r'<box>\s*\((\d+),\s*(\d+)\)\s*,?\s*\((\d+),\s*(\d+)\)\s*</box>',
+                content):
+            x1 = float(m.group(1)) / 1000 * w
+            y1 = float(m.group(2)) / 1000 * h
+            x2 = float(m.group(3)) / 1000 * w
+            y2 = float(m.group(4)) / 1000 * h
+            results.append({
+                "label": "qwen_det",
+                "score": -1.0,
+                "bbox": [x1, y1, x2, y2],
+                "point": (int((x1+x2)/2), int((y1+y2)/2)),
+            })
+        if results:
+            return results
+
+        # Strategy 3: bbox_2d style — [x1, y1, x2, y2] anywhere in text
+        for m in re.finditer(
+                r'\[\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)\s*\]', content):
+            bx1, by1 = int(m.group(1)), int(m.group(2))
+            bx2, by2 = int(m.group(3)), int(m.group(4))
+            if bx1 < bx2 and by1 < by2 and bx2 <= w * 1.1 and by2 <= h * 1.1:
+                results.append({
+                    "label": "qwen_det",
+                    "score": -1.0,
+                    "bbox": [float(min(bx1, w-1)), float(min(by1, h-1)),
+                             float(min(bx2, w-1)), float(min(by2, h-1))],
+                    "point": (int((bx1+bx2)/2), int((by1+by2)/2)),
+                })
+
+        return results
+
+
+# ---------------------------------------------------------------------------
 # Visualization
 # ---------------------------------------------------------------------------
 def draw_detections(image: np.ndarray, backend: str, detections: List[Dict],
@@ -488,7 +627,7 @@ def draw_detections(image: np.ndarray, backend: str, detections: List[Dict],
         tag = f"{name}"
         if 0 <= score < 1.0:
             tag += f" {score:.2f}"
-        if label and label not in ("molmo_point", "molmo+sam2", "sa2va_seg"):
+        if label and label not in ("molmo_point", "molmo+sam2", "sa2va_seg", "qwen_det"):
             tag += f" [{label}]"
         rank = f"#{i}" if len(items) > 1 else ""
         text = f"{tag}{rank}"
@@ -512,7 +651,7 @@ def main():
     parser.add_argument("--output-dir", default="benchmark/detection_compare/")
     parser.add_argument("--tasks", nargs="*", default=None)
     parser.add_argument("--backends", nargs="+",
-                        choices=["groundingdino", "molmo", "gdino_sam2", "sa2va"],
+                        choices=["groundingdino", "molmo", "gdino_sam2", "sa2va", "qwen_api"],
                         default=["groundingdino", "molmo", "gdino_sam2", "sa2va"])
     parser.add_argument("--device", default=None)
     # Molmo + SAM2
@@ -530,6 +669,11 @@ def main():
     parser.add_argument("--gdino-text-threshold", type=float, default=0.20)
     # Sa2VA
     parser.add_argument("--sa2va-model", default="ByteDance/Sa2VA-4B")
+    # Qwen VL API (vLLM / sglang)
+    parser.add_argument("--qwen-api-base", default="http://localhost:8000",
+                        help="vLLM / sglang OpenAI-compatible server URL")
+    parser.add_argument("--qwen-api-model", default=None,
+                        help="Model name on the server (if None, auto-detect)")
     # Display
     parser.add_argument("--top-k", type=int, default=1,
                         help="Draw top-K detections per model (0=all, default=1)")
@@ -571,6 +715,19 @@ def main():
 
     if "sa2va" in args.backends:
         detectors["sa2va"] = Sa2VADetector(args.sa2va_model, device)
+
+    if "qwen_api" in args.backends:
+        model_name = args.qwen_api_model
+        if not model_name:
+            from openai import OpenAI
+            _client = OpenAI(
+                base_url=args.qwen_api_base.rstrip("/") + "/v1",
+                api_key="EMPTY",
+            )
+            models = _client.models.list()
+            model_name = models.data[0].id if models.data else "default"
+            print(f"[QwenVL-API] Auto-detected model: {model_name}")
+        detectors["qwen_api"] = QwenVLAPIDetector(args.qwen_api_base, model_name)
 
     summary = []
 

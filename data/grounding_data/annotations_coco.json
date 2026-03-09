@@ -1,0 +1,8111 @@
+{
+  "info": {
+    "description": "Minecraft GroundingDINO training data"
+  },
+  "categories": [
+    {
+      "id": 1,
+      "name": "acacia log",
+      "supercategory": "block"
+    },
+    {
+      "id": 2,
+      "name": "birch log",
+      "supercategory": "block"
+    },
+    {
+      "id": 3,
+      "name": "coal ore",
+      "supercategory": "block"
+    },
+    {
+      "id": 4,
+      "name": "cobblestone",
+      "supercategory": "block"
+    },
+    {
+      "id": 5,
+      "name": "copper ore",
+      "supercategory": "block"
+    },
+    {
+      "id": 6,
+      "name": "dark oak log",
+      "supercategory": "block"
+    },
+    {
+      "id": 7,
+      "name": "diamond ore",
+      "supercategory": "block"
+    },
+    {
+      "id": 8,
+      "name": "dirt",
+      "supercategory": "block"
+    },
+    {
+      "id": 9,
+      "name": "emerald ore",
+      "supercategory": "block"
+    },
+    {
+      "id": 10,
+      "name": "gold ore",
+      "supercategory": "block"
+    },
+    {
+      "id": 11,
+      "name": "grass block",
+      "supercategory": "block"
+    },
+    {
+      "id": 12,
+      "name": "gravel",
+      "supercategory": "block"
+    },
+    {
+      "id": 13,
+      "name": "iron ore",
+      "supercategory": "block"
+    },
+    {
+      "id": 14,
+      "name": "jungle log",
+      "supercategory": "block"
+    },
+    {
+      "id": 15,
+      "name": "lapis ore",
+      "supercategory": "block"
+    },
+    {
+      "id": 16,
+      "name": "oak log",
+      "supercategory": "block"
+    },
+    {
+      "id": 17,
+      "name": "redstone ore",
+      "supercategory": "block"
+    },
+    {
+      "id": 18,
+      "name": "sand",
+      "supercategory": "block"
+    },
+    {
+      "id": 19,
+      "name": "spruce log",
+      "supercategory": "block"
+    },
+    {
+      "id": 20,
+      "name": "stone",
+      "supercategory": "block"
+    }
+  ],
+  "images": [
+    {
+      "id": 1,
+      "file_name": "mine_coal_step00062_off-10_coal_ore.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 2,
+      "file_name": "mine_coal_step00062_off-9_coal_ore.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 3,
+      "file_name": "mine_coal_step00062_off-8_coal_ore.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 4,
+      "file_name": "mine_coal_step00062_off-7_coal_ore.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 5,
+      "file_name": "mine_coal_step00062_off-6_coal_ore.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 6,
+      "file_name": "mine_coal_step00095_off-10_coal_ore.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 7,
+      "file_name": "mine_coal_step00095_off-9_coal_ore.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 8,
+      "file_name": "mine_coal_step00095_off-8_coal_ore.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 9,
+      "file_name": "mine_coal_step00095_off-7_coal_ore.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 10,
+      "file_name": "mine_coal_step00095_off-6_coal_ore.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 11,
+      "file_name": "mine_coal_step00124_off-10_coal_ore.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 12,
+      "file_name": "mine_coal_step00124_off-9_coal_ore.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 13,
+      "file_name": "mine_coal_step00124_off-8_coal_ore.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 14,
+      "file_name": "mine_coal_step00124_off-7_coal_ore.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 15,
+      "file_name": "mine_coal_step00124_off-6_coal_ore.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 16,
+      "file_name": "mine_coal_step00144_off-10_coal_ore.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 17,
+      "file_name": "mine_coal_step00144_off-9_coal_ore.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 18,
+      "file_name": "mine_coal_step00144_off-8_coal_ore.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 19,
+      "file_name": "mine_coal_step00144_off-7_coal_ore.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 20,
+      "file_name": "mine_coal_step00144_off-6_coal_ore.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 21,
+      "file_name": "mine_coal_step00162_off-10_coal_ore.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 22,
+      "file_name": "mine_coal_step00162_off-9_coal_ore.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 23,
+      "file_name": "mine_coal_step00162_off-8_coal_ore.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 24,
+      "file_name": "mine_coal_step00162_off-7_coal_ore.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 25,
+      "file_name": "mine_coal_step00162_off-6_coal_ore.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 26,
+      "file_name": "mine_coal_step00189_off-10_coal_ore.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 27,
+      "file_name": "mine_coal_step00189_off-9_coal_ore.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 28,
+      "file_name": "mine_coal_step00189_off-8_coal_ore.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 29,
+      "file_name": "mine_coal_step00189_off-7_coal_ore.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 30,
+      "file_name": "mine_coal_step00189_off-6_coal_ore.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 31,
+      "file_name": "mine_coal_step00207_off-10_coal_ore.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 32,
+      "file_name": "mine_coal_step00207_off-9_coal_ore.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 33,
+      "file_name": "mine_coal_step00207_off-8_coal_ore.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 34,
+      "file_name": "mine_coal_step00207_off-7_coal_ore.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 35,
+      "file_name": "mine_coal_step00207_off-6_coal_ore.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 36,
+      "file_name": "mine_coal_step00225_off-10_coal_ore.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 37,
+      "file_name": "mine_coal_step00225_off-9_coal_ore.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 38,
+      "file_name": "mine_coal_step00225_off-8_coal_ore.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 39,
+      "file_name": "mine_coal_step00225_off-7_coal_ore.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 40,
+      "file_name": "mine_coal_step00225_off-6_coal_ore.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 41,
+      "file_name": "mine_coal_step00243_off-10_coal_ore.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 42,
+      "file_name": "mine_coal_step00243_off-9_coal_ore.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 43,
+      "file_name": "mine_coal_step00243_off-8_coal_ore.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 44,
+      "file_name": "mine_coal_step00243_off-7_coal_ore.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 45,
+      "file_name": "mine_coal_step00243_off-6_coal_ore.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 46,
+      "file_name": "mine_coal_step00261_off-10_coal_ore.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 47,
+      "file_name": "mine_coal_step00261_off-9_coal_ore.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 48,
+      "file_name": "mine_coal_step00261_off-8_coal_ore.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 49,
+      "file_name": "mine_coal_step00261_off-7_coal_ore.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 50,
+      "file_name": "mine_coal_step00261_off-6_coal_ore.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 51,
+      "file_name": "mine_coal_step00279_off-10_coal_ore.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 52,
+      "file_name": "mine_coal_step00279_off-9_coal_ore.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 53,
+      "file_name": "mine_coal_step00279_off-8_coal_ore.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 54,
+      "file_name": "mine_coal_step00279_off-7_coal_ore.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 55,
+      "file_name": "mine_coal_step00279_off-6_coal_ore.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 56,
+      "file_name": "mine_coal_step00297_off-10_coal_ore.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 57,
+      "file_name": "mine_coal_step00297_off-9_coal_ore.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 58,
+      "file_name": "mine_coal_step00297_off-8_coal_ore.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 59,
+      "file_name": "mine_coal_step00297_off-7_coal_ore.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 60,
+      "file_name": "mine_coal_step00297_off-6_coal_ore.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 61,
+      "file_name": "mine_coal_step00338_off-10_coal_ore.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 62,
+      "file_name": "mine_coal_step00338_off-9_coal_ore.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 63,
+      "file_name": "mine_coal_step00338_off-8_coal_ore.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 64,
+      "file_name": "mine_coal_step00338_off-7_coal_ore.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 65,
+      "file_name": "mine_coal_step00338_off-6_coal_ore.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 66,
+      "file_name": "mine_coal_step00370_off-10_coal_ore.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 67,
+      "file_name": "mine_coal_step00370_off-9_coal_ore.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 68,
+      "file_name": "mine_coal_step00370_off-8_coal_ore.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 69,
+      "file_name": "mine_coal_step00370_off-7_coal_ore.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 70,
+      "file_name": "mine_coal_step00370_off-6_coal_ore.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 71,
+      "file_name": "mine_coal_step00390_off-10_coal_ore.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 72,
+      "file_name": "mine_coal_step00390_off-9_coal_ore.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 73,
+      "file_name": "mine_coal_step00390_off-8_coal_ore.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 74,
+      "file_name": "mine_coal_step00390_off-7_coal_ore.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 75,
+      "file_name": "mine_coal_step00390_off-6_coal_ore.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 76,
+      "file_name": "mine_coal_step00412_off-10_coal_ore.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 77,
+      "file_name": "mine_coal_step00412_off-9_coal_ore.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 78,
+      "file_name": "mine_coal_step00412_off-8_coal_ore.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 79,
+      "file_name": "mine_coal_step00412_off-7_coal_ore.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 80,
+      "file_name": "mine_coal_step00412_off-6_coal_ore.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 81,
+      "file_name": "mine_coal_step00432_off-10_coal_ore.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 82,
+      "file_name": "mine_coal_step00432_off-9_coal_ore.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 83,
+      "file_name": "mine_coal_step00432_off-8_coal_ore.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 84,
+      "file_name": "mine_coal_step00432_off-7_coal_ore.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 85,
+      "file_name": "mine_coal_step00432_off-6_coal_ore.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 86,
+      "file_name": "mine_coal_step00454_off-10_coal_ore.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 87,
+      "file_name": "mine_coal_step00454_off-9_coal_ore.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 88,
+      "file_name": "mine_coal_step00454_off-8_coal_ore.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 89,
+      "file_name": "mine_coal_step00454_off-7_coal_ore.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 90,
+      "file_name": "mine_coal_step00454_off-6_coal_ore.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 91,
+      "file_name": "mine_coal_step00479_off-10_coal_ore.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 92,
+      "file_name": "mine_coal_step00479_off-9_coal_ore.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 93,
+      "file_name": "mine_coal_step00479_off-8_coal_ore.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 94,
+      "file_name": "mine_coal_step00479_off-7_coal_ore.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 95,
+      "file_name": "mine_coal_step00479_off-6_coal_ore.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 96,
+      "file_name": "mine_coal_step00498_off-10_coal_ore.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 97,
+      "file_name": "mine_coal_step00498_off-9_coal_ore.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 98,
+      "file_name": "mine_coal_step00498_off-8_coal_ore.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 99,
+      "file_name": "mine_coal_step00498_off-7_coal_ore.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 100,
+      "file_name": "mine_coal_step00498_off-6_coal_ore.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 101,
+      "file_name": "mine_coal_step00536_off-10_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 102,
+      "file_name": "mine_coal_step00536_off-9_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 103,
+      "file_name": "mine_coal_step00536_off-8_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 104,
+      "file_name": "mine_coal_step00536_off-7_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 105,
+      "file_name": "mine_coal_step00536_off-6_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 106,
+      "file_name": "mine_coal_step00551_off-10_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 107,
+      "file_name": "mine_coal_step00551_off-9_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 108,
+      "file_name": "mine_coal_step00551_off-8_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 109,
+      "file_name": "mine_coal_step00551_off-7_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 110,
+      "file_name": "mine_coal_step00551_off-6_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 111,
+      "file_name": "mine_coal_step00929_off-10_grass_block.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 112,
+      "file_name": "mine_coal_step00929_off-9_grass_block.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 113,
+      "file_name": "mine_coal_step00929_off-8_grass_block.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 114,
+      "file_name": "mine_coal_step00929_off-7_grass_block.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 115,
+      "file_name": "mine_coal_step00929_off-6_grass_block.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 116,
+      "file_name": "mine_coal_step01272_off-10_spruce_leaves.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 117,
+      "file_name": "mine_coal_step01272_off-9_spruce_leaves.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 118,
+      "file_name": "mine_coal_step01272_off-8_spruce_leaves.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 119,
+      "file_name": "mine_coal_step01272_off-7_spruce_leaves.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 120,
+      "file_name": "mine_coal_step01272_off-6_spruce_leaves.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 121,
+      "file_name": "mine_coal_step01341_off-10_spruce_log.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 122,
+      "file_name": "mine_coal_step01341_off-9_spruce_log.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 123,
+      "file_name": "mine_coal_step01341_off-8_spruce_log.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 124,
+      "file_name": "mine_coal_step01341_off-7_spruce_log.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 125,
+      "file_name": "mine_coal_step01341_off-6_spruce_log.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 126,
+      "file_name": "mine_coal_step01364_off-10_spruce_leaves.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 127,
+      "file_name": "mine_coal_step01364_off-9_spruce_leaves.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 128,
+      "file_name": "mine_coal_step01364_off-8_spruce_leaves.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 129,
+      "file_name": "mine_coal_step01364_off-7_spruce_leaves.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 130,
+      "file_name": "mine_coal_step01364_off-6_spruce_leaves.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 131,
+      "file_name": "mine_coal_step01431_off-10_spruce_log.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 132,
+      "file_name": "mine_coal_step01431_off-9_spruce_log.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 133,
+      "file_name": "mine_coal_step01431_off-8_spruce_log.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 134,
+      "file_name": "mine_coal_step01431_off-7_spruce_log.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 135,
+      "file_name": "mine_coal_step01431_off-6_spruce_log.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 136,
+      "file_name": "mine_coal_step01533_off-10_spruce_log.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 137,
+      "file_name": "mine_coal_step01533_off-9_spruce_log.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 138,
+      "file_name": "mine_coal_step01533_off-8_spruce_log.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 139,
+      "file_name": "mine_coal_step01533_off-7_spruce_log.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 140,
+      "file_name": "mine_coal_step01533_off-6_spruce_log.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 141,
+      "file_name": "mine_coal_step01600_off-10_spruce_log.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 142,
+      "file_name": "mine_coal_step01600_off-9_spruce_log.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 143,
+      "file_name": "mine_coal_step01600_off-8_spruce_log.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 144,
+      "file_name": "mine_coal_step01600_off-7_spruce_log.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 145,
+      "file_name": "mine_coal_step01600_off-6_spruce_log.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 146,
+      "file_name": "mine_coal_step01667_off-10_spruce_log.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 147,
+      "file_name": "mine_coal_step01667_off-9_spruce_log.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 148,
+      "file_name": "mine_coal_step01667_off-8_spruce_log.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 149,
+      "file_name": "mine_coal_step01667_off-7_spruce_log.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 150,
+      "file_name": "mine_coal_step01667_off-6_spruce_log.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 151,
+      "file_name": "mine_coal_step01960_off-10_grass_block.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 152,
+      "file_name": "mine_coal_step01960_off-9_grass_block.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 153,
+      "file_name": "mine_coal_step01960_off-8_grass_block.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 154,
+      "file_name": "mine_coal_step01960_off-7_grass_block.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 155,
+      "file_name": "mine_coal_step01960_off-6_grass_block.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 156,
+      "file_name": "mine_coal_step01981_off-10_dirt.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 157,
+      "file_name": "mine_coal_step01981_off-9_dirt.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 158,
+      "file_name": "mine_coal_step01981_off-8_dirt.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 159,
+      "file_name": "mine_coal_step01981_off-7_dirt.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 160,
+      "file_name": "mine_coal_step01981_off-6_dirt.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 161,
+      "file_name": "mine_coal_step02015_off-10_grass_block.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 162,
+      "file_name": "mine_coal_step02015_off-9_grass_block.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 163,
+      "file_name": "mine_coal_step02015_off-8_grass_block.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 164,
+      "file_name": "mine_coal_step02015_off-7_grass_block.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 165,
+      "file_name": "mine_coal_step02015_off-6_grass_block.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 166,
+      "file_name": "mine_coal_step02054_off-10_dirt.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 167,
+      "file_name": "mine_coal_step02054_off-9_dirt.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 168,
+      "file_name": "mine_coal_step02054_off-8_dirt.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 169,
+      "file_name": "mine_coal_step02054_off-7_dirt.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 170,
+      "file_name": "mine_coal_step02054_off-6_dirt.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 171,
+      "file_name": "mine_coal_step02175_off-10_dirt.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 172,
+      "file_name": "mine_coal_step02175_off-9_dirt.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 173,
+      "file_name": "mine_coal_step02175_off-8_dirt.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 174,
+      "file_name": "mine_coal_step02175_off-7_dirt.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 175,
+      "file_name": "mine_coal_step02175_off-6_dirt.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 176,
+      "file_name": "mine_coal_step02187_off-10_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 177,
+      "file_name": "mine_coal_step02187_off-9_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 178,
+      "file_name": "mine_coal_step02187_off-8_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 179,
+      "file_name": "mine_coal_step02187_off-7_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 180,
+      "file_name": "mine_coal_step02187_off-6_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 181,
+      "file_name": "mine_coal_step02199_off-10_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 182,
+      "file_name": "mine_coal_step02199_off-9_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 183,
+      "file_name": "mine_coal_step02199_off-8_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 184,
+      "file_name": "mine_coal_step02199_off-7_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 185,
+      "file_name": "mine_coal_step02199_off-6_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 186,
+      "file_name": "mine_coal_step02264_off-10_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 187,
+      "file_name": "mine_coal_step02264_off-9_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 188,
+      "file_name": "mine_coal_step02264_off-8_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 189,
+      "file_name": "mine_coal_step02264_off-7_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 190,
+      "file_name": "mine_coal_step02264_off-6_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 191,
+      "file_name": "mine_coal_step02276_off-10_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 192,
+      "file_name": "mine_coal_step02276_off-9_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 193,
+      "file_name": "mine_coal_step02276_off-8_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 194,
+      "file_name": "mine_coal_step02276_off-7_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 195,
+      "file_name": "mine_coal_step02276_off-6_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 196,
+      "file_name": "mine_coal_step02288_off-10_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 197,
+      "file_name": "mine_coal_step02288_off-9_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 198,
+      "file_name": "mine_coal_step02288_off-8_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 199,
+      "file_name": "mine_coal_step02288_off-7_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 200,
+      "file_name": "mine_coal_step02288_off-6_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 201,
+      "file_name": "mine_emerald_step00202_off-10_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 202,
+      "file_name": "mine_emerald_step00202_off-9_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 203,
+      "file_name": "mine_emerald_step00202_off-8_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 204,
+      "file_name": "mine_emerald_step00202_off-7_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 205,
+      "file_name": "mine_emerald_step00202_off-6_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 206,
+      "file_name": "mine_emerald_step00220_off-10_coal_ore.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 207,
+      "file_name": "mine_emerald_step00220_off-9_coal_ore.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 208,
+      "file_name": "mine_emerald_step00220_off-8_coal_ore.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 209,
+      "file_name": "mine_emerald_step00220_off-7_coal_ore.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 210,
+      "file_name": "mine_emerald_step00220_off-6_coal_ore.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 211,
+      "file_name": "mine_emerald_step00238_off-10_coal_ore.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 212,
+      "file_name": "mine_emerald_step00238_off-9_coal_ore.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 213,
+      "file_name": "mine_emerald_step00238_off-8_coal_ore.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 214,
+      "file_name": "mine_emerald_step00238_off-7_coal_ore.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 215,
+      "file_name": "mine_emerald_step00238_off-6_coal_ore.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 216,
+      "file_name": "mine_emerald_step00258_off-10_coal_ore.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 217,
+      "file_name": "mine_emerald_step00258_off-9_coal_ore.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 218,
+      "file_name": "mine_emerald_step00258_off-8_coal_ore.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 219,
+      "file_name": "mine_emerald_step00258_off-7_coal_ore.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 220,
+      "file_name": "mine_emerald_step00258_off-6_coal_ore.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 221,
+      "file_name": "mine_emerald_step00278_off-10_coal_ore.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 222,
+      "file_name": "mine_emerald_step00278_off-9_coal_ore.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 223,
+      "file_name": "mine_emerald_step00278_off-8_coal_ore.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 224,
+      "file_name": "mine_emerald_step00278_off-7_coal_ore.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 225,
+      "file_name": "mine_emerald_step00278_off-6_coal_ore.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 226,
+      "file_name": "mine_emerald_step00290_off-10_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 227,
+      "file_name": "mine_emerald_step00290_off-9_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 228,
+      "file_name": "mine_emerald_step00290_off-8_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 229,
+      "file_name": "mine_emerald_step00290_off-7_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 230,
+      "file_name": "mine_emerald_step00290_off-6_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 231,
+      "file_name": "mine_emerald_step00737_off-10_oak_log.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 232,
+      "file_name": "mine_emerald_step00737_off-9_oak_log.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 233,
+      "file_name": "mine_emerald_step00737_off-8_oak_log.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 234,
+      "file_name": "mine_emerald_step00737_off-7_oak_log.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 235,
+      "file_name": "mine_emerald_step00737_off-6_oak_log.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 236,
+      "file_name": "mine_emerald_step00817_off-10_oak_log.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 237,
+      "file_name": "mine_emerald_step00817_off-9_oak_log.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 238,
+      "file_name": "mine_emerald_step00817_off-8_oak_log.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 239,
+      "file_name": "mine_emerald_step00817_off-7_oak_log.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 240,
+      "file_name": "mine_emerald_step00817_off-6_oak_log.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 241,
+      "file_name": "mine_emerald_step00888_off-10_oak_log.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 242,
+      "file_name": "mine_emerald_step00888_off-9_oak_log.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 243,
+      "file_name": "mine_emerald_step00888_off-8_oak_log.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 244,
+      "file_name": "mine_emerald_step00888_off-7_oak_log.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 245,
+      "file_name": "mine_emerald_step00888_off-6_oak_log.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 246,
+      "file_name": "mine_emerald_step00955_off-10_oak_log.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 247,
+      "file_name": "mine_emerald_step00955_off-9_oak_log.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 248,
+      "file_name": "mine_emerald_step00955_off-8_oak_log.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 249,
+      "file_name": "mine_emerald_step00955_off-7_oak_log.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 250,
+      "file_name": "mine_emerald_step00955_off-6_oak_log.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 251,
+      "file_name": "mine_emerald_step01252_off-10_crafting_table.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 252,
+      "file_name": "mine_emerald_step01252_off-9_crafting_table.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 253,
+      "file_name": "mine_emerald_step01252_off-8_crafting_table.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 254,
+      "file_name": "mine_emerald_step01252_off-7_crafting_table.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 255,
+      "file_name": "mine_emerald_step01252_off-6_crafting_table.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 256,
+      "file_name": "mine_emerald_step01288_off-10_grass_block.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 257,
+      "file_name": "mine_emerald_step01288_off-9_grass_block.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 258,
+      "file_name": "mine_emerald_step01288_off-8_grass_block.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 259,
+      "file_name": "mine_emerald_step01288_off-7_grass_block.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 260,
+      "file_name": "mine_emerald_step01288_off-6_grass_block.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 261,
+      "file_name": "mine_emerald_step01309_off-10_dirt.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 262,
+      "file_name": "mine_emerald_step01309_off-9_dirt.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 263,
+      "file_name": "mine_emerald_step01309_off-8_dirt.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 264,
+      "file_name": "mine_emerald_step01309_off-7_dirt.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 265,
+      "file_name": "mine_emerald_step01309_off-6_dirt.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 266,
+      "file_name": "mine_emerald_step01334_off-10_dirt.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 267,
+      "file_name": "mine_emerald_step01334_off-9_dirt.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 268,
+      "file_name": "mine_emerald_step01334_off-8_dirt.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 269,
+      "file_name": "mine_emerald_step01334_off-7_dirt.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 270,
+      "file_name": "mine_emerald_step01334_off-6_dirt.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 271,
+      "file_name": "mine_emerald_step01363_off-10_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 272,
+      "file_name": "mine_emerald_step01363_off-9_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 273,
+      "file_name": "mine_emerald_step01363_off-8_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 274,
+      "file_name": "mine_emerald_step01363_off-7_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 275,
+      "file_name": "mine_emerald_step01363_off-6_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 276,
+      "file_name": "mine_emerald_step01392_off-10_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 277,
+      "file_name": "mine_emerald_step01392_off-9_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 278,
+      "file_name": "mine_emerald_step01392_off-8_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 279,
+      "file_name": "mine_emerald_step01392_off-7_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 280,
+      "file_name": "mine_emerald_step01392_off-6_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 281,
+      "file_name": "mine_emerald_step01421_off-10_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 282,
+      "file_name": "mine_emerald_step01421_off-9_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 283,
+      "file_name": "mine_emerald_step01421_off-8_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 284,
+      "file_name": "mine_emerald_step01421_off-7_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 285,
+      "file_name": "mine_emerald_step01421_off-6_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 286,
+      "file_name": "mine_emerald_step01557_off-10_crafting_table.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 287,
+      "file_name": "mine_emerald_step01557_off-9_crafting_table.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 288,
+      "file_name": "mine_emerald_step01557_off-8_crafting_table.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 289,
+      "file_name": "mine_emerald_step01557_off-7_crafting_table.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 290,
+      "file_name": "mine_emerald_step01557_off-6_crafting_table.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 291,
+      "file_name": "mine_emerald_step01575_off-10_granite.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 292,
+      "file_name": "mine_emerald_step01575_off-9_granite.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 293,
+      "file_name": "mine_emerald_step01575_off-8_granite.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 294,
+      "file_name": "mine_emerald_step01575_off-7_granite.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 295,
+      "file_name": "mine_emerald_step01575_off-6_granite.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 296,
+      "file_name": "mine_emerald_step01593_off-10_granite.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 297,
+      "file_name": "mine_emerald_step01593_off-9_granite.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 298,
+      "file_name": "mine_emerald_step01593_off-8_granite.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 299,
+      "file_name": "mine_emerald_step01593_off-7_granite.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 300,
+      "file_name": "mine_emerald_step01593_off-6_granite.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 301,
+      "file_name": "mine_emerald_step01611_off-10_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 302,
+      "file_name": "mine_emerald_step01611_off-9_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 303,
+      "file_name": "mine_emerald_step01611_off-8_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 304,
+      "file_name": "mine_emerald_step01611_off-7_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 305,
+      "file_name": "mine_emerald_step01611_off-6_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 306,
+      "file_name": "mine_emerald_step01629_off-10_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 307,
+      "file_name": "mine_emerald_step01629_off-9_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 308,
+      "file_name": "mine_emerald_step01629_off-8_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 309,
+      "file_name": "mine_emerald_step01629_off-7_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 310,
+      "file_name": "mine_emerald_step01629_off-6_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 311,
+      "file_name": "mine_emerald_step01647_off-10_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 312,
+      "file_name": "mine_emerald_step01647_off-9_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 313,
+      "file_name": "mine_emerald_step01647_off-8_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 314,
+      "file_name": "mine_emerald_step01647_off-7_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 315,
+      "file_name": "mine_emerald_step01647_off-6_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 316,
+      "file_name": "mine_emerald_step01665_off-10_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 317,
+      "file_name": "mine_emerald_step01665_off-9_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 318,
+      "file_name": "mine_emerald_step01665_off-8_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 319,
+      "file_name": "mine_emerald_step01665_off-7_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 320,
+      "file_name": "mine_emerald_step01665_off-6_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 321,
+      "file_name": "mine_emerald_step01683_off-10_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 322,
+      "file_name": "mine_emerald_step01683_off-9_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 323,
+      "file_name": "mine_emerald_step01683_off-8_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 324,
+      "file_name": "mine_emerald_step01683_off-7_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 325,
+      "file_name": "mine_emerald_step01683_off-6_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 326,
+      "file_name": "mine_emerald_step01701_off-10_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 327,
+      "file_name": "mine_emerald_step01701_off-9_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 328,
+      "file_name": "mine_emerald_step01701_off-8_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 329,
+      "file_name": "mine_emerald_step01701_off-7_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 330,
+      "file_name": "mine_emerald_step01701_off-6_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 331,
+      "file_name": "mine_emerald_step01719_off-10_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 332,
+      "file_name": "mine_emerald_step01719_off-9_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 333,
+      "file_name": "mine_emerald_step01719_off-8_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 334,
+      "file_name": "mine_emerald_step01719_off-7_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 335,
+      "file_name": "mine_emerald_step01719_off-6_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 336,
+      "file_name": "mine_emerald_step01737_off-10_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 337,
+      "file_name": "mine_emerald_step01737_off-9_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 338,
+      "file_name": "mine_emerald_step01737_off-8_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 339,
+      "file_name": "mine_emerald_step01737_off-7_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 340,
+      "file_name": "mine_emerald_step01737_off-6_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 341,
+      "file_name": "mine_emerald_step01755_off-10_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 342,
+      "file_name": "mine_emerald_step01755_off-9_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 343,
+      "file_name": "mine_emerald_step01755_off-8_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 344,
+      "file_name": "mine_emerald_step01755_off-7_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 345,
+      "file_name": "mine_emerald_step01755_off-6_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 346,
+      "file_name": "mine_emerald_step01773_off-10_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 347,
+      "file_name": "mine_emerald_step01773_off-9_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 348,
+      "file_name": "mine_emerald_step01773_off-8_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 349,
+      "file_name": "mine_emerald_step01773_off-7_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 350,
+      "file_name": "mine_emerald_step01773_off-6_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 351,
+      "file_name": "mine_emerald_step01791_off-10_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 352,
+      "file_name": "mine_emerald_step01791_off-9_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 353,
+      "file_name": "mine_emerald_step01791_off-8_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 354,
+      "file_name": "mine_emerald_step01791_off-7_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 355,
+      "file_name": "mine_emerald_step01791_off-6_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 356,
+      "file_name": "mine_emerald_step01809_off-10_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 357,
+      "file_name": "mine_emerald_step01809_off-9_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 358,
+      "file_name": "mine_emerald_step01809_off-8_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 359,
+      "file_name": "mine_emerald_step01809_off-7_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 360,
+      "file_name": "mine_emerald_step01809_off-6_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 361,
+      "file_name": "mine_emerald_step01836_off-10_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 362,
+      "file_name": "mine_emerald_step01836_off-9_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 363,
+      "file_name": "mine_emerald_step01836_off-8_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 364,
+      "file_name": "mine_emerald_step01836_off-7_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 365,
+      "file_name": "mine_emerald_step01836_off-6_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 366,
+      "file_name": "mine_emerald_step01854_off-10_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 367,
+      "file_name": "mine_emerald_step01854_off-9_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 368,
+      "file_name": "mine_emerald_step01854_off-8_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 369,
+      "file_name": "mine_emerald_step01854_off-7_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 370,
+      "file_name": "mine_emerald_step01854_off-6_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 371,
+      "file_name": "mine_emerald_step01872_off-10_diorite.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 372,
+      "file_name": "mine_emerald_step01872_off-9_diorite.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 373,
+      "file_name": "mine_emerald_step01872_off-8_diorite.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 374,
+      "file_name": "mine_emerald_step01872_off-7_diorite.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 375,
+      "file_name": "mine_emerald_step01872_off-6_diorite.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 376,
+      "file_name": "mine_emerald_step01890_off-10_diorite.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 377,
+      "file_name": "mine_emerald_step01890_off-9_diorite.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 378,
+      "file_name": "mine_emerald_step01890_off-8_diorite.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 379,
+      "file_name": "mine_emerald_step01890_off-7_diorite.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 380,
+      "file_name": "mine_emerald_step01890_off-6_diorite.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 381,
+      "file_name": "mine_emerald_step01908_off-10_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 382,
+      "file_name": "mine_emerald_step01908_off-9_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 383,
+      "file_name": "mine_emerald_step01908_off-8_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 384,
+      "file_name": "mine_emerald_step01908_off-7_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 385,
+      "file_name": "mine_emerald_step01908_off-6_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 386,
+      "file_name": "mine_emerald_step01926_off-10_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 387,
+      "file_name": "mine_emerald_step01926_off-9_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 388,
+      "file_name": "mine_emerald_step01926_off-8_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 389,
+      "file_name": "mine_emerald_step01926_off-7_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 390,
+      "file_name": "mine_emerald_step01926_off-6_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 391,
+      "file_name": "mine_emerald_step01944_off-10_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 392,
+      "file_name": "mine_emerald_step01944_off-9_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 393,
+      "file_name": "mine_emerald_step01944_off-8_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 394,
+      "file_name": "mine_emerald_step01944_off-7_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 395,
+      "file_name": "mine_emerald_step01944_off-6_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 396,
+      "file_name": "mine_emerald_step01962_off-10_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 397,
+      "file_name": "mine_emerald_step01962_off-9_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 398,
+      "file_name": "mine_emerald_step01962_off-8_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 399,
+      "file_name": "mine_emerald_step01962_off-7_stone.png",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": 400,
+      "file_name": "mine_emerald_step01962_off-6_stone.png",
+      "width": 640,
+      "height": 360
+    }
+  ],
+  "annotations": [
+    {
+      "id": 1,
+      "image_id": 1,
+      "category_id": 3,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "coal ore"
+    },
+    {
+      "id": 2,
+      "image_id": 2,
+      "category_id": 3,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "coal ore"
+    },
+    {
+      "id": 3,
+      "image_id": 3,
+      "category_id": 3,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "coal ore"
+    },
+    {
+      "id": 4,
+      "image_id": 4,
+      "category_id": 3,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "coal ore"
+    },
+    {
+      "id": 5,
+      "image_id": 5,
+      "category_id": 3,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "coal ore"
+    },
+    {
+      "id": 6,
+      "image_id": 6,
+      "category_id": 3,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "coal ore"
+    },
+    {
+      "id": 7,
+      "image_id": 7,
+      "category_id": 3,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "coal ore"
+    },
+    {
+      "id": 8,
+      "image_id": 8,
+      "category_id": 3,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "coal ore"
+    },
+    {
+      "id": 9,
+      "image_id": 9,
+      "category_id": 3,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "coal ore"
+    },
+    {
+      "id": 10,
+      "image_id": 10,
+      "category_id": 3,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "coal ore"
+    },
+    {
+      "id": 11,
+      "image_id": 11,
+      "category_id": 3,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "coal ore"
+    },
+    {
+      "id": 12,
+      "image_id": 12,
+      "category_id": 3,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "coal ore"
+    },
+    {
+      "id": 13,
+      "image_id": 13,
+      "category_id": 3,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "coal ore"
+    },
+    {
+      "id": 14,
+      "image_id": 14,
+      "category_id": 3,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "coal ore"
+    },
+    {
+      "id": 15,
+      "image_id": 15,
+      "category_id": 3,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "coal ore"
+    },
+    {
+      "id": 16,
+      "image_id": 16,
+      "category_id": 3,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "coal ore"
+    },
+    {
+      "id": 17,
+      "image_id": 17,
+      "category_id": 3,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "coal ore"
+    },
+    {
+      "id": 18,
+      "image_id": 18,
+      "category_id": 3,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "coal ore"
+    },
+    {
+      "id": 19,
+      "image_id": 19,
+      "category_id": 3,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "coal ore"
+    },
+    {
+      "id": 20,
+      "image_id": 20,
+      "category_id": 3,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "coal ore"
+    },
+    {
+      "id": 21,
+      "image_id": 21,
+      "category_id": 3,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "coal ore"
+    },
+    {
+      "id": 22,
+      "image_id": 22,
+      "category_id": 3,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "coal ore"
+    },
+    {
+      "id": 23,
+      "image_id": 23,
+      "category_id": 3,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "coal ore"
+    },
+    {
+      "id": 24,
+      "image_id": 24,
+      "category_id": 3,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "coal ore"
+    },
+    {
+      "id": 25,
+      "image_id": 25,
+      "category_id": 3,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "coal ore"
+    },
+    {
+      "id": 26,
+      "image_id": 26,
+      "category_id": 3,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "coal ore"
+    },
+    {
+      "id": 27,
+      "image_id": 27,
+      "category_id": 3,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "coal ore"
+    },
+    {
+      "id": 28,
+      "image_id": 28,
+      "category_id": 3,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "coal ore"
+    },
+    {
+      "id": 29,
+      "image_id": 29,
+      "category_id": 3,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "coal ore"
+    },
+    {
+      "id": 30,
+      "image_id": 30,
+      "category_id": 3,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "coal ore"
+    },
+    {
+      "id": 31,
+      "image_id": 31,
+      "category_id": 3,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "coal ore"
+    },
+    {
+      "id": 32,
+      "image_id": 32,
+      "category_id": 3,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "coal ore"
+    },
+    {
+      "id": 33,
+      "image_id": 33,
+      "category_id": 3,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "coal ore"
+    },
+    {
+      "id": 34,
+      "image_id": 34,
+      "category_id": 3,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "coal ore"
+    },
+    {
+      "id": 35,
+      "image_id": 35,
+      "category_id": 3,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "coal ore"
+    },
+    {
+      "id": 36,
+      "image_id": 36,
+      "category_id": 3,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "coal ore"
+    },
+    {
+      "id": 37,
+      "image_id": 37,
+      "category_id": 3,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "coal ore"
+    },
+    {
+      "id": 38,
+      "image_id": 38,
+      "category_id": 3,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "coal ore"
+    },
+    {
+      "id": 39,
+      "image_id": 39,
+      "category_id": 3,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "coal ore"
+    },
+    {
+      "id": 40,
+      "image_id": 40,
+      "category_id": 3,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "coal ore"
+    },
+    {
+      "id": 41,
+      "image_id": 41,
+      "category_id": 3,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "coal ore"
+    },
+    {
+      "id": 42,
+      "image_id": 42,
+      "category_id": 3,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "coal ore"
+    },
+    {
+      "id": 43,
+      "image_id": 43,
+      "category_id": 3,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "coal ore"
+    },
+    {
+      "id": 44,
+      "image_id": 44,
+      "category_id": 3,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "coal ore"
+    },
+    {
+      "id": 45,
+      "image_id": 45,
+      "category_id": 3,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "coal ore"
+    },
+    {
+      "id": 46,
+      "image_id": 46,
+      "category_id": 3,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "coal ore"
+    },
+    {
+      "id": 47,
+      "image_id": 47,
+      "category_id": 3,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "coal ore"
+    },
+    {
+      "id": 48,
+      "image_id": 48,
+      "category_id": 3,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "coal ore"
+    },
+    {
+      "id": 49,
+      "image_id": 49,
+      "category_id": 3,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "coal ore"
+    },
+    {
+      "id": 50,
+      "image_id": 50,
+      "category_id": 3,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "coal ore"
+    },
+    {
+      "id": 51,
+      "image_id": 51,
+      "category_id": 3,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "coal ore"
+    },
+    {
+      "id": 52,
+      "image_id": 52,
+      "category_id": 3,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "coal ore"
+    },
+    {
+      "id": 53,
+      "image_id": 53,
+      "category_id": 3,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "coal ore"
+    },
+    {
+      "id": 54,
+      "image_id": 54,
+      "category_id": 3,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "coal ore"
+    },
+    {
+      "id": 55,
+      "image_id": 55,
+      "category_id": 3,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "coal ore"
+    },
+    {
+      "id": 56,
+      "image_id": 56,
+      "category_id": 3,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "coal ore"
+    },
+    {
+      "id": 57,
+      "image_id": 57,
+      "category_id": 3,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "coal ore"
+    },
+    {
+      "id": 58,
+      "image_id": 58,
+      "category_id": 3,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "coal ore"
+    },
+    {
+      "id": 59,
+      "image_id": 59,
+      "category_id": 3,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "coal ore"
+    },
+    {
+      "id": 60,
+      "image_id": 60,
+      "category_id": 3,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "coal ore"
+    },
+    {
+      "id": 61,
+      "image_id": 61,
+      "category_id": 3,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "coal ore"
+    },
+    {
+      "id": 62,
+      "image_id": 62,
+      "category_id": 3,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "coal ore"
+    },
+    {
+      "id": 63,
+      "image_id": 63,
+      "category_id": 3,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "coal ore"
+    },
+    {
+      "id": 64,
+      "image_id": 64,
+      "category_id": 3,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "coal ore"
+    },
+    {
+      "id": 65,
+      "image_id": 65,
+      "category_id": 3,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "coal ore"
+    },
+    {
+      "id": 66,
+      "image_id": 66,
+      "category_id": 3,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "coal ore"
+    },
+    {
+      "id": 67,
+      "image_id": 67,
+      "category_id": 3,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "coal ore"
+    },
+    {
+      "id": 68,
+      "image_id": 68,
+      "category_id": 3,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "coal ore"
+    },
+    {
+      "id": 69,
+      "image_id": 69,
+      "category_id": 3,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "coal ore"
+    },
+    {
+      "id": 70,
+      "image_id": 70,
+      "category_id": 3,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "coal ore"
+    },
+    {
+      "id": 71,
+      "image_id": 71,
+      "category_id": 3,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "coal ore"
+    },
+    {
+      "id": 72,
+      "image_id": 72,
+      "category_id": 3,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "coal ore"
+    },
+    {
+      "id": 73,
+      "image_id": 73,
+      "category_id": 3,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "coal ore"
+    },
+    {
+      "id": 74,
+      "image_id": 74,
+      "category_id": 3,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "coal ore"
+    },
+    {
+      "id": 75,
+      "image_id": 75,
+      "category_id": 3,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "coal ore"
+    },
+    {
+      "id": 76,
+      "image_id": 76,
+      "category_id": 3,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "coal ore"
+    },
+    {
+      "id": 77,
+      "image_id": 77,
+      "category_id": 3,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "coal ore"
+    },
+    {
+      "id": 78,
+      "image_id": 78,
+      "category_id": 3,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "coal ore"
+    },
+    {
+      "id": 79,
+      "image_id": 79,
+      "category_id": 3,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "coal ore"
+    },
+    {
+      "id": 80,
+      "image_id": 80,
+      "category_id": 3,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "coal ore"
+    },
+    {
+      "id": 81,
+      "image_id": 81,
+      "category_id": 3,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "coal ore"
+    },
+    {
+      "id": 82,
+      "image_id": 82,
+      "category_id": 3,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "coal ore"
+    },
+    {
+      "id": 83,
+      "image_id": 83,
+      "category_id": 3,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "coal ore"
+    },
+    {
+      "id": 84,
+      "image_id": 84,
+      "category_id": 3,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "coal ore"
+    },
+    {
+      "id": 85,
+      "image_id": 85,
+      "category_id": 3,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "coal ore"
+    },
+    {
+      "id": 86,
+      "image_id": 86,
+      "category_id": 3,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "coal ore"
+    },
+    {
+      "id": 87,
+      "image_id": 87,
+      "category_id": 3,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "coal ore"
+    },
+    {
+      "id": 88,
+      "image_id": 88,
+      "category_id": 3,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "coal ore"
+    },
+    {
+      "id": 89,
+      "image_id": 89,
+      "category_id": 3,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "coal ore"
+    },
+    {
+      "id": 90,
+      "image_id": 90,
+      "category_id": 3,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "coal ore"
+    },
+    {
+      "id": 91,
+      "image_id": 91,
+      "category_id": 3,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "coal ore"
+    },
+    {
+      "id": 92,
+      "image_id": 92,
+      "category_id": 3,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "coal ore"
+    },
+    {
+      "id": 93,
+      "image_id": 93,
+      "category_id": 3,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "coal ore"
+    },
+    {
+      "id": 94,
+      "image_id": 94,
+      "category_id": 3,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "coal ore"
+    },
+    {
+      "id": 95,
+      "image_id": 95,
+      "category_id": 3,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "coal ore"
+    },
+    {
+      "id": 96,
+      "image_id": 96,
+      "category_id": 3,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "coal ore"
+    },
+    {
+      "id": 97,
+      "image_id": 97,
+      "category_id": 3,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "coal ore"
+    },
+    {
+      "id": 98,
+      "image_id": 98,
+      "category_id": 3,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "coal ore"
+    },
+    {
+      "id": 99,
+      "image_id": 99,
+      "category_id": 3,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "coal ore"
+    },
+    {
+      "id": 100,
+      "image_id": 100,
+      "category_id": 3,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "coal ore"
+    },
+    {
+      "id": 101,
+      "image_id": 101,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 102,
+      "image_id": 102,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 103,
+      "image_id": 103,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 104,
+      "image_id": 104,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 105,
+      "image_id": 105,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 106,
+      "image_id": 106,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 107,
+      "image_id": 107,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 108,
+      "image_id": 108,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 109,
+      "image_id": 109,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 110,
+      "image_id": 110,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 111,
+      "image_id": 111,
+      "category_id": 11,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "grass block"
+    },
+    {
+      "id": 112,
+      "image_id": 112,
+      "category_id": 11,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "grass block"
+    },
+    {
+      "id": 113,
+      "image_id": 113,
+      "category_id": 11,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "grass block"
+    },
+    {
+      "id": 114,
+      "image_id": 114,
+      "category_id": 11,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "grass block"
+    },
+    {
+      "id": 115,
+      "image_id": 115,
+      "category_id": 11,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "grass block"
+    },
+    {
+      "id": 116,
+      "image_id": 116,
+      "category_id": 1,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "spruce leaves"
+    },
+    {
+      "id": 117,
+      "image_id": 117,
+      "category_id": 1,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "spruce leaves"
+    },
+    {
+      "id": 118,
+      "image_id": 118,
+      "category_id": 1,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "spruce leaves"
+    },
+    {
+      "id": 119,
+      "image_id": 119,
+      "category_id": 1,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "spruce leaves"
+    },
+    {
+      "id": 120,
+      "image_id": 120,
+      "category_id": 1,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "spruce leaves"
+    },
+    {
+      "id": 121,
+      "image_id": 121,
+      "category_id": 19,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "spruce log"
+    },
+    {
+      "id": 122,
+      "image_id": 122,
+      "category_id": 19,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "spruce log"
+    },
+    {
+      "id": 123,
+      "image_id": 123,
+      "category_id": 19,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "spruce log"
+    },
+    {
+      "id": 124,
+      "image_id": 124,
+      "category_id": 19,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "spruce log"
+    },
+    {
+      "id": 125,
+      "image_id": 125,
+      "category_id": 19,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "spruce log"
+    },
+    {
+      "id": 126,
+      "image_id": 126,
+      "category_id": 1,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "spruce leaves"
+    },
+    {
+      "id": 127,
+      "image_id": 127,
+      "category_id": 1,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "spruce leaves"
+    },
+    {
+      "id": 128,
+      "image_id": 128,
+      "category_id": 1,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "spruce leaves"
+    },
+    {
+      "id": 129,
+      "image_id": 129,
+      "category_id": 1,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "spruce leaves"
+    },
+    {
+      "id": 130,
+      "image_id": 130,
+      "category_id": 1,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "spruce leaves"
+    },
+    {
+      "id": 131,
+      "image_id": 131,
+      "category_id": 19,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "spruce log"
+    },
+    {
+      "id": 132,
+      "image_id": 132,
+      "category_id": 19,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "spruce log"
+    },
+    {
+      "id": 133,
+      "image_id": 133,
+      "category_id": 19,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "spruce log"
+    },
+    {
+      "id": 134,
+      "image_id": 134,
+      "category_id": 19,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "spruce log"
+    },
+    {
+      "id": 135,
+      "image_id": 135,
+      "category_id": 19,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "spruce log"
+    },
+    {
+      "id": 136,
+      "image_id": 136,
+      "category_id": 19,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "spruce log"
+    },
+    {
+      "id": 137,
+      "image_id": 137,
+      "category_id": 19,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "spruce log"
+    },
+    {
+      "id": 138,
+      "image_id": 138,
+      "category_id": 19,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "spruce log"
+    },
+    {
+      "id": 139,
+      "image_id": 139,
+      "category_id": 19,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "spruce log"
+    },
+    {
+      "id": 140,
+      "image_id": 140,
+      "category_id": 19,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "spruce log"
+    },
+    {
+      "id": 141,
+      "image_id": 141,
+      "category_id": 19,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "spruce log"
+    },
+    {
+      "id": 142,
+      "image_id": 142,
+      "category_id": 19,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "spruce log"
+    },
+    {
+      "id": 143,
+      "image_id": 143,
+      "category_id": 19,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "spruce log"
+    },
+    {
+      "id": 144,
+      "image_id": 144,
+      "category_id": 19,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "spruce log"
+    },
+    {
+      "id": 145,
+      "image_id": 145,
+      "category_id": 19,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "spruce log"
+    },
+    {
+      "id": 146,
+      "image_id": 146,
+      "category_id": 19,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "spruce log"
+    },
+    {
+      "id": 147,
+      "image_id": 147,
+      "category_id": 19,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "spruce log"
+    },
+    {
+      "id": 148,
+      "image_id": 148,
+      "category_id": 19,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "spruce log"
+    },
+    {
+      "id": 149,
+      "image_id": 149,
+      "category_id": 19,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "spruce log"
+    },
+    {
+      "id": 150,
+      "image_id": 150,
+      "category_id": 19,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "spruce log"
+    },
+    {
+      "id": 151,
+      "image_id": 151,
+      "category_id": 11,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "grass block"
+    },
+    {
+      "id": 152,
+      "image_id": 152,
+      "category_id": 11,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "grass block"
+    },
+    {
+      "id": 153,
+      "image_id": 153,
+      "category_id": 11,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "grass block"
+    },
+    {
+      "id": 154,
+      "image_id": 154,
+      "category_id": 11,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "grass block"
+    },
+    {
+      "id": 155,
+      "image_id": 155,
+      "category_id": 11,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "grass block"
+    },
+    {
+      "id": 156,
+      "image_id": 156,
+      "category_id": 8,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "dirt"
+    },
+    {
+      "id": 157,
+      "image_id": 157,
+      "category_id": 8,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "dirt"
+    },
+    {
+      "id": 158,
+      "image_id": 158,
+      "category_id": 8,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "dirt"
+    },
+    {
+      "id": 159,
+      "image_id": 159,
+      "category_id": 8,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "dirt"
+    },
+    {
+      "id": 160,
+      "image_id": 160,
+      "category_id": 8,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "dirt"
+    },
+    {
+      "id": 161,
+      "image_id": 161,
+      "category_id": 11,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "grass block"
+    },
+    {
+      "id": 162,
+      "image_id": 162,
+      "category_id": 11,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "grass block"
+    },
+    {
+      "id": 163,
+      "image_id": 163,
+      "category_id": 11,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "grass block"
+    },
+    {
+      "id": 164,
+      "image_id": 164,
+      "category_id": 11,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "grass block"
+    },
+    {
+      "id": 165,
+      "image_id": 165,
+      "category_id": 11,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "grass block"
+    },
+    {
+      "id": 166,
+      "image_id": 166,
+      "category_id": 8,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "dirt"
+    },
+    {
+      "id": 167,
+      "image_id": 167,
+      "category_id": 8,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "dirt"
+    },
+    {
+      "id": 168,
+      "image_id": 168,
+      "category_id": 8,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "dirt"
+    },
+    {
+      "id": 169,
+      "image_id": 169,
+      "category_id": 8,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "dirt"
+    },
+    {
+      "id": 170,
+      "image_id": 170,
+      "category_id": 8,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "dirt"
+    },
+    {
+      "id": 171,
+      "image_id": 171,
+      "category_id": 8,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "dirt"
+    },
+    {
+      "id": 172,
+      "image_id": 172,
+      "category_id": 8,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "dirt"
+    },
+    {
+      "id": 173,
+      "image_id": 173,
+      "category_id": 8,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "dirt"
+    },
+    {
+      "id": 174,
+      "image_id": 174,
+      "category_id": 8,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "dirt"
+    },
+    {
+      "id": 175,
+      "image_id": 175,
+      "category_id": 8,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "dirt"
+    },
+    {
+      "id": 176,
+      "image_id": 176,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 177,
+      "image_id": 177,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 178,
+      "image_id": 178,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 179,
+      "image_id": 179,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 180,
+      "image_id": 180,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 181,
+      "image_id": 181,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 182,
+      "image_id": 182,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 183,
+      "image_id": 183,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 184,
+      "image_id": 184,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 185,
+      "image_id": 185,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 186,
+      "image_id": 186,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 187,
+      "image_id": 187,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 188,
+      "image_id": 188,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 189,
+      "image_id": 189,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 190,
+      "image_id": 190,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 191,
+      "image_id": 191,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 192,
+      "image_id": 192,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 193,
+      "image_id": 193,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 194,
+      "image_id": 194,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 195,
+      "image_id": 195,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 196,
+      "image_id": 196,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 197,
+      "image_id": 197,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 198,
+      "image_id": 198,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 199,
+      "image_id": 199,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 200,
+      "image_id": 200,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 201,
+      "image_id": 201,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 202,
+      "image_id": 202,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 203,
+      "image_id": 203,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 204,
+      "image_id": 204,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 205,
+      "image_id": 205,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 206,
+      "image_id": 206,
+      "category_id": 3,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "coal ore"
+    },
+    {
+      "id": 207,
+      "image_id": 207,
+      "category_id": 3,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "coal ore"
+    },
+    {
+      "id": 208,
+      "image_id": 208,
+      "category_id": 3,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "coal ore"
+    },
+    {
+      "id": 209,
+      "image_id": 209,
+      "category_id": 3,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "coal ore"
+    },
+    {
+      "id": 210,
+      "image_id": 210,
+      "category_id": 3,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "coal ore"
+    },
+    {
+      "id": 211,
+      "image_id": 211,
+      "category_id": 3,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "coal ore"
+    },
+    {
+      "id": 212,
+      "image_id": 212,
+      "category_id": 3,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "coal ore"
+    },
+    {
+      "id": 213,
+      "image_id": 213,
+      "category_id": 3,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "coal ore"
+    },
+    {
+      "id": 214,
+      "image_id": 214,
+      "category_id": 3,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "coal ore"
+    },
+    {
+      "id": 215,
+      "image_id": 215,
+      "category_id": 3,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "coal ore"
+    },
+    {
+      "id": 216,
+      "image_id": 216,
+      "category_id": 3,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "coal ore"
+    },
+    {
+      "id": 217,
+      "image_id": 217,
+      "category_id": 3,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "coal ore"
+    },
+    {
+      "id": 218,
+      "image_id": 218,
+      "category_id": 3,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "coal ore"
+    },
+    {
+      "id": 219,
+      "image_id": 219,
+      "category_id": 3,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "coal ore"
+    },
+    {
+      "id": 220,
+      "image_id": 220,
+      "category_id": 3,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "coal ore"
+    },
+    {
+      "id": 221,
+      "image_id": 221,
+      "category_id": 3,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "coal ore"
+    },
+    {
+      "id": 222,
+      "image_id": 222,
+      "category_id": 3,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "coal ore"
+    },
+    {
+      "id": 223,
+      "image_id": 223,
+      "category_id": 3,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "coal ore"
+    },
+    {
+      "id": 224,
+      "image_id": 224,
+      "category_id": 3,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "coal ore"
+    },
+    {
+      "id": 225,
+      "image_id": 225,
+      "category_id": 3,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "coal ore"
+    },
+    {
+      "id": 226,
+      "image_id": 226,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 227,
+      "image_id": 227,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 228,
+      "image_id": 228,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 229,
+      "image_id": 229,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 230,
+      "image_id": 230,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 231,
+      "image_id": 231,
+      "category_id": 16,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "oak log"
+    },
+    {
+      "id": 232,
+      "image_id": 232,
+      "category_id": 16,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "oak log"
+    },
+    {
+      "id": 233,
+      "image_id": 233,
+      "category_id": 16,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "oak log"
+    },
+    {
+      "id": 234,
+      "image_id": 234,
+      "category_id": 16,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "oak log"
+    },
+    {
+      "id": 235,
+      "image_id": 235,
+      "category_id": 16,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "oak log"
+    },
+    {
+      "id": 236,
+      "image_id": 236,
+      "category_id": 16,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "oak log"
+    },
+    {
+      "id": 237,
+      "image_id": 237,
+      "category_id": 16,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "oak log"
+    },
+    {
+      "id": 238,
+      "image_id": 238,
+      "category_id": 16,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "oak log"
+    },
+    {
+      "id": 239,
+      "image_id": 239,
+      "category_id": 16,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "oak log"
+    },
+    {
+      "id": 240,
+      "image_id": 240,
+      "category_id": 16,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "oak log"
+    },
+    {
+      "id": 241,
+      "image_id": 241,
+      "category_id": 16,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "oak log"
+    },
+    {
+      "id": 242,
+      "image_id": 242,
+      "category_id": 16,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "oak log"
+    },
+    {
+      "id": 243,
+      "image_id": 243,
+      "category_id": 16,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "oak log"
+    },
+    {
+      "id": 244,
+      "image_id": 244,
+      "category_id": 16,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "oak log"
+    },
+    {
+      "id": 245,
+      "image_id": 245,
+      "category_id": 16,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "oak log"
+    },
+    {
+      "id": 246,
+      "image_id": 246,
+      "category_id": 16,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "oak log"
+    },
+    {
+      "id": 247,
+      "image_id": 247,
+      "category_id": 16,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "oak log"
+    },
+    {
+      "id": 248,
+      "image_id": 248,
+      "category_id": 16,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "oak log"
+    },
+    {
+      "id": 249,
+      "image_id": 249,
+      "category_id": 16,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "oak log"
+    },
+    {
+      "id": 250,
+      "image_id": 250,
+      "category_id": 16,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "oak log"
+    },
+    {
+      "id": 251,
+      "image_id": 251,
+      "category_id": 1,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "crafting table"
+    },
+    {
+      "id": 252,
+      "image_id": 252,
+      "category_id": 1,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "crafting table"
+    },
+    {
+      "id": 253,
+      "image_id": 253,
+      "category_id": 1,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "crafting table"
+    },
+    {
+      "id": 254,
+      "image_id": 254,
+      "category_id": 1,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "crafting table"
+    },
+    {
+      "id": 255,
+      "image_id": 255,
+      "category_id": 1,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "crafting table"
+    },
+    {
+      "id": 256,
+      "image_id": 256,
+      "category_id": 11,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "grass block"
+    },
+    {
+      "id": 257,
+      "image_id": 257,
+      "category_id": 11,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "grass block"
+    },
+    {
+      "id": 258,
+      "image_id": 258,
+      "category_id": 11,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "grass block"
+    },
+    {
+      "id": 259,
+      "image_id": 259,
+      "category_id": 11,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "grass block"
+    },
+    {
+      "id": 260,
+      "image_id": 260,
+      "category_id": 11,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "grass block"
+    },
+    {
+      "id": 261,
+      "image_id": 261,
+      "category_id": 8,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "dirt"
+    },
+    {
+      "id": 262,
+      "image_id": 262,
+      "category_id": 8,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "dirt"
+    },
+    {
+      "id": 263,
+      "image_id": 263,
+      "category_id": 8,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "dirt"
+    },
+    {
+      "id": 264,
+      "image_id": 264,
+      "category_id": 8,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "dirt"
+    },
+    {
+      "id": 265,
+      "image_id": 265,
+      "category_id": 8,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "dirt"
+    },
+    {
+      "id": 266,
+      "image_id": 266,
+      "category_id": 8,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "dirt"
+    },
+    {
+      "id": 267,
+      "image_id": 267,
+      "category_id": 8,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "dirt"
+    },
+    {
+      "id": 268,
+      "image_id": 268,
+      "category_id": 8,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "dirt"
+    },
+    {
+      "id": 269,
+      "image_id": 269,
+      "category_id": 8,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "dirt"
+    },
+    {
+      "id": 270,
+      "image_id": 270,
+      "category_id": 8,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "dirt"
+    },
+    {
+      "id": 271,
+      "image_id": 271,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 272,
+      "image_id": 272,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 273,
+      "image_id": 273,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 274,
+      "image_id": 274,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 275,
+      "image_id": 275,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 276,
+      "image_id": 276,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 277,
+      "image_id": 277,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 278,
+      "image_id": 278,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 279,
+      "image_id": 279,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 280,
+      "image_id": 280,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 281,
+      "image_id": 281,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 282,
+      "image_id": 282,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 283,
+      "image_id": 283,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 284,
+      "image_id": 284,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 285,
+      "image_id": 285,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 286,
+      "image_id": 286,
+      "category_id": 1,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "crafting table"
+    },
+    {
+      "id": 287,
+      "image_id": 287,
+      "category_id": 1,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "crafting table"
+    },
+    {
+      "id": 288,
+      "image_id": 288,
+      "category_id": 1,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "crafting table"
+    },
+    {
+      "id": 289,
+      "image_id": 289,
+      "category_id": 1,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "crafting table"
+    },
+    {
+      "id": 290,
+      "image_id": 290,
+      "category_id": 1,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "crafting table"
+    },
+    {
+      "id": 291,
+      "image_id": 291,
+      "category_id": 1,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "granite"
+    },
+    {
+      "id": 292,
+      "image_id": 292,
+      "category_id": 1,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "granite"
+    },
+    {
+      "id": 293,
+      "image_id": 293,
+      "category_id": 1,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "granite"
+    },
+    {
+      "id": 294,
+      "image_id": 294,
+      "category_id": 1,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "granite"
+    },
+    {
+      "id": 295,
+      "image_id": 295,
+      "category_id": 1,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "granite"
+    },
+    {
+      "id": 296,
+      "image_id": 296,
+      "category_id": 1,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "granite"
+    },
+    {
+      "id": 297,
+      "image_id": 297,
+      "category_id": 1,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "granite"
+    },
+    {
+      "id": 298,
+      "image_id": 298,
+      "category_id": 1,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "granite"
+    },
+    {
+      "id": 299,
+      "image_id": 299,
+      "category_id": 1,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "granite"
+    },
+    {
+      "id": 300,
+      "image_id": 300,
+      "category_id": 1,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "granite"
+    },
+    {
+      "id": 301,
+      "image_id": 301,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 302,
+      "image_id": 302,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 303,
+      "image_id": 303,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 304,
+      "image_id": 304,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 305,
+      "image_id": 305,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 306,
+      "image_id": 306,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 307,
+      "image_id": 307,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 308,
+      "image_id": 308,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 309,
+      "image_id": 309,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 310,
+      "image_id": 310,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 311,
+      "image_id": 311,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 312,
+      "image_id": 312,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 313,
+      "image_id": 313,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 314,
+      "image_id": 314,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 315,
+      "image_id": 315,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 316,
+      "image_id": 316,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 317,
+      "image_id": 317,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 318,
+      "image_id": 318,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 319,
+      "image_id": 319,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 320,
+      "image_id": 320,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 321,
+      "image_id": 321,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 322,
+      "image_id": 322,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 323,
+      "image_id": 323,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 324,
+      "image_id": 324,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 325,
+      "image_id": 325,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 326,
+      "image_id": 326,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 327,
+      "image_id": 327,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 328,
+      "image_id": 328,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 329,
+      "image_id": 329,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 330,
+      "image_id": 330,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 331,
+      "image_id": 331,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 332,
+      "image_id": 332,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 333,
+      "image_id": 333,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 334,
+      "image_id": 334,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 335,
+      "image_id": 335,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 336,
+      "image_id": 336,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 337,
+      "image_id": 337,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 338,
+      "image_id": 338,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 339,
+      "image_id": 339,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 340,
+      "image_id": 340,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 341,
+      "image_id": 341,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 342,
+      "image_id": 342,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 343,
+      "image_id": 343,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 344,
+      "image_id": 344,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 345,
+      "image_id": 345,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 346,
+      "image_id": 346,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 347,
+      "image_id": 347,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 348,
+      "image_id": 348,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 349,
+      "image_id": 349,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 350,
+      "image_id": 350,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 351,
+      "image_id": 351,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 352,
+      "image_id": 352,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 353,
+      "image_id": 353,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 354,
+      "image_id": 354,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 355,
+      "image_id": 355,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 356,
+      "image_id": 356,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 357,
+      "image_id": 357,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 358,
+      "image_id": 358,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 359,
+      "image_id": 359,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 360,
+      "image_id": 360,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 361,
+      "image_id": 361,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 362,
+      "image_id": 362,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 363,
+      "image_id": 363,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 364,
+      "image_id": 364,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 365,
+      "image_id": 365,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 366,
+      "image_id": 366,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 367,
+      "image_id": 367,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 368,
+      "image_id": 368,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 369,
+      "image_id": 369,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 370,
+      "image_id": 370,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 371,
+      "image_id": 371,
+      "category_id": 1,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "diorite"
+    },
+    {
+      "id": 372,
+      "image_id": 372,
+      "category_id": 1,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "diorite"
+    },
+    {
+      "id": 373,
+      "image_id": 373,
+      "category_id": 1,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "diorite"
+    },
+    {
+      "id": 374,
+      "image_id": 374,
+      "category_id": 1,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "diorite"
+    },
+    {
+      "id": 375,
+      "image_id": 375,
+      "category_id": 1,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "diorite"
+    },
+    {
+      "id": 376,
+      "image_id": 376,
+      "category_id": 1,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "diorite"
+    },
+    {
+      "id": 377,
+      "image_id": 377,
+      "category_id": 1,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "diorite"
+    },
+    {
+      "id": 378,
+      "image_id": 378,
+      "category_id": 1,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "diorite"
+    },
+    {
+      "id": 379,
+      "image_id": 379,
+      "category_id": 1,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "diorite"
+    },
+    {
+      "id": 380,
+      "image_id": 380,
+      "category_id": 1,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "diorite"
+    },
+    {
+      "id": 381,
+      "image_id": 381,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 382,
+      "image_id": 382,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 383,
+      "image_id": 383,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 384,
+      "image_id": 384,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 385,
+      "image_id": 385,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 386,
+      "image_id": 386,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 387,
+      "image_id": 387,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 388,
+      "image_id": 388,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 389,
+      "image_id": 389,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 390,
+      "image_id": 390,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 391,
+      "image_id": 391,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 392,
+      "image_id": 392,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 393,
+      "image_id": 393,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 394,
+      "image_id": 394,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 395,
+      "image_id": 395,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 396,
+      "image_id": 396,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 397,
+      "image_id": 397,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 398,
+      "image_id": 398,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 399,
+      "image_id": 399,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    },
+    {
+      "id": 400,
+      "image_id": 400,
+      "category_id": 20,
+      "bbox": [
+        240,
+        135,
+        160,
+        90
+      ],
+      "area": 14400,
+      "iscrowd": 0,
+      "caption": "stone"
+    }
+  ]
+}

@@ -1,0 +1,6802 @@
+[
+  {
+    "image_path": "mine_coal_step00062_off-10_coal_ore.png",
+    "block_key": "coal_ore",
+    "label": "coal ore",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 62,
+    "offset": -10
+  },
+  {
+    "image_path": "mine_coal_step00062_off-9_coal_ore.png",
+    "block_key": "coal_ore",
+    "label": "coal ore",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 62,
+    "offset": -9
+  },
+  {
+    "image_path": "mine_coal_step00062_off-8_coal_ore.png",
+    "block_key": "coal_ore",
+    "label": "coal ore",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 62,
+    "offset": -8
+  },
+  {
+    "image_path": "mine_coal_step00062_off-7_coal_ore.png",
+    "block_key": "coal_ore",
+    "label": "coal ore",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 62,
+    "offset": -7
+  },
+  {
+    "image_path": "mine_coal_step00062_off-6_coal_ore.png",
+    "block_key": "coal_ore",
+    "label": "coal ore",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 62,
+    "offset": -6
+  },
+  {
+    "image_path": "mine_coal_step00095_off-10_coal_ore.png",
+    "block_key": "coal_ore",
+    "label": "coal ore",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 95,
+    "offset": -10
+  },
+  {
+    "image_path": "mine_coal_step00095_off-9_coal_ore.png",
+    "block_key": "coal_ore",
+    "label": "coal ore",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 95,
+    "offset": -9
+  },
+  {
+    "image_path": "mine_coal_step00095_off-8_coal_ore.png",
+    "block_key": "coal_ore",
+    "label": "coal ore",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 95,
+    "offset": -8
+  },
+  {
+    "image_path": "mine_coal_step00095_off-7_coal_ore.png",
+    "block_key": "coal_ore",
+    "label": "coal ore",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 95,
+    "offset": -7
+  },
+  {
+    "image_path": "mine_coal_step00095_off-6_coal_ore.png",
+    "block_key": "coal_ore",
+    "label": "coal ore",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 95,
+    "offset": -6
+  },
+  {
+    "image_path": "mine_coal_step00124_off-10_coal_ore.png",
+    "block_key": "coal_ore",
+    "label": "coal ore",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 124,
+    "offset": -10
+  },
+  {
+    "image_path": "mine_coal_step00124_off-9_coal_ore.png",
+    "block_key": "coal_ore",
+    "label": "coal ore",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 124,
+    "offset": -9
+  },
+  {
+    "image_path": "mine_coal_step00124_off-8_coal_ore.png",
+    "block_key": "coal_ore",
+    "label": "coal ore",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 124,
+    "offset": -8
+  },
+  {
+    "image_path": "mine_coal_step00124_off-7_coal_ore.png",
+    "block_key": "coal_ore",
+    "label": "coal ore",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 124,
+    "offset": -7
+  },
+  {
+    "image_path": "mine_coal_step00124_off-6_coal_ore.png",
+    "block_key": "coal_ore",
+    "label": "coal ore",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 124,
+    "offset": -6
+  },
+  {
+    "image_path": "mine_coal_step00144_off-10_coal_ore.png",
+    "block_key": "coal_ore",
+    "label": "coal ore",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 144,
+    "offset": -10
+  },
+  {
+    "image_path": "mine_coal_step00144_off-9_coal_ore.png",
+    "block_key": "coal_ore",
+    "label": "coal ore",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 144,
+    "offset": -9
+  },
+  {
+    "image_path": "mine_coal_step00144_off-8_coal_ore.png",
+    "block_key": "coal_ore",
+    "label": "coal ore",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 144,
+    "offset": -8
+  },
+  {
+    "image_path": "mine_coal_step00144_off-7_coal_ore.png",
+    "block_key": "coal_ore",
+    "label": "coal ore",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 144,
+    "offset": -7
+  },
+  {
+    "image_path": "mine_coal_step00144_off-6_coal_ore.png",
+    "block_key": "coal_ore",
+    "label": "coal ore",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 144,
+    "offset": -6
+  },
+  {
+    "image_path": "mine_coal_step00162_off-10_coal_ore.png",
+    "block_key": "coal_ore",
+    "label": "coal ore",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 162,
+    "offset": -10
+  },
+  {
+    "image_path": "mine_coal_step00162_off-9_coal_ore.png",
+    "block_key": "coal_ore",
+    "label": "coal ore",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 162,
+    "offset": -9
+  },
+  {
+    "image_path": "mine_coal_step00162_off-8_coal_ore.png",
+    "block_key": "coal_ore",
+    "label": "coal ore",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 162,
+    "offset": -8
+  },
+  {
+    "image_path": "mine_coal_step00162_off-7_coal_ore.png",
+    "block_key": "coal_ore",
+    "label": "coal ore",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 162,
+    "offset": -7
+  },
+  {
+    "image_path": "mine_coal_step00162_off-6_coal_ore.png",
+    "block_key": "coal_ore",
+    "label": "coal ore",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 162,
+    "offset": -6
+  },
+  {
+    "image_path": "mine_coal_step00189_off-10_coal_ore.png",
+    "block_key": "coal_ore",
+    "label": "coal ore",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 189,
+    "offset": -10
+  },
+  {
+    "image_path": "mine_coal_step00189_off-9_coal_ore.png",
+    "block_key": "coal_ore",
+    "label": "coal ore",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 189,
+    "offset": -9
+  },
+  {
+    "image_path": "mine_coal_step00189_off-8_coal_ore.png",
+    "block_key": "coal_ore",
+    "label": "coal ore",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 189,
+    "offset": -8
+  },
+  {
+    "image_path": "mine_coal_step00189_off-7_coal_ore.png",
+    "block_key": "coal_ore",
+    "label": "coal ore",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 189,
+    "offset": -7
+  },
+  {
+    "image_path": "mine_coal_step00189_off-6_coal_ore.png",
+    "block_key": "coal_ore",
+    "label": "coal ore",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 189,
+    "offset": -6
+  },
+  {
+    "image_path": "mine_coal_step00207_off-10_coal_ore.png",
+    "block_key": "coal_ore",
+    "label": "coal ore",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 207,
+    "offset": -10
+  },
+  {
+    "image_path": "mine_coal_step00207_off-9_coal_ore.png",
+    "block_key": "coal_ore",
+    "label": "coal ore",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 207,
+    "offset": -9
+  },
+  {
+    "image_path": "mine_coal_step00207_off-8_coal_ore.png",
+    "block_key": "coal_ore",
+    "label": "coal ore",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 207,
+    "offset": -8
+  },
+  {
+    "image_path": "mine_coal_step00207_off-7_coal_ore.png",
+    "block_key": "coal_ore",
+    "label": "coal ore",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 207,
+    "offset": -7
+  },
+  {
+    "image_path": "mine_coal_step00207_off-6_coal_ore.png",
+    "block_key": "coal_ore",
+    "label": "coal ore",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 207,
+    "offset": -6
+  },
+  {
+    "image_path": "mine_coal_step00225_off-10_coal_ore.png",
+    "block_key": "coal_ore",
+    "label": "coal ore",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 225,
+    "offset": -10
+  },
+  {
+    "image_path": "mine_coal_step00225_off-9_coal_ore.png",
+    "block_key": "coal_ore",
+    "label": "coal ore",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 225,
+    "offset": -9
+  },
+  {
+    "image_path": "mine_coal_step00225_off-8_coal_ore.png",
+    "block_key": "coal_ore",
+    "label": "coal ore",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 225,
+    "offset": -8
+  },
+  {
+    "image_path": "mine_coal_step00225_off-7_coal_ore.png",
+    "block_key": "coal_ore",
+    "label": "coal ore",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 225,
+    "offset": -7
+  },
+  {
+    "image_path": "mine_coal_step00225_off-6_coal_ore.png",
+    "block_key": "coal_ore",
+    "label": "coal ore",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 225,
+    "offset": -6
+  },
+  {
+    "image_path": "mine_coal_step00243_off-10_coal_ore.png",
+    "block_key": "coal_ore",
+    "label": "coal ore",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 243,
+    "offset": -10
+  },
+  {
+    "image_path": "mine_coal_step00243_off-9_coal_ore.png",
+    "block_key": "coal_ore",
+    "label": "coal ore",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 243,
+    "offset": -9
+  },
+  {
+    "image_path": "mine_coal_step00243_off-8_coal_ore.png",
+    "block_key": "coal_ore",
+    "label": "coal ore",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 243,
+    "offset": -8
+  },
+  {
+    "image_path": "mine_coal_step00243_off-7_coal_ore.png",
+    "block_key": "coal_ore",
+    "label": "coal ore",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 243,
+    "offset": -7
+  },
+  {
+    "image_path": "mine_coal_step00243_off-6_coal_ore.png",
+    "block_key": "coal_ore",
+    "label": "coal ore",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 243,
+    "offset": -6
+  },
+  {
+    "image_path": "mine_coal_step00261_off-10_coal_ore.png",
+    "block_key": "coal_ore",
+    "label": "coal ore",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 261,
+    "offset": -10
+  },
+  {
+    "image_path": "mine_coal_step00261_off-9_coal_ore.png",
+    "block_key": "coal_ore",
+    "label": "coal ore",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 261,
+    "offset": -9
+  },
+  {
+    "image_path": "mine_coal_step00261_off-8_coal_ore.png",
+    "block_key": "coal_ore",
+    "label": "coal ore",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 261,
+    "offset": -8
+  },
+  {
+    "image_path": "mine_coal_step00261_off-7_coal_ore.png",
+    "block_key": "coal_ore",
+    "label": "coal ore",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 261,
+    "offset": -7
+  },
+  {
+    "image_path": "mine_coal_step00261_off-6_coal_ore.png",
+    "block_key": "coal_ore",
+    "label": "coal ore",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 261,
+    "offset": -6
+  },
+  {
+    "image_path": "mine_coal_step00279_off-10_coal_ore.png",
+    "block_key": "coal_ore",
+    "label": "coal ore",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 279,
+    "offset": -10
+  },
+  {
+    "image_path": "mine_coal_step00279_off-9_coal_ore.png",
+    "block_key": "coal_ore",
+    "label": "coal ore",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 279,
+    "offset": -9
+  },
+  {
+    "image_path": "mine_coal_step00279_off-8_coal_ore.png",
+    "block_key": "coal_ore",
+    "label": "coal ore",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 279,
+    "offset": -8
+  },
+  {
+    "image_path": "mine_coal_step00279_off-7_coal_ore.png",
+    "block_key": "coal_ore",
+    "label": "coal ore",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 279,
+    "offset": -7
+  },
+  {
+    "image_path": "mine_coal_step00279_off-6_coal_ore.png",
+    "block_key": "coal_ore",
+    "label": "coal ore",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 279,
+    "offset": -6
+  },
+  {
+    "image_path": "mine_coal_step00297_off-10_coal_ore.png",
+    "block_key": "coal_ore",
+    "label": "coal ore",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 297,
+    "offset": -10
+  },
+  {
+    "image_path": "mine_coal_step00297_off-9_coal_ore.png",
+    "block_key": "coal_ore",
+    "label": "coal ore",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 297,
+    "offset": -9
+  },
+  {
+    "image_path": "mine_coal_step00297_off-8_coal_ore.png",
+    "block_key": "coal_ore",
+    "label": "coal ore",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 297,
+    "offset": -8
+  },
+  {
+    "image_path": "mine_coal_step00297_off-7_coal_ore.png",
+    "block_key": "coal_ore",
+    "label": "coal ore",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 297,
+    "offset": -7
+  },
+  {
+    "image_path": "mine_coal_step00297_off-6_coal_ore.png",
+    "block_key": "coal_ore",
+    "label": "coal ore",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 297,
+    "offset": -6
+  },
+  {
+    "image_path": "mine_coal_step00338_off-10_coal_ore.png",
+    "block_key": "coal_ore",
+    "label": "coal ore",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 338,
+    "offset": -10
+  },
+  {
+    "image_path": "mine_coal_step00338_off-9_coal_ore.png",
+    "block_key": "coal_ore",
+    "label": "coal ore",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 338,
+    "offset": -9
+  },
+  {
+    "image_path": "mine_coal_step00338_off-8_coal_ore.png",
+    "block_key": "coal_ore",
+    "label": "coal ore",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 338,
+    "offset": -8
+  },
+  {
+    "image_path": "mine_coal_step00338_off-7_coal_ore.png",
+    "block_key": "coal_ore",
+    "label": "coal ore",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 338,
+    "offset": -7
+  },
+  {
+    "image_path": "mine_coal_step00338_off-6_coal_ore.png",
+    "block_key": "coal_ore",
+    "label": "coal ore",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 338,
+    "offset": -6
+  },
+  {
+    "image_path": "mine_coal_step00370_off-10_coal_ore.png",
+    "block_key": "coal_ore",
+    "label": "coal ore",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 370,
+    "offset": -10
+  },
+  {
+    "image_path": "mine_coal_step00370_off-9_coal_ore.png",
+    "block_key": "coal_ore",
+    "label": "coal ore",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 370,
+    "offset": -9
+  },
+  {
+    "image_path": "mine_coal_step00370_off-8_coal_ore.png",
+    "block_key": "coal_ore",
+    "label": "coal ore",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 370,
+    "offset": -8
+  },
+  {
+    "image_path": "mine_coal_step00370_off-7_coal_ore.png",
+    "block_key": "coal_ore",
+    "label": "coal ore",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 370,
+    "offset": -7
+  },
+  {
+    "image_path": "mine_coal_step00370_off-6_coal_ore.png",
+    "block_key": "coal_ore",
+    "label": "coal ore",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 370,
+    "offset": -6
+  },
+  {
+    "image_path": "mine_coal_step00390_off-10_coal_ore.png",
+    "block_key": "coal_ore",
+    "label": "coal ore",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 390,
+    "offset": -10
+  },
+  {
+    "image_path": "mine_coal_step00390_off-9_coal_ore.png",
+    "block_key": "coal_ore",
+    "label": "coal ore",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 390,
+    "offset": -9
+  },
+  {
+    "image_path": "mine_coal_step00390_off-8_coal_ore.png",
+    "block_key": "coal_ore",
+    "label": "coal ore",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 390,
+    "offset": -8
+  },
+  {
+    "image_path": "mine_coal_step00390_off-7_coal_ore.png",
+    "block_key": "coal_ore",
+    "label": "coal ore",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 390,
+    "offset": -7
+  },
+  {
+    "image_path": "mine_coal_step00390_off-6_coal_ore.png",
+    "block_key": "coal_ore",
+    "label": "coal ore",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 390,
+    "offset": -6
+  },
+  {
+    "image_path": "mine_coal_step00412_off-10_coal_ore.png",
+    "block_key": "coal_ore",
+    "label": "coal ore",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 412,
+    "offset": -10
+  },
+  {
+    "image_path": "mine_coal_step00412_off-9_coal_ore.png",
+    "block_key": "coal_ore",
+    "label": "coal ore",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 412,
+    "offset": -9
+  },
+  {
+    "image_path": "mine_coal_step00412_off-8_coal_ore.png",
+    "block_key": "coal_ore",
+    "label": "coal ore",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 412,
+    "offset": -8
+  },
+  {
+    "image_path": "mine_coal_step00412_off-7_coal_ore.png",
+    "block_key": "coal_ore",
+    "label": "coal ore",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 412,
+    "offset": -7
+  },
+  {
+    "image_path": "mine_coal_step00412_off-6_coal_ore.png",
+    "block_key": "coal_ore",
+    "label": "coal ore",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 412,
+    "offset": -6
+  },
+  {
+    "image_path": "mine_coal_step00432_off-10_coal_ore.png",
+    "block_key": "coal_ore",
+    "label": "coal ore",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 432,
+    "offset": -10
+  },
+  {
+    "image_path": "mine_coal_step00432_off-9_coal_ore.png",
+    "block_key": "coal_ore",
+    "label": "coal ore",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 432,
+    "offset": -9
+  },
+  {
+    "image_path": "mine_coal_step00432_off-8_coal_ore.png",
+    "block_key": "coal_ore",
+    "label": "coal ore",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 432,
+    "offset": -8
+  },
+  {
+    "image_path": "mine_coal_step00432_off-7_coal_ore.png",
+    "block_key": "coal_ore",
+    "label": "coal ore",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 432,
+    "offset": -7
+  },
+  {
+    "image_path": "mine_coal_step00432_off-6_coal_ore.png",
+    "block_key": "coal_ore",
+    "label": "coal ore",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 432,
+    "offset": -6
+  },
+  {
+    "image_path": "mine_coal_step00454_off-10_coal_ore.png",
+    "block_key": "coal_ore",
+    "label": "coal ore",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 454,
+    "offset": -10
+  },
+  {
+    "image_path": "mine_coal_step00454_off-9_coal_ore.png",
+    "block_key": "coal_ore",
+    "label": "coal ore",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 454,
+    "offset": -9
+  },
+  {
+    "image_path": "mine_coal_step00454_off-8_coal_ore.png",
+    "block_key": "coal_ore",
+    "label": "coal ore",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 454,
+    "offset": -8
+  },
+  {
+    "image_path": "mine_coal_step00454_off-7_coal_ore.png",
+    "block_key": "coal_ore",
+    "label": "coal ore",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 454,
+    "offset": -7
+  },
+  {
+    "image_path": "mine_coal_step00454_off-6_coal_ore.png",
+    "block_key": "coal_ore",
+    "label": "coal ore",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 454,
+    "offset": -6
+  },
+  {
+    "image_path": "mine_coal_step00479_off-10_coal_ore.png",
+    "block_key": "coal_ore",
+    "label": "coal ore",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 479,
+    "offset": -10
+  },
+  {
+    "image_path": "mine_coal_step00479_off-9_coal_ore.png",
+    "block_key": "coal_ore",
+    "label": "coal ore",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 479,
+    "offset": -9
+  },
+  {
+    "image_path": "mine_coal_step00479_off-8_coal_ore.png",
+    "block_key": "coal_ore",
+    "label": "coal ore",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 479,
+    "offset": -8
+  },
+  {
+    "image_path": "mine_coal_step00479_off-7_coal_ore.png",
+    "block_key": "coal_ore",
+    "label": "coal ore",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 479,
+    "offset": -7
+  },
+  {
+    "image_path": "mine_coal_step00479_off-6_coal_ore.png",
+    "block_key": "coal_ore",
+    "label": "coal ore",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 479,
+    "offset": -6
+  },
+  {
+    "image_path": "mine_coal_step00498_off-10_coal_ore.png",
+    "block_key": "coal_ore",
+    "label": "coal ore",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 498,
+    "offset": -10
+  },
+  {
+    "image_path": "mine_coal_step00498_off-9_coal_ore.png",
+    "block_key": "coal_ore",
+    "label": "coal ore",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 498,
+    "offset": -9
+  },
+  {
+    "image_path": "mine_coal_step00498_off-8_coal_ore.png",
+    "block_key": "coal_ore",
+    "label": "coal ore",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 498,
+    "offset": -8
+  },
+  {
+    "image_path": "mine_coal_step00498_off-7_coal_ore.png",
+    "block_key": "coal_ore",
+    "label": "coal ore",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 498,
+    "offset": -7
+  },
+  {
+    "image_path": "mine_coal_step00498_off-6_coal_ore.png",
+    "block_key": "coal_ore",
+    "label": "coal ore",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 498,
+    "offset": -6
+  },
+  {
+    "image_path": "mine_coal_step00536_off-10_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 536,
+    "offset": -10
+  },
+  {
+    "image_path": "mine_coal_step00536_off-9_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 536,
+    "offset": -9
+  },
+  {
+    "image_path": "mine_coal_step00536_off-8_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 536,
+    "offset": -8
+  },
+  {
+    "image_path": "mine_coal_step00536_off-7_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 536,
+    "offset": -7
+  },
+  {
+    "image_path": "mine_coal_step00536_off-6_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 536,
+    "offset": -6
+  },
+  {
+    "image_path": "mine_coal_step00551_off-10_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 551,
+    "offset": -10
+  },
+  {
+    "image_path": "mine_coal_step00551_off-9_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 551,
+    "offset": -9
+  },
+  {
+    "image_path": "mine_coal_step00551_off-8_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 551,
+    "offset": -8
+  },
+  {
+    "image_path": "mine_coal_step00551_off-7_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 551,
+    "offset": -7
+  },
+  {
+    "image_path": "mine_coal_step00551_off-6_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 551,
+    "offset": -6
+  },
+  {
+    "image_path": "mine_coal_step00929_off-10_grass_block.png",
+    "block_key": "grass_block",
+    "label": "grass block",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 929,
+    "offset": -10
+  },
+  {
+    "image_path": "mine_coal_step00929_off-9_grass_block.png",
+    "block_key": "grass_block",
+    "label": "grass block",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 929,
+    "offset": -9
+  },
+  {
+    "image_path": "mine_coal_step00929_off-8_grass_block.png",
+    "block_key": "grass_block",
+    "label": "grass block",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 929,
+    "offset": -8
+  },
+  {
+    "image_path": "mine_coal_step00929_off-7_grass_block.png",
+    "block_key": "grass_block",
+    "label": "grass block",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 929,
+    "offset": -7
+  },
+  {
+    "image_path": "mine_coal_step00929_off-6_grass_block.png",
+    "block_key": "grass_block",
+    "label": "grass block",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 929,
+    "offset": -6
+  },
+  {
+    "image_path": "mine_coal_step01272_off-10_spruce_leaves.png",
+    "block_key": "spruce_leaves",
+    "label": "spruce leaves",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1272,
+    "offset": -10
+  },
+  {
+    "image_path": "mine_coal_step01272_off-9_spruce_leaves.png",
+    "block_key": "spruce_leaves",
+    "label": "spruce leaves",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1272,
+    "offset": -9
+  },
+  {
+    "image_path": "mine_coal_step01272_off-8_spruce_leaves.png",
+    "block_key": "spruce_leaves",
+    "label": "spruce leaves",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1272,
+    "offset": -8
+  },
+  {
+    "image_path": "mine_coal_step01272_off-7_spruce_leaves.png",
+    "block_key": "spruce_leaves",
+    "label": "spruce leaves",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1272,
+    "offset": -7
+  },
+  {
+    "image_path": "mine_coal_step01272_off-6_spruce_leaves.png",
+    "block_key": "spruce_leaves",
+    "label": "spruce leaves",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1272,
+    "offset": -6
+  },
+  {
+    "image_path": "mine_coal_step01341_off-10_spruce_log.png",
+    "block_key": "spruce_log",
+    "label": "spruce log",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1341,
+    "offset": -10
+  },
+  {
+    "image_path": "mine_coal_step01341_off-9_spruce_log.png",
+    "block_key": "spruce_log",
+    "label": "spruce log",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1341,
+    "offset": -9
+  },
+  {
+    "image_path": "mine_coal_step01341_off-8_spruce_log.png",
+    "block_key": "spruce_log",
+    "label": "spruce log",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1341,
+    "offset": -8
+  },
+  {
+    "image_path": "mine_coal_step01341_off-7_spruce_log.png",
+    "block_key": "spruce_log",
+    "label": "spruce log",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1341,
+    "offset": -7
+  },
+  {
+    "image_path": "mine_coal_step01341_off-6_spruce_log.png",
+    "block_key": "spruce_log",
+    "label": "spruce log",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1341,
+    "offset": -6
+  },
+  {
+    "image_path": "mine_coal_step01364_off-10_spruce_leaves.png",
+    "block_key": "spruce_leaves",
+    "label": "spruce leaves",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1364,
+    "offset": -10
+  },
+  {
+    "image_path": "mine_coal_step01364_off-9_spruce_leaves.png",
+    "block_key": "spruce_leaves",
+    "label": "spruce leaves",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1364,
+    "offset": -9
+  },
+  {
+    "image_path": "mine_coal_step01364_off-8_spruce_leaves.png",
+    "block_key": "spruce_leaves",
+    "label": "spruce leaves",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1364,
+    "offset": -8
+  },
+  {
+    "image_path": "mine_coal_step01364_off-7_spruce_leaves.png",
+    "block_key": "spruce_leaves",
+    "label": "spruce leaves",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1364,
+    "offset": -7
+  },
+  {
+    "image_path": "mine_coal_step01364_off-6_spruce_leaves.png",
+    "block_key": "spruce_leaves",
+    "label": "spruce leaves",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1364,
+    "offset": -6
+  },
+  {
+    "image_path": "mine_coal_step01431_off-10_spruce_log.png",
+    "block_key": "spruce_log",
+    "label": "spruce log",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1431,
+    "offset": -10
+  },
+  {
+    "image_path": "mine_coal_step01431_off-9_spruce_log.png",
+    "block_key": "spruce_log",
+    "label": "spruce log",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1431,
+    "offset": -9
+  },
+  {
+    "image_path": "mine_coal_step01431_off-8_spruce_log.png",
+    "block_key": "spruce_log",
+    "label": "spruce log",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1431,
+    "offset": -8
+  },
+  {
+    "image_path": "mine_coal_step01431_off-7_spruce_log.png",
+    "block_key": "spruce_log",
+    "label": "spruce log",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1431,
+    "offset": -7
+  },
+  {
+    "image_path": "mine_coal_step01431_off-6_spruce_log.png",
+    "block_key": "spruce_log",
+    "label": "spruce log",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1431,
+    "offset": -6
+  },
+  {
+    "image_path": "mine_coal_step01533_off-10_spruce_log.png",
+    "block_key": "spruce_log",
+    "label": "spruce log",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1533,
+    "offset": -10
+  },
+  {
+    "image_path": "mine_coal_step01533_off-9_spruce_log.png",
+    "block_key": "spruce_log",
+    "label": "spruce log",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1533,
+    "offset": -9
+  },
+  {
+    "image_path": "mine_coal_step01533_off-8_spruce_log.png",
+    "block_key": "spruce_log",
+    "label": "spruce log",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1533,
+    "offset": -8
+  },
+  {
+    "image_path": "mine_coal_step01533_off-7_spruce_log.png",
+    "block_key": "spruce_log",
+    "label": "spruce log",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1533,
+    "offset": -7
+  },
+  {
+    "image_path": "mine_coal_step01533_off-6_spruce_log.png",
+    "block_key": "spruce_log",
+    "label": "spruce log",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1533,
+    "offset": -6
+  },
+  {
+    "image_path": "mine_coal_step01600_off-10_spruce_log.png",
+    "block_key": "spruce_log",
+    "label": "spruce log",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1600,
+    "offset": -10
+  },
+  {
+    "image_path": "mine_coal_step01600_off-9_spruce_log.png",
+    "block_key": "spruce_log",
+    "label": "spruce log",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1600,
+    "offset": -9
+  },
+  {
+    "image_path": "mine_coal_step01600_off-8_spruce_log.png",
+    "block_key": "spruce_log",
+    "label": "spruce log",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1600,
+    "offset": -8
+  },
+  {
+    "image_path": "mine_coal_step01600_off-7_spruce_log.png",
+    "block_key": "spruce_log",
+    "label": "spruce log",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1600,
+    "offset": -7
+  },
+  {
+    "image_path": "mine_coal_step01600_off-6_spruce_log.png",
+    "block_key": "spruce_log",
+    "label": "spruce log",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1600,
+    "offset": -6
+  },
+  {
+    "image_path": "mine_coal_step01667_off-10_spruce_log.png",
+    "block_key": "spruce_log",
+    "label": "spruce log",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1667,
+    "offset": -10
+  },
+  {
+    "image_path": "mine_coal_step01667_off-9_spruce_log.png",
+    "block_key": "spruce_log",
+    "label": "spruce log",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1667,
+    "offset": -9
+  },
+  {
+    "image_path": "mine_coal_step01667_off-8_spruce_log.png",
+    "block_key": "spruce_log",
+    "label": "spruce log",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1667,
+    "offset": -8
+  },
+  {
+    "image_path": "mine_coal_step01667_off-7_spruce_log.png",
+    "block_key": "spruce_log",
+    "label": "spruce log",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1667,
+    "offset": -7
+  },
+  {
+    "image_path": "mine_coal_step01667_off-6_spruce_log.png",
+    "block_key": "spruce_log",
+    "label": "spruce log",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1667,
+    "offset": -6
+  },
+  {
+    "image_path": "mine_coal_step01960_off-10_grass_block.png",
+    "block_key": "grass_block",
+    "label": "grass block",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1960,
+    "offset": -10
+  },
+  {
+    "image_path": "mine_coal_step01960_off-9_grass_block.png",
+    "block_key": "grass_block",
+    "label": "grass block",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1960,
+    "offset": -9
+  },
+  {
+    "image_path": "mine_coal_step01960_off-8_grass_block.png",
+    "block_key": "grass_block",
+    "label": "grass block",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1960,
+    "offset": -8
+  },
+  {
+    "image_path": "mine_coal_step01960_off-7_grass_block.png",
+    "block_key": "grass_block",
+    "label": "grass block",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1960,
+    "offset": -7
+  },
+  {
+    "image_path": "mine_coal_step01960_off-6_grass_block.png",
+    "block_key": "grass_block",
+    "label": "grass block",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1960,
+    "offset": -6
+  },
+  {
+    "image_path": "mine_coal_step01981_off-10_dirt.png",
+    "block_key": "dirt",
+    "label": "dirt",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1981,
+    "offset": -10
+  },
+  {
+    "image_path": "mine_coal_step01981_off-9_dirt.png",
+    "block_key": "dirt",
+    "label": "dirt",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1981,
+    "offset": -9
+  },
+  {
+    "image_path": "mine_coal_step01981_off-8_dirt.png",
+    "block_key": "dirt",
+    "label": "dirt",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1981,
+    "offset": -8
+  },
+  {
+    "image_path": "mine_coal_step01981_off-7_dirt.png",
+    "block_key": "dirt",
+    "label": "dirt",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1981,
+    "offset": -7
+  },
+  {
+    "image_path": "mine_coal_step01981_off-6_dirt.png",
+    "block_key": "dirt",
+    "label": "dirt",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1981,
+    "offset": -6
+  },
+  {
+    "image_path": "mine_coal_step02015_off-10_grass_block.png",
+    "block_key": "grass_block",
+    "label": "grass block",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 2015,
+    "offset": -10
+  },
+  {
+    "image_path": "mine_coal_step02015_off-9_grass_block.png",
+    "block_key": "grass_block",
+    "label": "grass block",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 2015,
+    "offset": -9
+  },
+  {
+    "image_path": "mine_coal_step02015_off-8_grass_block.png",
+    "block_key": "grass_block",
+    "label": "grass block",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 2015,
+    "offset": -8
+  },
+  {
+    "image_path": "mine_coal_step02015_off-7_grass_block.png",
+    "block_key": "grass_block",
+    "label": "grass block",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 2015,
+    "offset": -7
+  },
+  {
+    "image_path": "mine_coal_step02015_off-6_grass_block.png",
+    "block_key": "grass_block",
+    "label": "grass block",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 2015,
+    "offset": -6
+  },
+  {
+    "image_path": "mine_coal_step02054_off-10_dirt.png",
+    "block_key": "dirt",
+    "label": "dirt",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 2054,
+    "offset": -10
+  },
+  {
+    "image_path": "mine_coal_step02054_off-9_dirt.png",
+    "block_key": "dirt",
+    "label": "dirt",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 2054,
+    "offset": -9
+  },
+  {
+    "image_path": "mine_coal_step02054_off-8_dirt.png",
+    "block_key": "dirt",
+    "label": "dirt",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 2054,
+    "offset": -8
+  },
+  {
+    "image_path": "mine_coal_step02054_off-7_dirt.png",
+    "block_key": "dirt",
+    "label": "dirt",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 2054,
+    "offset": -7
+  },
+  {
+    "image_path": "mine_coal_step02054_off-6_dirt.png",
+    "block_key": "dirt",
+    "label": "dirt",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 2054,
+    "offset": -6
+  },
+  {
+    "image_path": "mine_coal_step02175_off-10_dirt.png",
+    "block_key": "dirt",
+    "label": "dirt",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 2175,
+    "offset": -10
+  },
+  {
+    "image_path": "mine_coal_step02175_off-9_dirt.png",
+    "block_key": "dirt",
+    "label": "dirt",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 2175,
+    "offset": -9
+  },
+  {
+    "image_path": "mine_coal_step02175_off-8_dirt.png",
+    "block_key": "dirt",
+    "label": "dirt",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 2175,
+    "offset": -8
+  },
+  {
+    "image_path": "mine_coal_step02175_off-7_dirt.png",
+    "block_key": "dirt",
+    "label": "dirt",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 2175,
+    "offset": -7
+  },
+  {
+    "image_path": "mine_coal_step02175_off-6_dirt.png",
+    "block_key": "dirt",
+    "label": "dirt",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 2175,
+    "offset": -6
+  },
+  {
+    "image_path": "mine_coal_step02187_off-10_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 2187,
+    "offset": -10
+  },
+  {
+    "image_path": "mine_coal_step02187_off-9_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 2187,
+    "offset": -9
+  },
+  {
+    "image_path": "mine_coal_step02187_off-8_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 2187,
+    "offset": -8
+  },
+  {
+    "image_path": "mine_coal_step02187_off-7_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 2187,
+    "offset": -7
+  },
+  {
+    "image_path": "mine_coal_step02187_off-6_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 2187,
+    "offset": -6
+  },
+  {
+    "image_path": "mine_coal_step02199_off-10_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 2199,
+    "offset": -10
+  },
+  {
+    "image_path": "mine_coal_step02199_off-9_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 2199,
+    "offset": -9
+  },
+  {
+    "image_path": "mine_coal_step02199_off-8_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 2199,
+    "offset": -8
+  },
+  {
+    "image_path": "mine_coal_step02199_off-7_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 2199,
+    "offset": -7
+  },
+  {
+    "image_path": "mine_coal_step02199_off-6_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 2199,
+    "offset": -6
+  },
+  {
+    "image_path": "mine_coal_step02264_off-10_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 2264,
+    "offset": -10
+  },
+  {
+    "image_path": "mine_coal_step02264_off-9_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 2264,
+    "offset": -9
+  },
+  {
+    "image_path": "mine_coal_step02264_off-8_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 2264,
+    "offset": -8
+  },
+  {
+    "image_path": "mine_coal_step02264_off-7_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 2264,
+    "offset": -7
+  },
+  {
+    "image_path": "mine_coal_step02264_off-6_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 2264,
+    "offset": -6
+  },
+  {
+    "image_path": "mine_coal_step02276_off-10_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 2276,
+    "offset": -10
+  },
+  {
+    "image_path": "mine_coal_step02276_off-9_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 2276,
+    "offset": -9
+  },
+  {
+    "image_path": "mine_coal_step02276_off-8_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 2276,
+    "offset": -8
+  },
+  {
+    "image_path": "mine_coal_step02276_off-7_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 2276,
+    "offset": -7
+  },
+  {
+    "image_path": "mine_coal_step02276_off-6_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 2276,
+    "offset": -6
+  },
+  {
+    "image_path": "mine_coal_step02288_off-10_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 2288,
+    "offset": -10
+  },
+  {
+    "image_path": "mine_coal_step02288_off-9_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 2288,
+    "offset": -9
+  },
+  {
+    "image_path": "mine_coal_step02288_off-8_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 2288,
+    "offset": -8
+  },
+  {
+    "image_path": "mine_coal_step02288_off-7_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 2288,
+    "offset": -7
+  },
+  {
+    "image_path": "mine_coal_step02288_off-6_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_coal",
+    "task_target": "Point to the coal ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 2288,
+    "offset": -6
+  },
+  {
+    "image_path": "mine_emerald_step00202_off-10_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 202,
+    "offset": -10
+  },
+  {
+    "image_path": "mine_emerald_step00202_off-9_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 202,
+    "offset": -9
+  },
+  {
+    "image_path": "mine_emerald_step00202_off-8_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 202,
+    "offset": -8
+  },
+  {
+    "image_path": "mine_emerald_step00202_off-7_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 202,
+    "offset": -7
+  },
+  {
+    "image_path": "mine_emerald_step00202_off-6_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 202,
+    "offset": -6
+  },
+  {
+    "image_path": "mine_emerald_step00220_off-10_coal_ore.png",
+    "block_key": "coal_ore",
+    "label": "coal ore",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 220,
+    "offset": -10
+  },
+  {
+    "image_path": "mine_emerald_step00220_off-9_coal_ore.png",
+    "block_key": "coal_ore",
+    "label": "coal ore",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 220,
+    "offset": -9
+  },
+  {
+    "image_path": "mine_emerald_step00220_off-8_coal_ore.png",
+    "block_key": "coal_ore",
+    "label": "coal ore",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 220,
+    "offset": -8
+  },
+  {
+    "image_path": "mine_emerald_step00220_off-7_coal_ore.png",
+    "block_key": "coal_ore",
+    "label": "coal ore",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 220,
+    "offset": -7
+  },
+  {
+    "image_path": "mine_emerald_step00220_off-6_coal_ore.png",
+    "block_key": "coal_ore",
+    "label": "coal ore",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 220,
+    "offset": -6
+  },
+  {
+    "image_path": "mine_emerald_step00238_off-10_coal_ore.png",
+    "block_key": "coal_ore",
+    "label": "coal ore",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 238,
+    "offset": -10
+  },
+  {
+    "image_path": "mine_emerald_step00238_off-9_coal_ore.png",
+    "block_key": "coal_ore",
+    "label": "coal ore",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 238,
+    "offset": -9
+  },
+  {
+    "image_path": "mine_emerald_step00238_off-8_coal_ore.png",
+    "block_key": "coal_ore",
+    "label": "coal ore",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 238,
+    "offset": -8
+  },
+  {
+    "image_path": "mine_emerald_step00238_off-7_coal_ore.png",
+    "block_key": "coal_ore",
+    "label": "coal ore",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 238,
+    "offset": -7
+  },
+  {
+    "image_path": "mine_emerald_step00238_off-6_coal_ore.png",
+    "block_key": "coal_ore",
+    "label": "coal ore",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 238,
+    "offset": -6
+  },
+  {
+    "image_path": "mine_emerald_step00258_off-10_coal_ore.png",
+    "block_key": "coal_ore",
+    "label": "coal ore",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 258,
+    "offset": -10
+  },
+  {
+    "image_path": "mine_emerald_step00258_off-9_coal_ore.png",
+    "block_key": "coal_ore",
+    "label": "coal ore",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 258,
+    "offset": -9
+  },
+  {
+    "image_path": "mine_emerald_step00258_off-8_coal_ore.png",
+    "block_key": "coal_ore",
+    "label": "coal ore",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 258,
+    "offset": -8
+  },
+  {
+    "image_path": "mine_emerald_step00258_off-7_coal_ore.png",
+    "block_key": "coal_ore",
+    "label": "coal ore",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 258,
+    "offset": -7
+  },
+  {
+    "image_path": "mine_emerald_step00258_off-6_coal_ore.png",
+    "block_key": "coal_ore",
+    "label": "coal ore",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 258,
+    "offset": -6
+  },
+  {
+    "image_path": "mine_emerald_step00278_off-10_coal_ore.png",
+    "block_key": "coal_ore",
+    "label": "coal ore",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 278,
+    "offset": -10
+  },
+  {
+    "image_path": "mine_emerald_step00278_off-9_coal_ore.png",
+    "block_key": "coal_ore",
+    "label": "coal ore",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 278,
+    "offset": -9
+  },
+  {
+    "image_path": "mine_emerald_step00278_off-8_coal_ore.png",
+    "block_key": "coal_ore",
+    "label": "coal ore",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 278,
+    "offset": -8
+  },
+  {
+    "image_path": "mine_emerald_step00278_off-7_coal_ore.png",
+    "block_key": "coal_ore",
+    "label": "coal ore",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 278,
+    "offset": -7
+  },
+  {
+    "image_path": "mine_emerald_step00278_off-6_coal_ore.png",
+    "block_key": "coal_ore",
+    "label": "coal ore",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 278,
+    "offset": -6
+  },
+  {
+    "image_path": "mine_emerald_step00290_off-10_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 290,
+    "offset": -10
+  },
+  {
+    "image_path": "mine_emerald_step00290_off-9_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 290,
+    "offset": -9
+  },
+  {
+    "image_path": "mine_emerald_step00290_off-8_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 290,
+    "offset": -8
+  },
+  {
+    "image_path": "mine_emerald_step00290_off-7_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 290,
+    "offset": -7
+  },
+  {
+    "image_path": "mine_emerald_step00290_off-6_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 290,
+    "offset": -6
+  },
+  {
+    "image_path": "mine_emerald_step00737_off-10_oak_log.png",
+    "block_key": "oak_log",
+    "label": "oak log",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 737,
+    "offset": -10
+  },
+  {
+    "image_path": "mine_emerald_step00737_off-9_oak_log.png",
+    "block_key": "oak_log",
+    "label": "oak log",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 737,
+    "offset": -9
+  },
+  {
+    "image_path": "mine_emerald_step00737_off-8_oak_log.png",
+    "block_key": "oak_log",
+    "label": "oak log",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 737,
+    "offset": -8
+  },
+  {
+    "image_path": "mine_emerald_step00737_off-7_oak_log.png",
+    "block_key": "oak_log",
+    "label": "oak log",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 737,
+    "offset": -7
+  },
+  {
+    "image_path": "mine_emerald_step00737_off-6_oak_log.png",
+    "block_key": "oak_log",
+    "label": "oak log",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 737,
+    "offset": -6
+  },
+  {
+    "image_path": "mine_emerald_step00817_off-10_oak_log.png",
+    "block_key": "oak_log",
+    "label": "oak log",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 817,
+    "offset": -10
+  },
+  {
+    "image_path": "mine_emerald_step00817_off-9_oak_log.png",
+    "block_key": "oak_log",
+    "label": "oak log",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 817,
+    "offset": -9
+  },
+  {
+    "image_path": "mine_emerald_step00817_off-8_oak_log.png",
+    "block_key": "oak_log",
+    "label": "oak log",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 817,
+    "offset": -8
+  },
+  {
+    "image_path": "mine_emerald_step00817_off-7_oak_log.png",
+    "block_key": "oak_log",
+    "label": "oak log",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 817,
+    "offset": -7
+  },
+  {
+    "image_path": "mine_emerald_step00817_off-6_oak_log.png",
+    "block_key": "oak_log",
+    "label": "oak log",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 817,
+    "offset": -6
+  },
+  {
+    "image_path": "mine_emerald_step00888_off-10_oak_log.png",
+    "block_key": "oak_log",
+    "label": "oak log",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 888,
+    "offset": -10
+  },
+  {
+    "image_path": "mine_emerald_step00888_off-9_oak_log.png",
+    "block_key": "oak_log",
+    "label": "oak log",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 888,
+    "offset": -9
+  },
+  {
+    "image_path": "mine_emerald_step00888_off-8_oak_log.png",
+    "block_key": "oak_log",
+    "label": "oak log",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 888,
+    "offset": -8
+  },
+  {
+    "image_path": "mine_emerald_step00888_off-7_oak_log.png",
+    "block_key": "oak_log",
+    "label": "oak log",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 888,
+    "offset": -7
+  },
+  {
+    "image_path": "mine_emerald_step00888_off-6_oak_log.png",
+    "block_key": "oak_log",
+    "label": "oak log",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 888,
+    "offset": -6
+  },
+  {
+    "image_path": "mine_emerald_step00955_off-10_oak_log.png",
+    "block_key": "oak_log",
+    "label": "oak log",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 955,
+    "offset": -10
+  },
+  {
+    "image_path": "mine_emerald_step00955_off-9_oak_log.png",
+    "block_key": "oak_log",
+    "label": "oak log",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 955,
+    "offset": -9
+  },
+  {
+    "image_path": "mine_emerald_step00955_off-8_oak_log.png",
+    "block_key": "oak_log",
+    "label": "oak log",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 955,
+    "offset": -8
+  },
+  {
+    "image_path": "mine_emerald_step00955_off-7_oak_log.png",
+    "block_key": "oak_log",
+    "label": "oak log",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 955,
+    "offset": -7
+  },
+  {
+    "image_path": "mine_emerald_step00955_off-6_oak_log.png",
+    "block_key": "oak_log",
+    "label": "oak log",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 955,
+    "offset": -6
+  },
+  {
+    "image_path": "mine_emerald_step01252_off-10_crafting_table.png",
+    "block_key": "crafting_table",
+    "label": "crafting table",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1252,
+    "offset": -10
+  },
+  {
+    "image_path": "mine_emerald_step01252_off-9_crafting_table.png",
+    "block_key": "crafting_table",
+    "label": "crafting table",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1252,
+    "offset": -9
+  },
+  {
+    "image_path": "mine_emerald_step01252_off-8_crafting_table.png",
+    "block_key": "crafting_table",
+    "label": "crafting table",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1252,
+    "offset": -8
+  },
+  {
+    "image_path": "mine_emerald_step01252_off-7_crafting_table.png",
+    "block_key": "crafting_table",
+    "label": "crafting table",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1252,
+    "offset": -7
+  },
+  {
+    "image_path": "mine_emerald_step01252_off-6_crafting_table.png",
+    "block_key": "crafting_table",
+    "label": "crafting table",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1252,
+    "offset": -6
+  },
+  {
+    "image_path": "mine_emerald_step01288_off-10_grass_block.png",
+    "block_key": "grass_block",
+    "label": "grass block",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1288,
+    "offset": -10
+  },
+  {
+    "image_path": "mine_emerald_step01288_off-9_grass_block.png",
+    "block_key": "grass_block",
+    "label": "grass block",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1288,
+    "offset": -9
+  },
+  {
+    "image_path": "mine_emerald_step01288_off-8_grass_block.png",
+    "block_key": "grass_block",
+    "label": "grass block",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1288,
+    "offset": -8
+  },
+  {
+    "image_path": "mine_emerald_step01288_off-7_grass_block.png",
+    "block_key": "grass_block",
+    "label": "grass block",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1288,
+    "offset": -7
+  },
+  {
+    "image_path": "mine_emerald_step01288_off-6_grass_block.png",
+    "block_key": "grass_block",
+    "label": "grass block",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1288,
+    "offset": -6
+  },
+  {
+    "image_path": "mine_emerald_step01309_off-10_dirt.png",
+    "block_key": "dirt",
+    "label": "dirt",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1309,
+    "offset": -10
+  },
+  {
+    "image_path": "mine_emerald_step01309_off-9_dirt.png",
+    "block_key": "dirt",
+    "label": "dirt",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1309,
+    "offset": -9
+  },
+  {
+    "image_path": "mine_emerald_step01309_off-8_dirt.png",
+    "block_key": "dirt",
+    "label": "dirt",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1309,
+    "offset": -8
+  },
+  {
+    "image_path": "mine_emerald_step01309_off-7_dirt.png",
+    "block_key": "dirt",
+    "label": "dirt",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1309,
+    "offset": -7
+  },
+  {
+    "image_path": "mine_emerald_step01309_off-6_dirt.png",
+    "block_key": "dirt",
+    "label": "dirt",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1309,
+    "offset": -6
+  },
+  {
+    "image_path": "mine_emerald_step01334_off-10_dirt.png",
+    "block_key": "dirt",
+    "label": "dirt",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1334,
+    "offset": -10
+  },
+  {
+    "image_path": "mine_emerald_step01334_off-9_dirt.png",
+    "block_key": "dirt",
+    "label": "dirt",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1334,
+    "offset": -9
+  },
+  {
+    "image_path": "mine_emerald_step01334_off-8_dirt.png",
+    "block_key": "dirt",
+    "label": "dirt",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1334,
+    "offset": -8
+  },
+  {
+    "image_path": "mine_emerald_step01334_off-7_dirt.png",
+    "block_key": "dirt",
+    "label": "dirt",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1334,
+    "offset": -7
+  },
+  {
+    "image_path": "mine_emerald_step01334_off-6_dirt.png",
+    "block_key": "dirt",
+    "label": "dirt",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1334,
+    "offset": -6
+  },
+  {
+    "image_path": "mine_emerald_step01363_off-10_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1363,
+    "offset": -10
+  },
+  {
+    "image_path": "mine_emerald_step01363_off-9_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1363,
+    "offset": -9
+  },
+  {
+    "image_path": "mine_emerald_step01363_off-8_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1363,
+    "offset": -8
+  },
+  {
+    "image_path": "mine_emerald_step01363_off-7_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1363,
+    "offset": -7
+  },
+  {
+    "image_path": "mine_emerald_step01363_off-6_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1363,
+    "offset": -6
+  },
+  {
+    "image_path": "mine_emerald_step01392_off-10_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1392,
+    "offset": -10
+  },
+  {
+    "image_path": "mine_emerald_step01392_off-9_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1392,
+    "offset": -9
+  },
+  {
+    "image_path": "mine_emerald_step01392_off-8_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1392,
+    "offset": -8
+  },
+  {
+    "image_path": "mine_emerald_step01392_off-7_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1392,
+    "offset": -7
+  },
+  {
+    "image_path": "mine_emerald_step01392_off-6_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1392,
+    "offset": -6
+  },
+  {
+    "image_path": "mine_emerald_step01421_off-10_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1421,
+    "offset": -10
+  },
+  {
+    "image_path": "mine_emerald_step01421_off-9_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1421,
+    "offset": -9
+  },
+  {
+    "image_path": "mine_emerald_step01421_off-8_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1421,
+    "offset": -8
+  },
+  {
+    "image_path": "mine_emerald_step01421_off-7_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1421,
+    "offset": -7
+  },
+  {
+    "image_path": "mine_emerald_step01421_off-6_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1421,
+    "offset": -6
+  },
+  {
+    "image_path": "mine_emerald_step01557_off-10_crafting_table.png",
+    "block_key": "crafting_table",
+    "label": "crafting table",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1557,
+    "offset": -10
+  },
+  {
+    "image_path": "mine_emerald_step01557_off-9_crafting_table.png",
+    "block_key": "crafting_table",
+    "label": "crafting table",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1557,
+    "offset": -9
+  },
+  {
+    "image_path": "mine_emerald_step01557_off-8_crafting_table.png",
+    "block_key": "crafting_table",
+    "label": "crafting table",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1557,
+    "offset": -8
+  },
+  {
+    "image_path": "mine_emerald_step01557_off-7_crafting_table.png",
+    "block_key": "crafting_table",
+    "label": "crafting table",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1557,
+    "offset": -7
+  },
+  {
+    "image_path": "mine_emerald_step01557_off-6_crafting_table.png",
+    "block_key": "crafting_table",
+    "label": "crafting table",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1557,
+    "offset": -6
+  },
+  {
+    "image_path": "mine_emerald_step01575_off-10_granite.png",
+    "block_key": "granite",
+    "label": "granite",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1575,
+    "offset": -10
+  },
+  {
+    "image_path": "mine_emerald_step01575_off-9_granite.png",
+    "block_key": "granite",
+    "label": "granite",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1575,
+    "offset": -9
+  },
+  {
+    "image_path": "mine_emerald_step01575_off-8_granite.png",
+    "block_key": "granite",
+    "label": "granite",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1575,
+    "offset": -8
+  },
+  {
+    "image_path": "mine_emerald_step01575_off-7_granite.png",
+    "block_key": "granite",
+    "label": "granite",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1575,
+    "offset": -7
+  },
+  {
+    "image_path": "mine_emerald_step01575_off-6_granite.png",
+    "block_key": "granite",
+    "label": "granite",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1575,
+    "offset": -6
+  },
+  {
+    "image_path": "mine_emerald_step01593_off-10_granite.png",
+    "block_key": "granite",
+    "label": "granite",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1593,
+    "offset": -10
+  },
+  {
+    "image_path": "mine_emerald_step01593_off-9_granite.png",
+    "block_key": "granite",
+    "label": "granite",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1593,
+    "offset": -9
+  },
+  {
+    "image_path": "mine_emerald_step01593_off-8_granite.png",
+    "block_key": "granite",
+    "label": "granite",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1593,
+    "offset": -8
+  },
+  {
+    "image_path": "mine_emerald_step01593_off-7_granite.png",
+    "block_key": "granite",
+    "label": "granite",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1593,
+    "offset": -7
+  },
+  {
+    "image_path": "mine_emerald_step01593_off-6_granite.png",
+    "block_key": "granite",
+    "label": "granite",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1593,
+    "offset": -6
+  },
+  {
+    "image_path": "mine_emerald_step01611_off-10_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1611,
+    "offset": -10
+  },
+  {
+    "image_path": "mine_emerald_step01611_off-9_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1611,
+    "offset": -9
+  },
+  {
+    "image_path": "mine_emerald_step01611_off-8_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1611,
+    "offset": -8
+  },
+  {
+    "image_path": "mine_emerald_step01611_off-7_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1611,
+    "offset": -7
+  },
+  {
+    "image_path": "mine_emerald_step01611_off-6_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1611,
+    "offset": -6
+  },
+  {
+    "image_path": "mine_emerald_step01629_off-10_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1629,
+    "offset": -10
+  },
+  {
+    "image_path": "mine_emerald_step01629_off-9_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1629,
+    "offset": -9
+  },
+  {
+    "image_path": "mine_emerald_step01629_off-8_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1629,
+    "offset": -8
+  },
+  {
+    "image_path": "mine_emerald_step01629_off-7_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1629,
+    "offset": -7
+  },
+  {
+    "image_path": "mine_emerald_step01629_off-6_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1629,
+    "offset": -6
+  },
+  {
+    "image_path": "mine_emerald_step01647_off-10_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1647,
+    "offset": -10
+  },
+  {
+    "image_path": "mine_emerald_step01647_off-9_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1647,
+    "offset": -9
+  },
+  {
+    "image_path": "mine_emerald_step01647_off-8_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1647,
+    "offset": -8
+  },
+  {
+    "image_path": "mine_emerald_step01647_off-7_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1647,
+    "offset": -7
+  },
+  {
+    "image_path": "mine_emerald_step01647_off-6_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1647,
+    "offset": -6
+  },
+  {
+    "image_path": "mine_emerald_step01665_off-10_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1665,
+    "offset": -10
+  },
+  {
+    "image_path": "mine_emerald_step01665_off-9_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1665,
+    "offset": -9
+  },
+  {
+    "image_path": "mine_emerald_step01665_off-8_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1665,
+    "offset": -8
+  },
+  {
+    "image_path": "mine_emerald_step01665_off-7_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1665,
+    "offset": -7
+  },
+  {
+    "image_path": "mine_emerald_step01665_off-6_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1665,
+    "offset": -6
+  },
+  {
+    "image_path": "mine_emerald_step01683_off-10_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1683,
+    "offset": -10
+  },
+  {
+    "image_path": "mine_emerald_step01683_off-9_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1683,
+    "offset": -9
+  },
+  {
+    "image_path": "mine_emerald_step01683_off-8_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1683,
+    "offset": -8
+  },
+  {
+    "image_path": "mine_emerald_step01683_off-7_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1683,
+    "offset": -7
+  },
+  {
+    "image_path": "mine_emerald_step01683_off-6_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1683,
+    "offset": -6
+  },
+  {
+    "image_path": "mine_emerald_step01701_off-10_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1701,
+    "offset": -10
+  },
+  {
+    "image_path": "mine_emerald_step01701_off-9_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1701,
+    "offset": -9
+  },
+  {
+    "image_path": "mine_emerald_step01701_off-8_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1701,
+    "offset": -8
+  },
+  {
+    "image_path": "mine_emerald_step01701_off-7_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1701,
+    "offset": -7
+  },
+  {
+    "image_path": "mine_emerald_step01701_off-6_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1701,
+    "offset": -6
+  },
+  {
+    "image_path": "mine_emerald_step01719_off-10_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1719,
+    "offset": -10
+  },
+  {
+    "image_path": "mine_emerald_step01719_off-9_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1719,
+    "offset": -9
+  },
+  {
+    "image_path": "mine_emerald_step01719_off-8_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1719,
+    "offset": -8
+  },
+  {
+    "image_path": "mine_emerald_step01719_off-7_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1719,
+    "offset": -7
+  },
+  {
+    "image_path": "mine_emerald_step01719_off-6_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1719,
+    "offset": -6
+  },
+  {
+    "image_path": "mine_emerald_step01737_off-10_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1737,
+    "offset": -10
+  },
+  {
+    "image_path": "mine_emerald_step01737_off-9_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1737,
+    "offset": -9
+  },
+  {
+    "image_path": "mine_emerald_step01737_off-8_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1737,
+    "offset": -8
+  },
+  {
+    "image_path": "mine_emerald_step01737_off-7_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1737,
+    "offset": -7
+  },
+  {
+    "image_path": "mine_emerald_step01737_off-6_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1737,
+    "offset": -6
+  },
+  {
+    "image_path": "mine_emerald_step01755_off-10_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1755,
+    "offset": -10
+  },
+  {
+    "image_path": "mine_emerald_step01755_off-9_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1755,
+    "offset": -9
+  },
+  {
+    "image_path": "mine_emerald_step01755_off-8_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1755,
+    "offset": -8
+  },
+  {
+    "image_path": "mine_emerald_step01755_off-7_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1755,
+    "offset": -7
+  },
+  {
+    "image_path": "mine_emerald_step01755_off-6_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1755,
+    "offset": -6
+  },
+  {
+    "image_path": "mine_emerald_step01773_off-10_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1773,
+    "offset": -10
+  },
+  {
+    "image_path": "mine_emerald_step01773_off-9_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1773,
+    "offset": -9
+  },
+  {
+    "image_path": "mine_emerald_step01773_off-8_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1773,
+    "offset": -8
+  },
+  {
+    "image_path": "mine_emerald_step01773_off-7_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1773,
+    "offset": -7
+  },
+  {
+    "image_path": "mine_emerald_step01773_off-6_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1773,
+    "offset": -6
+  },
+  {
+    "image_path": "mine_emerald_step01791_off-10_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1791,
+    "offset": -10
+  },
+  {
+    "image_path": "mine_emerald_step01791_off-9_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1791,
+    "offset": -9
+  },
+  {
+    "image_path": "mine_emerald_step01791_off-8_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1791,
+    "offset": -8
+  },
+  {
+    "image_path": "mine_emerald_step01791_off-7_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1791,
+    "offset": -7
+  },
+  {
+    "image_path": "mine_emerald_step01791_off-6_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1791,
+    "offset": -6
+  },
+  {
+    "image_path": "mine_emerald_step01809_off-10_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1809,
+    "offset": -10
+  },
+  {
+    "image_path": "mine_emerald_step01809_off-9_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1809,
+    "offset": -9
+  },
+  {
+    "image_path": "mine_emerald_step01809_off-8_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1809,
+    "offset": -8
+  },
+  {
+    "image_path": "mine_emerald_step01809_off-7_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1809,
+    "offset": -7
+  },
+  {
+    "image_path": "mine_emerald_step01809_off-6_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1809,
+    "offset": -6
+  },
+  {
+    "image_path": "mine_emerald_step01836_off-10_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1836,
+    "offset": -10
+  },
+  {
+    "image_path": "mine_emerald_step01836_off-9_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1836,
+    "offset": -9
+  },
+  {
+    "image_path": "mine_emerald_step01836_off-8_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1836,
+    "offset": -8
+  },
+  {
+    "image_path": "mine_emerald_step01836_off-7_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1836,
+    "offset": -7
+  },
+  {
+    "image_path": "mine_emerald_step01836_off-6_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1836,
+    "offset": -6
+  },
+  {
+    "image_path": "mine_emerald_step01854_off-10_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1854,
+    "offset": -10
+  },
+  {
+    "image_path": "mine_emerald_step01854_off-9_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1854,
+    "offset": -9
+  },
+  {
+    "image_path": "mine_emerald_step01854_off-8_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1854,
+    "offset": -8
+  },
+  {
+    "image_path": "mine_emerald_step01854_off-7_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1854,
+    "offset": -7
+  },
+  {
+    "image_path": "mine_emerald_step01854_off-6_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1854,
+    "offset": -6
+  },
+  {
+    "image_path": "mine_emerald_step01872_off-10_diorite.png",
+    "block_key": "diorite",
+    "label": "diorite",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1872,
+    "offset": -10
+  },
+  {
+    "image_path": "mine_emerald_step01872_off-9_diorite.png",
+    "block_key": "diorite",
+    "label": "diorite",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1872,
+    "offset": -9
+  },
+  {
+    "image_path": "mine_emerald_step01872_off-8_diorite.png",
+    "block_key": "diorite",
+    "label": "diorite",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1872,
+    "offset": -8
+  },
+  {
+    "image_path": "mine_emerald_step01872_off-7_diorite.png",
+    "block_key": "diorite",
+    "label": "diorite",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1872,
+    "offset": -7
+  },
+  {
+    "image_path": "mine_emerald_step01872_off-6_diorite.png",
+    "block_key": "diorite",
+    "label": "diorite",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1872,
+    "offset": -6
+  },
+  {
+    "image_path": "mine_emerald_step01890_off-10_diorite.png",
+    "block_key": "diorite",
+    "label": "diorite",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1890,
+    "offset": -10
+  },
+  {
+    "image_path": "mine_emerald_step01890_off-9_diorite.png",
+    "block_key": "diorite",
+    "label": "diorite",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1890,
+    "offset": -9
+  },
+  {
+    "image_path": "mine_emerald_step01890_off-8_diorite.png",
+    "block_key": "diorite",
+    "label": "diorite",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1890,
+    "offset": -8
+  },
+  {
+    "image_path": "mine_emerald_step01890_off-7_diorite.png",
+    "block_key": "diorite",
+    "label": "diorite",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1890,
+    "offset": -7
+  },
+  {
+    "image_path": "mine_emerald_step01890_off-6_diorite.png",
+    "block_key": "diorite",
+    "label": "diorite",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1890,
+    "offset": -6
+  },
+  {
+    "image_path": "mine_emerald_step01908_off-10_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1908,
+    "offset": -10
+  },
+  {
+    "image_path": "mine_emerald_step01908_off-9_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1908,
+    "offset": -9
+  },
+  {
+    "image_path": "mine_emerald_step01908_off-8_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1908,
+    "offset": -8
+  },
+  {
+    "image_path": "mine_emerald_step01908_off-7_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1908,
+    "offset": -7
+  },
+  {
+    "image_path": "mine_emerald_step01908_off-6_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1908,
+    "offset": -6
+  },
+  {
+    "image_path": "mine_emerald_step01926_off-10_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1926,
+    "offset": -10
+  },
+  {
+    "image_path": "mine_emerald_step01926_off-9_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1926,
+    "offset": -9
+  },
+  {
+    "image_path": "mine_emerald_step01926_off-8_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1926,
+    "offset": -8
+  },
+  {
+    "image_path": "mine_emerald_step01926_off-7_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1926,
+    "offset": -7
+  },
+  {
+    "image_path": "mine_emerald_step01926_off-6_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1926,
+    "offset": -6
+  },
+  {
+    "image_path": "mine_emerald_step01944_off-10_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1944,
+    "offset": -10
+  },
+  {
+    "image_path": "mine_emerald_step01944_off-9_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1944,
+    "offset": -9
+  },
+  {
+    "image_path": "mine_emerald_step01944_off-8_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1944,
+    "offset": -8
+  },
+  {
+    "image_path": "mine_emerald_step01944_off-7_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1944,
+    "offset": -7
+  },
+  {
+    "image_path": "mine_emerald_step01944_off-6_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1944,
+    "offset": -6
+  },
+  {
+    "image_path": "mine_emerald_step01962_off-10_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1962,
+    "offset": -10
+  },
+  {
+    "image_path": "mine_emerald_step01962_off-9_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1962,
+    "offset": -9
+  },
+  {
+    "image_path": "mine_emerald_step01962_off-8_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1962,
+    "offset": -8
+  },
+  {
+    "image_path": "mine_emerald_step01962_off-7_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1962,
+    "offset": -7
+  },
+  {
+    "image_path": "mine_emerald_step01962_off-6_stone.png",
+    "block_key": "stone",
+    "label": "stone",
+    "task": "mine_emerald",
+    "task_target": "Point to the emerald ore",
+    "bbox_xyxy": [
+      240,
+      135,
+      400,
+      225
+    ],
+    "img_w": 640,
+    "img_h": 360,
+    "step": 1962,
+    "offset": -6
+  }
+]

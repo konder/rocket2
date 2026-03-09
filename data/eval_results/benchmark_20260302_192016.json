@@ -1,0 +1,94 @@
+{
+  "meta": {
+    "timestamp": "2026-03-02T19:20:16.286653",
+    "task_file": "benchmark/eval_tasks_paper.yaml",
+    "ckpt": "hf:phython96/ROCKET-2-1.5x-17w",
+    "cfg_coef": 1.5,
+    "molmo_mock": false,
+    "goal_backend": "groundingdino",
+    "molmo_model": "allenai/Molmo-7B-D-0924",
+    "gdino_config": "/Users/nanzhang/aimc/data/weights/groundingdino/GroundingDINO_SwinT_OGC.py",
+    "gdino_weights": null,
+    "gdino_hf_repo": "ShilongLiu/GroundingDINO"
+  },
+  "summary": {
+    "overall": {
+      "num_tasks": 1,
+      "total_episodes": 2,
+      "total_success": 2,
+      "success_rate": 1.0
+    },
+    "by_interaction_type": {
+      "mine": {
+        "num_tasks": 1,
+        "total_episodes": 2,
+        "total_success": 2,
+        "success_rate": 1.0,
+        "tasks": [
+          "mine_emerald"
+        ]
+      }
+    }
+  },
+  "task_results": [
+    {
+      "task_name": "mine_emerald",
+      "interaction_type": "mine",
+      "num_episodes": 2,
+      "num_success": 2,
+      "success_rate": 1.0,
+      "episodes": [
+        {
+          "success": true,
+          "num_steps": 75,
+          "max_steps": 600,
+          "early_done": true,
+          "goal_found": true,
+          "elapsed_sec": 14.11,
+          "fps": 5.3,
+          "goal_point": [
+            220,
+            256
+          ],
+          "interaction_type": "mine",
+          "video_path": "benchmark/results/videos/mine_emerald_ep0.mp4",
+          "timing": {
+            "warmup_sec": 67.149,
+            "goal_first_sec": 3.295,
+            "goal_retry_sec": 0.0,
+            "policy_total_sec": 11.622,
+            "env_total_sec": 2.482,
+            "steps": 75,
+            "policy_ms_per_step": 154.97,
+            "env_ms_per_step": 33.09
+          }
+        },
+        {
+          "success": true,
+          "num_steps": 68,
+          "max_steps": 600,
+          "early_done": true,
+          "goal_found": true,
+          "elapsed_sec": 13.0,
+          "fps": 5.2,
+          "goal_point": [
+            220,
+            256
+          ],
+          "interaction_type": "mine",
+          "video_path": "benchmark/results/videos/mine_emerald_ep1.mp4",
+          "timing": {
+            "warmup_sec": 56.662,
+            "goal_first_sec": 2.469,
+            "goal_retry_sec": 0.0,
+            "policy_total_sec": 10.248,
+            "env_total_sec": 2.75,
+            "steps": 68,
+            "policy_ms_per_step": 150.7,
+            "env_ms_per_step": 40.45
+          }
+        }
+      ]
+    }
+  ]
+}

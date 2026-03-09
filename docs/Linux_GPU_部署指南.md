@@ -306,8 +306,15 @@ python benchmark/benchmark_eval.py \
 | `--sam-variant` | `base` | SAM-2 变体：large/base/small/tiny |
 | `--output-dir` | `benchmark/results/` | 输出目录 |
 | `--save-video` | `false` | 保存 MP4 回放视频 |
+| `--no-reuse-env` | `false` | 每个 episode 新建环境（默认复用 env 仅 reset，减少启动开销） |
+| `--num-empty-frames` | `20` | reset 后跳过的空帧数，可改为 10 或 5 略加速复位 |
+| `--profile` | `false` | 打印每 episode 耗时分解（warmup / goal_gen / policy vs env） |
 
-### 7.6 输出文件
+### 7.6 环境启动与复位优化
+
+同一 task 下默认**复用同一个 env**，只在 episode 之间做完整 `reset()`，避免重复启动 JVM/Minecraft。若需进一步缩短复位后的等待，可尝试 `--num-empty-frames 10` 或 `5`。MineRL/MineStudio 本身没有更多「启动加速」接口；**不可**使用 FastResetCallback（不重置方块，会导致挖矿/击杀等任务从第 2 个 episode 起无法完成）。详见 [benchmark_env_startup.md](benchmark_env_startup.md)。
+
+### 7.7 输出文件
 
 ```
 benchmark/results/

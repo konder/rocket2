@@ -75,13 +75,17 @@ pip install minestudio==1.1.2 --no-deps
 # 3.3 安装项目依赖（包含 minestudio 的运行时依赖）
 pip install -r requirements.txt
 
-# 3.4 安装 SAM-2（从本地 MineStudio 源码）
+# 3.4 安装 SAM-2（使用 rocket2 仓库内已修改的 MineStudio 源码）
+# 注意：不要从 GitHub 克隆 MineStudio，rocket2 仓库已包含修改后的版本
 cd MineStudio/minestudio/utils/realtime_sam
 pip install --no-build-isolation -e .
 cd /path/to/rocket2
 ```
 
-> `setup.py` 已修改为跨平台版本，在没有 CUDA 时自动跳过 CUDA 扩展编译，
+> **重要**：`MineStudio/minestudio/utils/realtime_sam/setup.py` 已修改为跨平台版本，
+> 在没有 CUDA / CUDA_HOME 时自动跳过 CUDA 扩展编译。
+> 若从 GitHub 克隆原始 MineStudio，其 `setup.py` 会无条件调用 `CUDAExtension`，
+> 在 macOS 上导致 `OSError: CUDA_HOME environment variable is not set`。
 > `sam2/utils/misc.py` 中的 `get_connected_components` 会自动 fallback 到 cv2 实现。
 
 ## 4. 配置 MineStudio 模拟器
@@ -413,9 +417,27 @@ Total Steps: 100
 
 ### 6.1 SAM-2 setup.py (跨平台)
 
-`MineStudio/minestudio/utils/realtime_sam/setup.py` 已修改为自动检测 CUDA：
+`MineStudio/minestudio/utils/realtime_sam/setup.py` 已修改为自动检测 CUDA。
+原始 GitHub 版本的 `get_extensions()` 会无条件调用 `CUDAExtension`，在 macOS 上报错：
+`OSError: CUDA_HOME environment variable is not set`。
+
+修改后的逻辑：
+
+```python
+def get_extensions():
+    import torch
+    if not torch.cuda.is_available():
+        return [], {}
+    cuda_home = os.environ.get("CUDA_HOME") or os.environ.get("CUDA_PATH")
+    if cuda_home is None:
+        return [], {}
+    # ... 编译 CUDA C++ 扩展
+```
+
 - 有 CUDA + CUDA_HOME → 编译 CUDA C++ 扩展
-- 无 CUDA → 跳过，使用 cv2 的 Python fallback
+- 无 CUDA 或无 CUDA_HOME → 返回空列表，跳过编译，使用 cv2 的 Python fallback
+
+**因此安装 SAM-2 必须使用 rocket2 仓库内的 `MineStudio/` 目录，不可另行克隆原始 GitHub 仓库。**
 
 ### 6.2 移除 sam2_wrapper.py
 
@@ -450,7 +472,46 @@ pip install Pyro4
 ```
 
 ### Q: `OSError: CUDA_HOME environment variable is not set`（安装 SAM-2 时）
-确认使用的是修改后的跨平台 `setup.py`（仓库中已包含）。
+
+根本原因：使用了从 GitHub 克隆的原始 MineStudio，其 `setup.py` 会无条件调用 `CUDAExtension`。
+
+修复方法：确保从 rocket2 仓库内的 `MineStudio/` 目录安装 SAM-2，而非另行克隆：
+
+```bash
+# 错误做法（原始 GitHub 版本，setup.py 未修改）：
+# git clone https://github.com/CraftJarvis/MineStudio.git
+# cd MineStudio/minestudio/utils/realtime_sam && pip install --no-build-isolation -e .
+
+# 正确做法（使用 rocket2 仓库内已修改的版本）：
+cd /path/to/rocket2/MineStudio/minestudio/utils/realtime_sam
+pip install --no-build-isolation -e .
+```
+
+若已误用原始仓库克隆，可手动 patch `setup.py` 中的 `get_extensions` 函数：
+
+```python
+def get_extensions():
+    import torch
+    if not torch.cuda.is_available():
+        return [], {}
+    cuda_home = os.environ.get("CUDA_HOME") or os.environ.get("CUDA_PATH")
+    if cuda_home is None:
+        return [], {}
+    from torch.utils.cpp_extension import BuildExtension, CUDAExtension
+    srcs = ["sam2/csrc/connected_components.cu"]
+    compile_args = {
+        "cxx": [],
+        "nvcc": [
+            "-DCUDA_HAS_FP16=1",
+            "-D__CUDA_NO_HALF_OPERATORS__",
+            "-D__CUDA_NO_HALF_CONVERSIONS__",
+            "-D__CUDA_NO_HALF2_OPERATORS__",
+        ],
+    }
+    ext_modules = [CUDAExtension("sam2._C", srcs, extra_compile_args=compile_args)]
+    cmdclass = {"build_ext": BuildExtension.with_options(no_python_abi_suffix=True)}
+    return ext_modules, cmdclass
+```
 
 ### Q: 引擎重启后需要重新下载
 确认设置了 `MINESTUDIO_DIR` 环境变量：
@@ -489,6 +550,7 @@ conda activate rocket2-arm64
 pip install torch torchvision
 pip install minestudio==1.1.2 --no-deps
 pip install -r requirements.txt
+# 使用 rocket2 仓库内已修改的 MineStudio（不要从 GitHub 克隆原始版本）
 cd MineStudio/minestudio/utils/realtime_sam && pip install --no-build-isolation -e . && cd -
 
 # === 环境变量 ===

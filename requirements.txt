@@ -53,3 +53,4 @@ wandb>=0.16.0
 requests>=2.31.0
 pyyaml>=6.0
 numpy<2
+psutil

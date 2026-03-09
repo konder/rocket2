@@ -125,7 +125,7 @@ pip install "cuda-python<12"
 pip install -r requirements.txt
 ```
 
-### 3.4 安装 Molmo 依赖
+### 3.4 安装 Molmo 依赖（可选）
 
 ```bash
 # transformers 需要 4.46.x 版本（Molmo 兼容）
@@ -141,6 +141,7 @@ pip install transformers==4.46.3 accelerate sentencepiece
 ### 4.1 下载 Minecraft 模拟器引擎
 
 ```bash
+export HF_ENDPOINT=https://hf-mirror.com
 python -m minestudio.simulator.entry -y
 ```
 

@@ -246,7 +246,21 @@ def collect_from_task(
 
                 img_filename = f"{task_name}_step{step_i:05d}_off{offset}_{raw_name}.png"
                 img_path = os.path.join(output_images_dir, img_filename)
-                cv2.imwrite(img_path, cv2.cvtColor(frame, cv2.COLOR_RGB2BGR))
+                
+                # Check cv2.imwrite return value (it doesn't throw exceptions on failure)
+                try:
+                    frame_bgr = cv2.cvtColor(frame, cv2.COLOR_RGB2BGR)
+                    success = cv2.imwrite(img_path, frame_bgr)
+                    if not success:
+                        print(f"    [ERROR] cv2.imwrite failed for {img_filename}")
+                        print(f"           Path: {img_path}")
+                        print(f"           Frame: {frame.shape}, {frame.dtype}")
+                        continue  # Skip this annotation if image write failed
+                except Exception as e:
+                    print(f"    [ERROR] Failed to save {img_filename}: {e}")
+                    import traceback
+                    traceback.print_exc()
+                    continue
 
                 ann = {
                     "image_path":  img_filename,

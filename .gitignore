@@ -197,3 +197,31 @@ timm_models/
 Molmo-7B-D-0924/
 data/
 logs/
+# 添加于 2026-03-11 整理
+
+# 模型权重文件 (太大不提交)
+*.pth
+!open_groundingdino/tools/*.pth
+
+# SAM预览图
+sam_previews/
+
+# 可视化图片
+visualized/
+
+# 临时文件
+*.tmp
+*.temp
+
+# 数据目录 (已在 data/ 下)
+grounding_data_*/
+
+# 检查点目录
+checkpoints/
+checkpoints_*/
+
+# SAM checkpoints (large model files)
+MineStudio/minestudio/utils/realtime_sam/checkpoints/*.pt
+
+# External dependencies (cloned repos)
+open_groundingdino/

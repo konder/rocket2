@@ -345,7 +345,24 @@ class GroundingDinoGoalGenerator(GoalGeneratorBase):
 
         print(f"[GoalGenerator] Loading GroundingDINO config: {config_path}")
         print(f"[GoalGenerator] Loading GroundingDINO weights: {weights_path}")
-        self.gdino_model = load_model(config_path, weights_path).to(self.device).eval()
+        
+        # Handle both wrapped and unwrapped checkpoint formats
+        import torch
+        from groundingdino.util.misc import clean_state_dict
+        from groundingdino.util.slconfig import SLConfig
+        from groundingdino.models import build_model
+        
+        args = SLConfig.fromfile(config_path)
+        args.device = self.device
+        self.gdino_model = build_model(args)
+        
+        checkpoint = torch.load(weights_path, map_location="cpu")
+        if "model" in checkpoint:
+            self.gdino_model.load_state_dict(clean_state_dict(checkpoint["model"]), strict=False)
+        else:
+            self.gdino_model.load_state_dict(clean_state_dict(checkpoint), strict=False)
+        
+        self.gdino_model = self.gdino_model.to(self.device).eval()
 
     @staticmethod
     def _normalize_caption(text: str) -> str:

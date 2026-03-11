@@ -387,9 +387,12 @@ def main():
 
     # Load VPT once and reuse across tasks
     import torch
+    from minestudio.models import load_vpt_policy
     device = "cuda" if torch.cuda.is_available() else "cpu"
     print(f"Loading VPT model from '{args.vpt_model}' on {device} ...")
-    vpt_model = VPTPolicy.from_pretrained(args.vpt_model).to(device).eval()
+    # Use load_vpt_policy for compatibility with MineStudio 1.1.2+
+    vpt_model = load_vpt_policy(model_path=None)  # Loads from HuggingFace
+    vpt_model = vpt_model.to(device).eval()
     print("VPT model loaded.\n")
 
     all_annotations = []

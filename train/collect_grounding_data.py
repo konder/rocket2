@@ -387,13 +387,31 @@ def main():
 
     # Load VPT once and reuse across tasks
     import torch
-    from minestudio.models import load_vpt_policy
     device = "cuda" if torch.cuda.is_available() else "cpu"
     print(f"Loading VPT model from '{args.vpt_model}' on {device} ...")
-    # Use load_vpt_policy for compatibility with MineStudio 1.1.2+
-    vpt_model = load_vpt_policy(model_path=None)  # Loads from HuggingFace
-    vpt_model = vpt_model.to(device).eval()
-    print("VPT model loaded.\n")
+    
+    # Try different loading methods for compatibility
+    try:
+        # Method 1: Use from_pretrained (MineStudio 1.0.x)
+        vpt_model = VPTPolicy.from_pretrained(args.vpt_model).to(device).eval()
+        print("VPT model loaded (from_pretrained).\n")
+    except TypeError:
+        # Method 2: Manual loading for MineStudio 1.1.2+
+        from huggingface_hub import hf_hub_download
+        import pickle
+        
+        model_file = hf_hub_download(repo_id=args.vpt_model, filename="model.pt")
+        with open(model_file, "rb") as f:
+            model_data = pickle.load(f)
+        
+        policy_kwargs = model_data["model"]["args"]["net"]["args"]
+        vpt_model = VPTPolicy(policy_kwargs=policy_kwargs).to(device)
+        
+        ckpt_file = hf_hub_download(repo_id=args.vpt_model, filename="ckpt.pt")
+        state_dict = torch.load(ckpt_file, map_location=device)
+        vpt_model.load_state_dict(state_dict["model"])
+        vpt_model = vpt_model.eval()
+        print("VPT model loaded (manual).\n")
 
     all_annotations = []
 

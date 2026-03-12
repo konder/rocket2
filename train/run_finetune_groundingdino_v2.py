@@ -455,6 +455,7 @@ def main():
     parser.add_argument("--gdino-config", required=True)
     parser.add_argument("--gdino-weights", required=True)
     parser.add_argument("--output-dir", default="data/grounding_data/checkpoints")
+    parser.add_argument("--log-file", default=None, help="Path to log file (default: output_dir/training.log)")
     parser.add_argument("--epochs", type=int, default=10)
     parser.add_argument("--batch-size", type=int, default=4)
     parser.add_argument("--lr", type=float, default=1e-5)
@@ -466,6 +467,32 @@ def main():
     parser.add_argument("--weight-bbox", type=float, default=5.0)
     parser.add_argument("--weight-giou", type=float, default=2.0)
     args = parser.parse_args()
+    
+    # Set up logging
+    os.makedirs(args.output_dir, exist_ok=True)
+    log_file = args.log_file or os.path.join(args.output_dir, "training.log")
+    
+    # Redirect stdout to both console and file
+    import logging
+    logging.basicConfig(
+        level=logging.INFO,
+        format='%(asctime)s %(message)s',
+        handlers=[
+            logging.FileHandler(log_file),
+            logging.StreamHandler(sys.stdout)
+        ]
+    )
+    logger = logging.getLogger(__name__)
+    
+    # Replace print with logger
+    import builtins
+    original_print = builtins.print
+    def logged_print(*args, **kwargs):
+        original_print(*args, **kwargs)
+        logger.info(' '.join(str(a) for a in args))
+    builtins.print = logged_print
+    
+    print(f"Log file: {log_file}")
     
     train(args)
 

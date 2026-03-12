@@ -379,12 +379,18 @@ def train(args):
         device = torch.device("cpu")
         print("Device: CPU")
     
+    # Initialize progress logger
+    from progress_logger import ProgressLogger
+    log_file = args.log_file or os.path.join(args.output_dir, "progress.log")
+    progress = ProgressLogger(log_file, "Fine-tuning")
+    progress.log_event("initialized", f"device={device}, epochs={args.epochs}, lr={args.lr}")
+    
     # Load model
     from groundingdino.util.inference import load_model
     model = load_model(args.gdino_config, args.gdino_weights)
     model = model.to(device)
     model.train()
-    freeze_modules(model)
+    freeze_modules(model, mode=args.freeze_mode)
     
     # Build criterion
     matcher = HungarianMatcher(
@@ -464,9 +470,13 @@ def train(args):
             if batch_i % 10 == 0:
                 loss_str = "  ".join([f"{k}: {v.item():.4f}" for k, v in loss_dict.items()])
                 print(f"  Epoch {epoch+1}/{args.epochs}  Batch {batch_i}/{len(loader)}  Loss: {loss.item():.4f}  [{loss_str}]")
+                # Log progress
+                progress.log("process", batch_i, len(loader), 
+                           info={"loss": f"{loss.item():.4f}", "epoch": epoch+1})
         
         avg_loss = epoch_loss / max(len(loader), 1)
         print(f"Epoch {epoch+1} avg loss: {avg_loss:.4f}")
+        progress.log_event(f"Epoch {epoch+1} completed", f"avg_loss: {avg_loss:.4f}")
         
         # Save checkpoint
         ckpt_path = os.path.join(args.output_dir, f"checkpoint_epoch{epoch+1}.pth")
@@ -479,6 +489,8 @@ def train(args):
             torch.save(model.state_dict(), best_path)
             print(f"  Best model updated: {best_path}")
     
+    progress.log_event("Training complete", f"best_loss: {best_loss:.4f}")
+    progress.close()
     print(f"\nFine-tuning complete. Best loss: {best_loss:.4f}")
 
 
@@ -493,6 +505,8 @@ def main():
     parser.add_argument("--epochs", type=int, default=10)
     parser.add_argument("--batch-size", type=int, default=4)
     parser.add_argument("--lr", type=float, default=1e-5)
+    parser.add_argument("--freeze-mode", default="incremental", choices=["incremental", "minimal", "full"],
+                        help="Freezing strategy: incremental (recommended), minimal, full")
     # Loss weights
     parser.add_argument("--cost-class", type=float, default=2.0)
     parser.add_argument("--cost-bbox", type=float, default=5.0)

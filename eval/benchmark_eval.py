@@ -501,6 +501,12 @@ def run_task_evaluation(
 
     for ep in range(num_episodes):
         print(f"  Episode {ep+1}/{num_episodes} ...", end=" ", flush=True)
+        
+        # Log episode progress
+        log_progress("episode", ep + 1, num_episodes, {
+            "task": task_name,
+            "episode": ep + 1
+        })
 
         if not reuse_env:
             try:
@@ -750,11 +756,19 @@ def main():
 
     default_episodes = task_config.get("default_episodes", 3)
     task_results = []
+    
+    total_tasks = len(tasks)
 
-    for task in tasks:
+    for task_idx, task in enumerate(tasks, 1):
         num_episodes = args.episodes or task.get("episodes", default_episodes)
         if args.max_steps:
             task = {**task, "max_steps": args.max_steps}
+        
+        # Log progress
+        log_progress("task", task_idx, total_tasks, {
+            "name": task.get("name", "unknown"),
+            "episodes": num_episodes
+        })
 
         result = run_task_evaluation(
             task=task,

@@ -38,6 +38,12 @@ Usage:
         --task-file eval/eval_tasks_paper.yaml \\
         --episodes 1 --tasks navigate_village \\
         --profile --output-dir data/eval_results/
+
+日志参数:
+    --log-file FILE       完整日志输出文件（默认: output_dir/benchmark.log）
+    --progress-log FILE   进度日志文件（默认: /root/rocket2/logs/process.log）
+                          进度日志格式: 【Benchmark】task x/y, [info: ...]
+                          用于实时监控，可通过 tail -f 或 Web 界面查看
 """
 
 import os
@@ -698,6 +704,10 @@ def main():
     out_group = parser.add_argument_group("Output")
     out_group.add_argument("--output-dir", default="data/eval_results/",
                            help="Directory for results JSON and videos")
+    out_group.add_argument("--log-file", default=None,
+                           help="完整日志输出文件（默认: output_dir/benchmark.log）")
+    out_group.add_argument("--progress-log", default="/root/rocket2/logs/process.log",
+                           help="进度日志文件（统一监控）")
     out_group.add_argument("--save-video", action="store_true",
                            help="Save episode videos (slow, large files)")
     out_group.add_argument("--profile", action="store_true",
@@ -710,6 +720,30 @@ def main():
     args = parser.parse_args()
 
     os.makedirs(args.output_dir, exist_ok=True)
+    
+    # 设置日志文件输出
+    log_file = args.log_file or os.path.join(args.output_dir, "benchmark.log")
+    os.makedirs(os.path.dirname(log_file) if os.path.dirname(log_file) else ".", exist_ok=True)
+    log_fp = open(log_file, "w")
+    
+    # 同时输出到控制台和日志文件
+    class TeeOutput:
+        def __init__(self, *files):
+            self.files = files
+        def write(self, text):
+            for f in self.files:
+                f.write(text)
+                f.flush()
+        def flush(self):
+            for f in self.files:
+                f.flush()
+    
+    sys.stdout = TeeOutput(sys.stdout, log_fp)
+    sys.stderr = TeeOutput(sys.stderr, log_fp)
+    
+    print(f"日志文件: {log_file}")
+    print(f"进度日志: {args.progress_log}")
+    
     task_config = load_task_file(args.task_file)
     tasks = task_config["tasks"]
 

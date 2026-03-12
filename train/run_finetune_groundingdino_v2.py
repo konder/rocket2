@@ -381,8 +381,9 @@ def train(args):
     
     # Initialize progress logger
     from progress_logger import ProgressLogger
-    log_file = args.log_file or os.path.join(args.output_dir, "progress.log")
-    progress = ProgressLogger(log_file, "Fine-tuning")
+    # Use centralized process.log for monitoring
+    log_file = args.log_file or "/root/rocket2/logs/process.log"
+    progress = ProgressLogger(log_file, "Fine-tuning", append=True)
     progress.log_event("initialized", f"device={device}, epochs={args.epochs}, lr={args.lr}")
     
     # Load model

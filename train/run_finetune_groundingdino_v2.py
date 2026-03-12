@@ -327,9 +327,28 @@ def build_transform():
     ])
 
 
-def freeze_modules(model):
-    """Freeze backbone and text encoder"""
-    frozen_prefixes = ["backbone", "bert"]
+def freeze_modules(model, mode="incremental"):
+    """
+    Freeze model parameters for fine-tuning
+    
+    Args:
+        mode: Freezing strategy
+            - "incremental": Freeze backbone + bert + encoder, train decoder (recommended for new scenarios)
+            - "minimal": Freeze backbone + bert, train all transformer (original behavior)
+            - "full": Freeze nothing, train all (not recommended)
+    """
+    if mode == "incremental":
+        # Incremental learning: preserve pretrained knowledge, adapt to new scenarios
+        frozen_prefixes = ["backbone", "bert", "transformer.encoder"]
+        print("Incremental mode: Freeze backbone + bert + encoder, train decoder")
+    elif mode == "minimal":
+        # Minimal freeze: only backbone and bert
+        frozen_prefixes = ["backbone", "bert"]
+        print("Minimal mode: Freeze backbone + bert, train all transformer")
+    else:
+        frozen_prefixes = []
+        print("Full mode: No freezing, train all parameters")
+    
     for name, param in model.named_parameters():
         if any(name.startswith(p) for p in frozen_prefixes):
             param.requires_grad = False
@@ -337,6 +356,8 @@ def freeze_modules(model):
     trainable = sum(p.numel() for p in model.parameters() if p.requires_grad)
     total = sum(p.numel() for p in model.parameters())
     print(f"Trainable params: {trainable:,} / {total:,} ({100*trainable/total:.1f}%)")
+    
+    return trainable
 
 
 def train(args):

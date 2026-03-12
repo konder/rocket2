@@ -58,13 +58,7 @@ class ProgressLogger:
         # 写入开始标记
         self._write_line(f"=== {task_name} started at {datetime.now().isoformat()} ===")
     
-    def log(
-        self,
-        action: str,
-        current: int,
-        total: int,
-        info: Optional[Dict[str, Any]] = None
-    ):
+    def log(self, action: str, current: int, total: int, info: Dict[str, Any] = None):
         """
         记录进度
         

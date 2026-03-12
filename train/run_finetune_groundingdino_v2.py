@@ -340,10 +340,23 @@ def freeze_modules(model):
 
 
 def train(args):
-    # Force CPU for training due to MPS compatibility issues with grid_sampler_2d_backward
-    # MPS doesn't support this operation needed for backward pass
-    device = torch.device("cpu")
-    print(f"Device: CPU (MPS has compatibility issues with grid_sampler_2d_backward)")
+    # Device selection: prefer CUDA, fallback to MPS, then CPU
+    if torch.cuda.is_available():
+        device = torch.device("cuda")
+        print(f"Device: CUDA ({torch.cuda.get_device_name(0)})")
+    elif torch.backends.mps.is_available():
+        try:
+            # Test MPS compatibility
+            test_tensor = torch.zeros(1, device="mps")
+            device = torch.device("mps")
+            print("Device: MPS (Apple Silicon)")
+        except Exception as e:
+            print(f"MPS available but has issues: {e}")
+            print("Falling back to CPU")
+            device = torch.device("cpu")
+    else:
+        device = torch.device("cpu")
+        print("Device: CPU")
     
     # Load model
     from groundingdino.util.inference import load_model

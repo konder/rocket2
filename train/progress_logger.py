@@ -103,11 +103,14 @@ class ProgressLogger:
     
     def _write_line(self, line: str):
         """写入一行日志"""
+        # 写入文件
         self.file.write(line + "\n")
         self.file.flush()  # 立即刷新，确保可以实时查看
         
+        # 同时输出到控制台
         if self.also_print:
             print(line)
+            sys.stdout.flush()  # 确保控制台也实时显示
     
     def elapsed_time(self) -> str:
         """返回已用时间"""

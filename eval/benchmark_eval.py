@@ -48,6 +48,31 @@ import json
 import time
 import yaml
 import argparse
+
+# Progress logging support
+PROGRESS_LOG = "/root/rocket2/logs/process.log"
+
+def log_progress(action: str, current: int, total: int, info: dict = None):
+    """Log progress to process.log"""
+    from datetime import datetime
+    
+    timestamp = datetime.now().strftime("%H:%M:%S")
+    info_str = ""
+    if info:
+        info_str = ", ".join([f"{k}: {v}" for k, v in info.items()])
+    
+    if info_str:
+        line = f"[{timestamp}] 【Benchmark】{action} {current}/{total}, [info: {info_str}]"
+    else:
+        line = f"[{timestamp}] 【Benchmark】{action} {current}/{total}"
+    
+    # Append to progress log
+    os.makedirs(os.path.dirname(PROGRESS_LOG), exist_ok=True)
+    with open(PROGRESS_LOG, "a") as f:
+        f.write(line + "\n")
+    
+    # Also print
+    print(line)
 import traceback
 import numpy as np
 from pathlib import Path
